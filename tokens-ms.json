@@ -1,0 +1,702 @@
+{
+  "primitive": {
+    "color": {
+      "neutral": {
+        "100": { "value": "#FAFBFC", "type": "color", "description": "Lightest neutral — near white" },
+        "200": { "value": "#F2F4F6", "type": "color" },
+        "300": { "value": "#E5E9ED", "type": "color" },
+        "400": { "value": "#D3D9E0", "type": "color" },
+        "500": { "value": "#B0BAC4", "type": "color" },
+        "600": { "value": "#8A96A3", "type": "color" },
+        "700": { "value": "#606D7A", "type": "color" },
+        "800": { "value": "#3D4752", "type": "color" },
+        "900": { "value": "#242C35", "type": "color" },
+        "1000": { "value": "#111518", "type": "color", "description": "Darkest neutral — near black" }
+      },
+      "blue": {
+        "100": { "value": "#EAEBFC", "type": "color", "description": "Lightest brand blue tint" },
+        "200": { "value": "#C8CAFF", "type": "color" },
+        "300": { "value": "#9B9EF5", "type": "color" },
+        "400": { "value": "#6B6FEB", "type": "color" },
+        "500": { "value": "#2529D8", "type": "color", "description": "MultiSped primary brand blue" },
+        "600": { "value": "#1C1FB8", "type": "color" },
+        "700": { "value": "#131591", "type": "color" },
+        "800": { "value": "#0C0E6B", "type": "color" },
+        "900": { "value": "#070847", "type": "color" },
+        "1000": { "value": "#020c1b", "type": "color", "description": "Map background — deepest navy, base dark surface" }
+      },
+      "amber": {
+        "100": { "value": "#FFF8EC", "type": "color" },
+        "200": { "value": "#FFEDC4", "type": "color" },
+        "300": { "value": "#FFD980", "type": "color" },
+        "400": { "value": "#FFC23D", "type": "color" },
+        "500": { "value": "#FFAB00", "type": "color" },
+        "600": { "value": "#E09600", "type": "color" },
+        "700": { "value": "#B87A00", "type": "color" },
+        "800": { "value": "#8A5C00", "type": "color" }
+      },
+      "success": {
+        "100": { "value": "#E8F7EE", "type": "color" },
+        "200": { "value": "#C2E9D0", "type": "color" },
+        "300": { "value": "#8DD4AD", "type": "color" },
+        "400": { "value": "#55BC87", "type": "color" },
+        "500": { "value": "#28A462", "type": "color" },
+        "600": { "value": "#1E8750", "type": "color" },
+        "700": { "value": "#156B3E", "type": "color" },
+        "800": { "value": "#0D4F2C", "type": "color" }
+      },
+      "error": {
+        "100": { "value": "#FEF0EF", "type": "color" },
+        "200": { "value": "#FDD4D1", "type": "color" },
+        "300": { "value": "#FBA8A3", "type": "color" },
+        "400": { "value": "#F87B73", "type": "color" },
+        "500": { "value": "#F44F45", "type": "color" },
+        "600": { "value": "#D93530", "type": "color" },
+        "700": { "value": "#B02420", "type": "color" },
+        "800": { "value": "#841714", "type": "color" }
+      },
+      "warning": {
+        "100": { "value": "#FFF6E6", "type": "color" },
+        "200": { "value": "#FFE4B0", "type": "color" },
+        "300": { "value": "#FFCF75", "type": "color" },
+        "400": { "value": "#FFB83A", "type": "color" },
+        "500": { "value": "#FF9F00", "type": "color" },
+        "600": { "value": "#CC7E00", "type": "color" },
+        "700": { "value": "#9E6100", "type": "color" },
+        "800": { "value": "#724500", "type": "color" }
+      }
+    },
+    "space": {
+      "100": { "value": "4px", "type": "spacing" },
+      "200": { "value": "8px", "type": "spacing" },
+      "300": { "value": "12px", "type": "spacing" },
+      "400": { "value": "16px", "type": "spacing" },
+      "500": { "value": "24px", "type": "spacing" },
+      "600": { "value": "32px", "type": "spacing" },
+      "700": { "value": "48px", "type": "spacing" },
+      "800": { "value": "64px", "type": "spacing" },
+      "900": { "value": "96px", "type": "spacing" },
+      "1000": { "value": "128px", "type": "spacing" }
+    },
+    "border-radius": {
+      "0": { "value": "0px", "type": "borderRadius" },
+      "100": { "value": "2px", "type": "borderRadius" },
+      "200": { "value": "4px", "type": "borderRadius" },
+      "300": { "value": "8px", "type": "borderRadius" },
+      "400": { "value": "12px", "type": "borderRadius" },
+      "500": { "value": "16px", "type": "borderRadius" },
+      "600": { "value": "24px", "type": "borderRadius" },
+      "full": { "value": "9999px", "type": "borderRadius" }
+    },
+    "size": {
+      "50": { "value": "4px", "type": "sizing" },
+      "100": { "value": "8px", "type": "sizing" },
+      "200": { "value": "16px", "type": "sizing" },
+      "300": { "value": "20px", "type": "sizing" },
+      "400": { "value": "24px", "type": "sizing" },
+      "500": { "value": "32px", "type": "sizing" },
+      "600": { "value": "40px", "type": "sizing" },
+      "700": { "value": "48px", "type": "sizing" },
+      "800": { "value": "56px", "type": "sizing" }
+    },
+    "font-size": {
+      "50": { "value": "10px", "type": "fontSizes" },
+      "100": { "value": "12px", "type": "fontSizes" },
+      "200": { "value": "14px", "type": "fontSizes" },
+      "300": { "value": "16px", "type": "fontSizes" },
+      "400": { "value": "18px", "type": "fontSizes" },
+      "500": { "value": "20px", "type": "fontSizes" },
+      "600": { "value": "24px", "type": "fontSizes" },
+      "700": { "value": "32px", "type": "fontSizes" },
+      "800": { "value": "40px", "type": "fontSizes" },
+      "900": { "value": "56px", "type": "fontSizes" },
+      "1000": { "value": "72px", "type": "fontSizes" }
+    },
+    "font-weight": {
+      "thin": { "value": "100", "type": "fontWeights" },
+      "light": { "value": "300", "type": "fontWeights" },
+      "regular": { "value": "400", "type": "fontWeights" },
+      "medium": { "value": "500", "type": "fontWeights" },
+      "semibold": { "value": "600", "type": "fontWeights" },
+      "bold": { "value": "700", "type": "fontWeights" },
+      "extrabold": { "value": "800", "type": "fontWeights" }
+    },
+    "line-height": {
+      "100": { "value": "1.0", "type": "lineHeights" },
+      "200": { "value": "1.2", "type": "lineHeights" },
+      "300": { "value": "1.4", "type": "lineHeights" },
+      "400": { "value": "1.6", "type": "lineHeights" },
+      "500": { "value": "1.8", "type": "lineHeights" }
+    },
+    "font-style": {
+      "normal": { "value": "normal", "type": "other" },
+      "italic": { "value": "italic", "type": "other" }
+    },
+    "border-width": {
+      "none": { "value": "0px", "type": "borderWidth" },
+      "thin": { "value": "1px", "type": "borderWidth" },
+      "medium": { "value": "2px", "type": "borderWidth" },
+      "thick": { "value": "4px", "type": "borderWidth" }
+    },
+    "z-index": {
+      "0": { "value": "-1", "type": "other" },
+      "100": { "value": "100", "type": "other" },
+      "200": { "value": "200", "type": "other" },
+      "300": { "value": "300", "type": "other" },
+      "400": { "value": "400", "type": "other" },
+      "500": { "value": "500", "type": "other" }
+    },
+    "gradient": {
+      "primary": { "value": "linear-gradient(135deg, #2529D8 0%, #0C0E6B 100%)", "type": "other", "description": "Primary brand gradient — electric blue to deep navy" },
+      "primary-glow": { "value": "linear-gradient(135deg, #6B6FEB 0%, #2529D8 100%)", "type": "other", "description": "Lighter brand gradient for hover states and highlights" },
+      "surface-dark": { "value": "linear-gradient(180deg, #070847 0%, #020c1b 100%)", "type": "other", "description": "Dark surface gradient matching map background" },
+      "success": { "value": "linear-gradient(135deg, #28A462 0%, #0D4F2C 100%)", "type": "other" },
+      "subtle-dark": { "value": "linear-gradient(180deg, #112240 0%, #020c1b 100%)", "type": "other", "description": "Subtle dark gradient — mirrors map land color to deepest bg" }
+    }
+  },
+  "semantic": {
+    "color": {
+      "background": {
+        "primary": {
+          "value": "{color.blue.1000}",
+          "type": "color",
+          "description": "Primary page background — deep navy matching the map canvas",
+          "$extensions": { "dark": "{color.blue.1000}" }
+        },
+        "secondary": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "description": "Light mode page background",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "surface": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "description": "Card / panel surface — light mode",
+          "$extensions": { "dark": "{color.blue.800}" }
+        },
+        "surface-raised": {
+          "value": "{color.neutral.200}",
+          "type": "color",
+          "description": "Elevated surface (modals, popovers) — light mode",
+          "$extensions": { "dark": "{color.blue.700}" }
+        },
+        "weak": {
+          "value": "{color.neutral.200}",
+          "type": "color",
+          "description": "Subtle background for secondary areas",
+          "$extensions": { "dark": "{color.neutral.800}" }
+        },
+        "inactive": {
+          "value": "{color.neutral.200}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.800}" }
+        },
+        "inverse": {
+          "value": "{color.neutral.1000}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "brand": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "description": "Brand background — MultiSped primary blue",
+          "$extensions": { "dark": "{color.blue.500}" }
+        },
+        "brand-subtle": {
+          "value": "{color.blue.100}",
+          "type": "color",
+          "description": "Tinted brand background for low-emphasis areas",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "brand-active": {
+          "value": "{color.blue.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.400}" }
+        },
+        "highlight": {
+          "value": "{color.blue.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "overlay": {
+          "value": "{color.neutral.1000}",
+          "type": "color",
+          "description": "Scrim / overlay behind modals",
+          "$extensions": { "dark": "{color.neutral.1000}" }
+        },
+        "success": {
+          "value": "{color.success.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.success.800}" }
+        },
+        "error": {
+          "value": "{color.error.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.error.800}" }
+        },
+        "warning": {
+          "value": "{color.warning.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.warning.800}" }
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "{color.neutral.1000}",
+          "type": "color",
+          "description": "Primary body text — light mode",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "secondary": {
+          "value": "{color.neutral.700}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.400}" }
+        },
+        "tertiary": {
+          "value": "{color.neutral.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.500}" }
+        },
+        "disabled": {
+          "value": "{color.neutral.400}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.600}" }
+        },
+        "inverse": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "description": "Text on dark/brand surfaces",
+          "$extensions": { "dark": "{color.neutral.1000}" }
+        },
+        "brand": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "description": "Brand-coloured text — links, emphasis",
+          "$extensions": { "dark": "{color.blue.300}" }
+        },
+        "brand-subtle": {
+          "value": "{color.blue.400}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.200}" }
+        },
+        "on-brand": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "description": "Text placed directly on brand-blue surface",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "success": {
+          "value": "{color.success.700}",
+          "type": "color",
+          "$extensions": { "dark": "{color.success.300}" }
+        },
+        "error": {
+          "value": "{color.error.700}",
+          "type": "color",
+          "$extensions": { "dark": "{color.error.300}" }
+        },
+        "warning": {
+          "value": "{color.warning.700}",
+          "type": "color",
+          "$extensions": { "dark": "{color.warning.300}" }
+        },
+        "heading": {
+          "value": "{color.neutral.1000}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "heading-on-dark": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "description": "Headings on the deep navy map/hero background",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "muted-on-dark": {
+          "value": "{color.blue.200}",
+          "type": "color",
+          "description": "Muted / secondary text on the dark map surface",
+          "$extensions": { "dark": "{color.blue.200}" }
+        }
+      },
+      "border": {
+        "default": {
+          "value": "{color.neutral.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.800}" }
+        },
+        "strong": {
+          "value": "{color.neutral.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.600}" }
+        },
+        "weak": {
+          "value": "{color.neutral.200}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.900}" }
+        },
+        "brand": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.400}" }
+        },
+        "brand-subtle": {
+          "value": "{color.blue.200}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.800}" }
+        },
+        "focus": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "description": "Focus ring colour",
+          "$extensions": { "dark": "{color.blue.400}" }
+        },
+        "disabled": {
+          "value": "{color.neutral.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.700}" }
+        },
+        "success": {
+          "value": "{color.success.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.success.400}" }
+        },
+        "error": {
+          "value": "{color.error.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.error.400}" }
+        },
+        "warning": {
+          "value": "{color.warning.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.warning.400}" }
+        },
+        "map-panel": {
+          "value": "{color.blue.800}",
+          "type": "color",
+          "description": "Border for panels / cards sitting on the dark map surface — mirrors InteractiveMap panel border #233554",
+          "$extensions": { "dark": "{color.blue.800}" }
+        }
+      },
+      "icon": {
+        "default": {
+          "value": "{color.neutral.800}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.300}" }
+        },
+        "secondary": {
+          "value": "{color.neutral.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.500}" }
+        },
+        "brand": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.300}" }
+        },
+        "on-brand": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "disabled": {
+          "value": "{color.neutral.400}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.600}" }
+        },
+        "success": {
+          "value": "{color.success.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.success.300}" }
+        },
+        "error": {
+          "value": "{color.error.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.error.300}" }
+        },
+        "warning": {
+          "value": "{color.warning.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.warning.300}" }
+        },
+        "button-primary": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "button-secondary": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.300}" }
+        }
+      },
+      "action": {
+        "primary-background": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "description": "Primary CTA button fill",
+          "$extensions": { "dark": "{color.blue.500}" }
+        },
+        "primary-background-hover": {
+          "value": "{color.blue.600}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.400}" }
+        },
+        "primary-background-active": {
+          "value": "{color.blue.700}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.300}" }
+        },
+        "primary-text": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "secondary-background": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "secondary-background-hover": {
+          "value": "{color.blue.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.800}" }
+        },
+        "secondary-text": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.300}" }
+        },
+        "secondary-border": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.400}" }
+        },
+        "ghost-text": {
+          "value": "{color.neutral.700}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.300}" }
+        },
+        "ghost-text-hover": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.300}" }
+        },
+        "destructive-background": {
+          "value": "{color.error.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.error.500}" }
+        },
+        "destructive-text": {
+          "value": "{color.neutral.100}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.100}" }
+        },
+        "disabled-background": {
+          "value": "{color.neutral.200}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.800}" }
+        },
+        "disabled-text": {
+          "value": "{color.neutral.400}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.600}" }
+        }
+      },
+      "shadow": {
+        "default": {
+          "value": "{color.neutral.400}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.1000}" }
+        },
+        "active": {
+          "value": "{color.blue.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "hover": {
+          "value": "{color.neutral.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.900}" }
+        },
+        "focus": {
+          "value": "{color.blue.200}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.800}" }
+        },
+        "card-primary": {
+          "value": "{color.blue.200}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "card-secondary": {
+          "value": "{color.neutral.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.900}" }
+        },
+        "button": {
+          "value": "{color.blue.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.900}" }
+        },
+        "modal": {
+          "value": "{color.neutral.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.1000}" }
+        },
+        "navigation": {
+          "value": "{color.neutral.300}",
+          "type": "color",
+          "$extensions": { "dark": "{color.neutral.900}" }
+        }
+      },
+      "status": {
+        "success": {
+          "value": "{color.success.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.success.400}" }
+        },
+        "error": {
+          "value": "{color.error.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.error.400}" }
+        },
+        "warning": {
+          "value": "{color.warning.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.warning.400}" }
+        },
+        "info": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.400}" }
+        },
+        "decorative": {
+          "value": "{color.amber.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.amber.400}" }
+        },
+        "progress": {
+          "value": "{color.blue.500}",
+          "type": "color",
+          "$extensions": { "dark": "{color.blue.300}" }
+        }
+      },
+      "map": {
+        "background": {
+          "value": "#020c1b",
+          "type": "color",
+          "description": "Exact InteractiveMap SVG background — use as hero/section bg"
+        },
+        "land": {
+          "value": "#112240",
+          "type": "color",
+          "description": "InteractiveMap country fill"
+        },
+        "border": {
+          "value": "#1e3a6a",
+          "type": "color",
+          "description": "InteractiveMap country stroke"
+        },
+        "arc": {
+          "value": "#4a6fa5",
+          "type": "color",
+          "description": "InteractiveMap route arc colour — use for decorative lines/dividers on dark bg"
+        },
+        "panel": {
+          "value": "rgba(10, 25, 47, 0.75)",
+          "type": "color",
+          "description": "InteractiveMap control panel backdrop — use for glass-morphism cards on dark bg"
+        },
+        "panel-border": {
+          "value": "#233554",
+          "type": "color",
+          "description": "InteractiveMap panel border"
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "size": { "value": "{font-size.1000}", "type": "fontSizes", "description": "Hero display — 72px" },
+        "weight": { "value": "{font-weight.bold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.200}", "type": "lineHeights" }
+      },
+      "h1": {
+        "size": { "value": "{font-size.900}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.bold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.200}", "type": "lineHeights" }
+      },
+      "h2": {
+        "size": { "value": "{font-size.800}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.200}", "type": "lineHeights" }
+      },
+      "h3": {
+        "size": { "value": "{font-size.700}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.300}", "type": "lineHeights" }
+      },
+      "h4": {
+        "size": { "value": "{font-size.600}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.300}", "type": "lineHeights" }
+      },
+      "body-large": {
+        "size": { "value": "{font-size.400}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.regular}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.400}", "type": "lineHeights" }
+      },
+      "body": {
+        "size": { "value": "{font-size.300}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.regular}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.400}", "type": "lineHeights" }
+      },
+      "body-small": {
+        "size": { "value": "{font-size.200}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.regular}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.400}", "type": "lineHeights" }
+      },
+      "label": {
+        "size": { "value": "{font-size.200}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.300}", "type": "lineHeights" }
+      },
+      "caption": {
+        "size": { "value": "{font-size.100}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.regular}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.400}", "type": "lineHeights" }
+      },
+      "overline": {
+        "size": { "value": "{font-size.100}", "type": "fontSizes" },
+        "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" },
+        "line-height": { "value": "{line-height.300}", "type": "lineHeights" },
+        "description": "All-caps label — letter-spacing 0.1em"
+      }
+    },
+    "border-radius": {
+      "default": { "value": "{border-radius.300}", "type": "borderRadius" },
+      "small": { "value": "{border-radius.200}", "type": "borderRadius" },
+      "large": { "value": "{border-radius.400}", "type": "borderRadius" },
+      "pill": { "value": "{border-radius.full}", "type": "borderRadius" },
+      "none": { "value": "{border-radius.0}", "type": "borderRadius" },
+      "sharp": { "value": "{border-radius.100}", "type": "borderRadius" }
+    },
+    "size": {
+      "icon-small": { "value": "{size.100}", "type": "sizing" },
+      "icon-medium": { "value": "{size.200}", "type": "sizing" },
+      "icon-large": { "value": "{size.300}", "type": "sizing" },
+      "icon-primary": { "value": "{size.200}", "type": "sizing" },
+      "icon-secondary": { "value": "{size.200}", "type": "sizing" },
+      "icon-badge": { "value": "{size.300}", "type": "sizing" },
+      "icon-button-primary": { "value": "{size.200}", "type": "sizing" },
+      "icon-button-secondary": { "value": "{size.200}", "type": "sizing" }
+    },
+    "z-index": {
+      "default": { "value": "{z-index.0}", "type": "other" },
+      "sticky": { "value": "{z-index.200}", "type": "other" },
+      "navigation": { "value": "{z-index.300}", "type": "other" },
+      "dropdown": { "value": "{z-index.400}", "type": "other" },
+      "modal": { "value": "{z-index.500}", "type": "other" }
+    }
+  }
+}
