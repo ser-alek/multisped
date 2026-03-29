@@ -1,320 +1,408 @@
 {
   "primitive": {
-    "color/brand/blue-100":  { "value": "#E6EEFF", "type": "color" },
-    "color/brand/blue-200":  { "value": "#B8CBFF", "type": "color" },
-    "color/brand/blue-300":  { "value": "#7FA8FF", "type": "color" },
-    "color/brand/blue-400":  { "value": "#4A6FEF", "type": "color" },
-    "color/brand/blue-500":  { "value": "#2529D8", "type": "color", "description": "Primary brand blue" },
-    "color/brand/blue-600":  { "value": "#1C1FB8", "type": "color" },
-    "color/brand/blue-700":  { "value": "#131591", "type": "color" },
-    "color/brand/blue-800":  { "value": "#0C0E6B", "type": "color" },
-    "color/brand/blue-900":  { "value": "#070847", "type": "color" },
-    "color/brand/blue-1000": { "value": "#020c1b", "type": "color", "description": "Deepest navy / map canvas bg" },
-
-    "color/navy/navy-100": { "value": "#1a2d4a", "type": "color", "description": "Card hover on dark" },
-    "color/navy/navy-200": { "value": "#152238", "type": "color" },
-    "color/navy/navy-300": { "value": "#112240", "type": "color", "description": "Map land / dark card resting" },
-    "color/navy/navy-400": { "value": "#0e1c34", "type": "color" },
-    "color/navy/navy-500": { "value": "#0a1628", "type": "color" },
-
-    "color/neutral/neutral-100":  { "value": "#FAFBFC", "type": "color", "description": "Near white" },
-    "color/neutral/neutral-200":  { "value": "#F2F4F6", "type": "color" },
-    "color/neutral/neutral-300":  { "value": "#E5E9ED", "type": "color" },
-    "color/neutral/neutral-400":  { "value": "#D3D9E0", "type": "color" },
-    "color/neutral/neutral-500":  { "value": "#B0BAC4", "type": "color" },
-    "color/neutral/neutral-600":  { "value": "#8A96A3", "type": "color" },
-    "color/neutral/neutral-700":  { "value": "#606D7A", "type": "color" },
-    "color/neutral/neutral-800":  { "value": "#3D4752", "type": "color" },
-    "color/neutral/neutral-900":  { "value": "#242C35", "type": "color" },
-    "color/neutral/neutral-1000": { "value": "#111518", "type": "color" },
-
-    "color/success/success-100": { "value": "#E8F7EE", "type": "color" },
-    "color/success/success-500": { "value": "#28A462", "type": "color" },
-    "color/success/success-700": { "value": "#156B3E", "type": "color" },
-
-    "color/error/error-100": { "value": "#FEF0EF", "type": "color" },
-    "color/error/error-500": { "value": "#F44F45", "type": "color" },
-    "color/error/error-700": { "value": "#B02420", "type": "color" },
-
-    "color/warning/warning-100": { "value": "#FFF6E6", "type": "color" },
-    "color/warning/warning-500": { "value": "#FF9F00", "type": "color" },
-    "color/warning/warning-700": { "value": "#9E6100", "type": "color" },
-
-    "color/map/map-bg":           { "value": "#020c1b", "type": "color" },
-    "color/map/map-land":         { "value": "#112240", "type": "color" },
-    "color/map/map-border":       { "value": "#1e3a6a", "type": "color" },
-    "color/map/map-arc":          { "value": "#4a6fa5", "type": "color" },
-    "color/map/map-panel":        { "value": "rgba(10,25,47,0.75)", "type": "color" },
-    "color/map/map-panel-border": { "value": "#233554", "type": "color" },
-
-    "space/space-100":  { "value": "4px",   "type": "spacing" },
-    "space/space-200":  { "value": "8px",   "type": "spacing" },
-    "space/space-300":  { "value": "12px",  "type": "spacing" },
-    "space/space-400":  { "value": "16px",  "type": "spacing" },
-    "space/space-500":  { "value": "24px",  "type": "spacing" },
-    "space/space-600":  { "value": "32px",  "type": "spacing" },
-    "space/space-700":  { "value": "48px",  "type": "spacing" },
-    "space/space-800":  { "value": "64px",  "type": "spacing" },
-    "space/space-900":  { "value": "96px",  "type": "spacing" },
-    "space/space-1000": { "value": "128px", "type": "spacing" },
-
-    "border-radius/radius-0":    { "value": "0px",    "type": "borderRadius" },
-    "border-radius/radius-100":  { "value": "2px",    "type": "borderRadius" },
-    "border-radius/radius-200":  { "value": "4px",    "type": "borderRadius" },
-    "border-radius/radius-300":  { "value": "8px",    "type": "borderRadius" },
-    "border-radius/radius-400":  { "value": "12px",   "type": "borderRadius" },
-    "border-radius/radius-500":  { "value": "16px",   "type": "borderRadius" },
-    "border-radius/radius-600":  { "value": "24px",   "type": "borderRadius" },
-    "border-radius/radius-full": { "value": "9999px", "type": "borderRadius" },
-
-    "typography/font-size/xs":  { "value": "12px", "type": "fontSizes" },
-    "typography/font-size/sm":  { "value": "14px", "type": "fontSizes" },
-    "typography/font-size/md":  { "value": "16px", "type": "fontSizes" },
-    "typography/font-size/lg":  { "value": "18px", "type": "fontSizes" },
-    "typography/font-size/xl":  { "value": "20px", "type": "fontSizes" },
-    "typography/font-size/2xl": { "value": "24px", "type": "fontSizes" },
-    "typography/font-size/3xl": { "value": "32px", "type": "fontSizes" },
-    "typography/font-size/4xl": { "value": "40px", "type": "fontSizes" },
-    "typography/font-size/5xl": { "value": "56px", "type": "fontSizes" },
-    "typography/font-size/6xl": { "value": "72px", "type": "fontSizes" },
-
-    "typography/font-weight/regular":  { "value": "400", "type": "fontWeights" },
-    "typography/font-weight/medium":   { "value": "500", "type": "fontWeights" },
-    "typography/font-weight/semibold": { "value": "600", "type": "fontWeights" },
-    "typography/font-weight/bold":     { "value": "700", "type": "fontWeights" },
-
-    "typography/line-height/tight":  { "value": "1.2", "type": "lineHeights" },
-    "typography/line-height/snug":   { "value": "1.4", "type": "lineHeights" },
-    "typography/line-height/normal": { "value": "1.6", "type": "lineHeights" },
-    "typography/line-height/loose":  { "value": "1.8", "type": "lineHeights" },
-
-    "shadow/shadow-sm":               { "value": "0 1px 3px rgba(2,12,27,0.08)", "type": "boxShadow" },
-    "shadow/shadow-md":               { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow" },
-    "shadow/shadow-lg":               { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow" },
-    "shadow/shadow-brand":            { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow" },
-    "shadow/shadow-dark-inset":       { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow" },
-    "shadow/shadow-dark-hover":       { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
-    "shadow/shadow-active-dark":      { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)", "type": "boxShadow" },
-    "shadow/shadow-active-brand":     { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)", "type": "boxShadow" },
-
-    "transition/transition-fast":     { "value": "150ms ease", "type": "other" },
-    "transition/transition-base":     { "value": "250ms ease", "type": "other" },
-    "transition/transition-moderate": { "value": "350ms cubic-bezier(0.4,0,0.2,1)", "type": "other" },
-    "transition/transition-card":     { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other" }
+    "color": {
+      "brand": {
+        "100":  { "value": "#E6EEFF", "type": "color" },
+        "200":  { "value": "#B8CBFF", "type": "color" },
+        "300":  { "value": "#7FA8FF", "type": "color" },
+        "400":  { "value": "#4A6FEF", "type": "color" },
+        "500":  { "value": "#2529D8", "type": "color", "description": "Primary brand blue" },
+        "600":  { "value": "#1C1FB8", "type": "color" },
+        "700":  { "value": "#131591", "type": "color" },
+        "800":  { "value": "#0C0E6B", "type": "color" },
+        "900":  { "value": "#070847", "type": "color" },
+        "1000": { "value": "#020c1b", "type": "color", "description": "Deepest navy / map canvas bg" }
+      },
+      "navy": {
+        "100": { "value": "#1a2d4a", "type": "color", "description": "Card hover on dark" },
+        "200": { "value": "#152238", "type": "color" },
+        "300": { "value": "#112240", "type": "color", "description": "Map land / dark card resting" },
+        "400": { "value": "#0e1c34", "type": "color" },
+        "500": { "value": "#0a1628", "type": "color" }
+      },
+      "neutral": {
+        "100":  { "value": "#FAFBFC", "type": "color", "description": "Near white" },
+        "200":  { "value": "#F2F4F6", "type": "color" },
+        "300":  { "value": "#E5E9ED", "type": "color" },
+        "400":  { "value": "#D3D9E0", "type": "color" },
+        "500":  { "value": "#B0BAC4", "type": "color" },
+        "600":  { "value": "#8A96A3", "type": "color" },
+        "700":  { "value": "#606D7A", "type": "color" },
+        "800":  { "value": "#3D4752", "type": "color" },
+        "900":  { "value": "#242C35", "type": "color" },
+        "1000": { "value": "#111518", "type": "color" }
+      },
+      "success": {
+        "100": { "value": "#E8F7EE", "type": "color" },
+        "500": { "value": "#28A462", "type": "color" },
+        "700": { "value": "#156B3E", "type": "color" }
+      },
+      "error": {
+        "100": { "value": "#FEF0EF", "type": "color" },
+        "500": { "value": "#F44F45", "type": "color" },
+        "700": { "value": "#B02420", "type": "color" }
+      },
+      "warning": {
+        "100": { "value": "#FFF6E6", "type": "color" },
+        "500": { "value": "#FF9F00", "type": "color" },
+        "700": { "value": "#9E6100", "type": "color" }
+      },
+      "map": {
+        "bg":           { "value": "#020c1b", "type": "color" },
+        "land":         { "value": "#112240", "type": "color" },
+        "border":       { "value": "#1e3a6a", "type": "color" },
+        "arc":          { "value": "#4a6fa5", "type": "color" },
+        "panel":        { "value": "rgba(10,25,47,0.75)", "type": "color" },
+        "panel-border": { "value": "#233554", "type": "color" }
+      }
+    },
+    "space": {
+      "100":  { "value": "4px",   "type": "spacing" },
+      "200":  { "value": "8px",   "type": "spacing" },
+      "300":  { "value": "12px",  "type": "spacing" },
+      "400":  { "value": "16px",  "type": "spacing" },
+      "500":  { "value": "24px",  "type": "spacing" },
+      "600":  { "value": "32px",  "type": "spacing" },
+      "700":  { "value": "48px",  "type": "spacing" },
+      "800":  { "value": "64px",  "type": "spacing" },
+      "900":  { "value": "96px",  "type": "spacing" },
+      "1000": { "value": "128px", "type": "spacing" }
+    },
+    "radius": {
+      "0":    { "value": "0px",    "type": "borderRadius" },
+      "100":  { "value": "2px",    "type": "borderRadius" },
+      "200":  { "value": "4px",    "type": "borderRadius" },
+      "300":  { "value": "8px",    "type": "borderRadius" },
+      "400":  { "value": "12px",   "type": "borderRadius" },
+      "500":  { "value": "16px",   "type": "borderRadius" },
+      "600":  { "value": "24px",   "type": "borderRadius" },
+      "full": { "value": "9999px", "type": "borderRadius" }
+    },
+    "font-size": {
+      "xs":  { "value": "12px", "type": "fontSizes" },
+      "sm":  { "value": "14px", "type": "fontSizes" },
+      "md":  { "value": "16px", "type": "fontSizes" },
+      "lg":  { "value": "18px", "type": "fontSizes" },
+      "xl":  { "value": "20px", "type": "fontSizes" },
+      "2xl": { "value": "24px", "type": "fontSizes" },
+      "3xl": { "value": "32px", "type": "fontSizes" },
+      "4xl": { "value": "40px", "type": "fontSizes" },
+      "5xl": { "value": "56px", "type": "fontSizes" },
+      "6xl": { "value": "72px", "type": "fontSizes" }
+    },
+    "font-weight": {
+      "regular":  { "value": "400", "type": "fontWeights" },
+      "medium":   { "value": "500", "type": "fontWeights" },
+      "semibold": { "value": "600", "type": "fontWeights" },
+      "bold":     { "value": "700", "type": "fontWeights" }
+    },
+    "line-height": {
+      "tight":  { "value": "1.2", "type": "lineHeights" },
+      "snug":   { "value": "1.4", "type": "lineHeights" },
+      "normal": { "value": "1.6", "type": "lineHeights" },
+      "loose":  { "value": "1.8", "type": "lineHeights" }
+    },
+    "shadow": {
+      "sm":           { "value": "0 1px 3px rgba(2,12,27,0.08)", "type": "boxShadow" },
+      "md":           { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow" },
+      "lg":           { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow" },
+      "brand":        { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow" },
+      "dark-inset":   { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow" },
+      "dark-hover":   { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
+      "active-dark":  { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)", "type": "boxShadow" },
+      "active-brand": { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)", "type": "boxShadow" }
+    },
+    "transition": {
+      "fast":     { "value": "150ms ease", "type": "other" },
+      "base":     { "value": "250ms ease", "type": "other" },
+      "moderate": { "value": "350ms cubic-bezier(0.4,0,0.2,1)", "type": "other" },
+      "card":     { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other" }
+    }
   },
 
   "semantic": {
-    "light/background/page":          { "value": "#FAFBFC", "type": "color", "description": "Light section background" },
-    "light/background/surface":       { "value": "#FFFFFF", "type": "color", "description": "Card and panel fill" },
-    "light/background/subtle":        { "value": "#F2F4F6", "type": "color", "description": "Alternate rows, sidebar tint" },
-    "light/background/brand":         { "value": "#2529D8", "type": "color", "description": "Brand fill — buttons, active pills" },
-    "light/background/brand-subtle":  { "value": "#E6EEFF", "type": "color", "description": "Icon containers, tag bg" },
+    "light": {
+      "background": {
+        "page":         { "value": "#FAFBFC", "type": "color", "description": "Light section bg" },
+        "surface":      { "value": "#FFFFFF", "type": "color", "description": "Card and panel fill" },
+        "subtle":       { "value": "#F2F4F6", "type": "color", "description": "Alternate rows, sidebar tint" },
+        "brand":        { "value": "#2529D8", "type": "color", "description": "Brand fill — buttons, active pills" },
+        "brand-subtle": { "value": "#E6EEFF", "type": "color", "description": "Icon containers, tag bg" }
+      },
+      "text": {
+        "heading":     { "value": "#020c1b", "type": "color", "description": "Deep navy — max contrast on white" },
+        "body":        { "value": "#3D4752", "type": "color" },
+        "secondary":   { "value": "#606D7A", "type": "color" },
+        "placeholder": { "value": "#B0BAC4", "type": "color" },
+        "disabled":    { "value": "#D3D9E0", "type": "color" },
+        "brand":       { "value": "#2529D8", "type": "color", "description": "Links, inline emphasis" },
+        "overline":    { "value": "#2529D8", "type": "color", "description": "Section overline labels" },
+        "on-brand":    { "value": "#FAFBFC", "type": "color", "description": "Text on blue fills" }
+      },
+      "border": {
+        "default":  { "value": "#E5E9ED", "type": "color" },
+        "strong":   { "value": "#B0BAC4", "type": "color" },
+        "hover":    { "value": "#7FA8FF", "type": "color" },
+        "focus":    { "value": "#2529D8", "type": "color" },
+        "brand":    { "value": "#2529D8", "type": "color" },
+        "disabled": { "value": "#E5E9ED", "type": "color" },
+        "success":  { "value": "#28A462", "type": "color" },
+        "error":    { "value": "#F44F45", "type": "color" },
+        "warning":  { "value": "#FF9F00", "type": "color" }
+      },
+      "icon": {
+        "default":   { "value": "#3D4752", "type": "color" },
+        "secondary": { "value": "#606D7A", "type": "color" },
+        "brand":     { "value": "#2529D8", "type": "color" },
+        "disabled":  { "value": "#D3D9E0", "type": "color" },
+        "on-brand":  { "value": "#FAFBFC", "type": "color" }
+      },
+      "button": {
+        "primary": {
+          "bg":        { "value": "#2529D8", "type": "color" },
+          "bg-hover":  { "value": "#1C1FB8", "type": "color" },
+          "bg-active": { "value": "#131591", "type": "color" },
+          "text":      { "value": "#FAFBFC", "type": "color" },
+          "shadow":    { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow" }
+        },
+        "secondary": {
+          "bg":        { "value": "#FFFFFF", "type": "color" },
+          "bg-hover":  { "value": "#E6EEFF", "type": "color" },
+          "text":      { "value": "#2529D8", "type": "color" },
+          "border":    { "value": "#2529D8", "type": "color" }
+        },
+        "disabled": {
+          "bg":   { "value": "#F2F4F6", "type": "color" },
+          "text": { "value": "#D3D9E0", "type": "color" }
+        }
+      },
+      "card": {
+        "bg":              { "value": "#FFFFFF", "type": "color" },
+        "border":          { "value": "#E5E9ED", "type": "color" },
+        "shadow":          { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow" },
+        "bg-hover":        { "value": "#FFFFFF", "type": "color", "description": "Stays white — lift via shadow" },
+        "border-hover":    { "value": "#7FA8FF", "type": "color" },
+        "shadow-hover":    { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow" },
+        "transform-hover": { "value": "translateY(-4px)", "type": "other" },
+        "heading":         { "value": "#020c1b", "type": "color" },
+        "body":            { "value": "#606D7A", "type": "color" },
+        "num":             { "value": "#8A96A3", "type": "color" }
+      },
+      "nav": {
+        "bg":          { "value": "#FAFBFC", "type": "color" },
+        "border":      { "value": "#E5E9ED", "type": "color" },
+        "link":        { "value": "#606D7A", "type": "color" },
+        "link-hover":  { "value": "#2529D8", "type": "color" },
+        "link-active": { "value": "#2529D8", "type": "color" }
+      },
+      "tab": {
+        "rest":        { "value": "#606D7A", "type": "color" },
+        "hover":       { "value": "#2529D8", "type": "color" },
+        "active-text": { "value": "#2529D8", "type": "color" },
+        "active-line": { "value": "#2529D8", "type": "color" },
+        "disabled":    { "value": "#D3D9E0", "type": "color" },
+        "bar-border":  { "value": "#E5E9ED", "type": "color" }
+      },
+      "status": {
+        "success": {
+          "bg":   { "value": "#E8F7EE", "type": "color" },
+          "text": { "value": "#156B3E", "type": "color" }
+        },
+        "error": {
+          "bg":   { "value": "#FEF0EF", "type": "color" },
+          "text": { "value": "#B02420", "type": "color" }
+        },
+        "warning": {
+          "bg":   { "value": "#FFF6E6", "type": "color" },
+          "text": { "value": "#9E6100", "type": "color" }
+        }
+      }
+    },
 
-    "light/text/heading":             { "value": "#020c1b", "type": "color", "description": "Deep navy — max contrast on white" },
-    "light/text/body":                { "value": "#3D4752", "type": "color" },
-    "light/text/secondary":           { "value": "#606D7A", "type": "color" },
-    "light/text/placeholder":         { "value": "#B0BAC4", "type": "color" },
-    "light/text/disabled":            { "value": "#D3D9E0", "type": "color" },
-    "light/text/brand":               { "value": "#2529D8", "type": "color", "description": "Links, inline emphasis" },
-    "light/text/overline":            { "value": "#2529D8", "type": "color", "description": "Section overline labels" },
-    "light/text/on-brand":            { "value": "#FAFBFC", "type": "color", "description": "Text on blue fills" },
+    "dark": {
+      "background": {
+        "page":               { "value": "#020c1b", "type": "color", "description": "Deep navy — map canvas" },
+        "surface":            { "value": "#112240", "type": "color", "description": "Card resting — map land" },
+        "surface-hover":      { "value": "#1a2d4a", "type": "color", "description": "Card hover — never brand blue" },
+        "panel":              { "value": "rgba(10,25,47,0.75)", "type": "color", "description": "Glass-morphism panel" },
+        "brand":              { "value": "#2529D8", "type": "color", "description": "Brand fill — same across themes" },
+        "brand-subtle":       { "value": "rgba(37,41,216,0.20)", "type": "color", "description": "Icon container on dark" },
+        "brand-subtle-hover": { "value": "rgba(37,41,216,0.35)", "type": "color" }
+      },
+      "text": {
+        "heading":   { "value": "#FAFBFC", "type": "color" },
+        "body":      { "value": "rgba(176,186,196,0.80)", "type": "color" },
+        "secondary": { "value": "rgba(176,186,196,0.55)", "type": "color" },
+        "disabled":  { "value": "rgba(176,186,196,0.25)", "type": "color" },
+        "brand":     { "value": "#7FA8FF", "type": "color", "description": "blue-300 — readable on dark" },
+        "overline":  { "value": "#7FA8FF", "type": "color" },
+        "on-brand":  { "value": "#FAFBFC", "type": "color" }
+      },
+      "border": {
+        "default":  { "value": "#1e3a6a", "type": "color", "description": "map border" },
+        "panel":    { "value": "#233554", "type": "color", "description": "map panel border" },
+        "hover":    { "value": "#4A6FEF", "type": "color" },
+        "focus":    { "value": "#4A6FEF", "type": "color" },
+        "brand":    { "value": "#2529D8", "type": "color" },
+        "disabled": { "value": "#1e3a6a", "type": "color" }
+      },
+      "icon": {
+        "default":   { "value": "#7FA8FF", "type": "color" },
+        "secondary": { "value": "#4a6fa5", "type": "color", "description": "map arc" },
+        "brand":     { "value": "#4A6FEF", "type": "color" },
+        "disabled":  { "value": "rgba(176,186,196,0.25)", "type": "color" },
+        "on-brand":  { "value": "#FAFBFC", "type": "color" }
+      },
+      "button": {
+        "primary": {
+          "bg":        { "value": "#2529D8", "type": "color" },
+          "bg-hover":  { "value": "#1C1FB8", "type": "color" },
+          "bg-active": { "value": "#131591", "type": "color" },
+          "text":      { "value": "#FAFBFC", "type": "color" },
+          "shadow":    { "value": "0 8px 32px rgba(37,41,216,0.50)", "type": "boxShadow" }
+        },
+        "ghost": {
+          "text":         { "value": "#7FA8FF", "type": "color" },
+          "border":       { "value": "#1e3a6a", "type": "color" },
+          "border-hover": { "value": "#4A6FEF", "type": "color" }
+        },
+        "disabled": {
+          "bg":   { "value": "#112240", "type": "color" },
+          "text": { "value": "rgba(176,186,196,0.25)", "type": "color" }
+        }
+      },
+      "card": {
+        "bg":             { "value": "#112240", "type": "color", "description": "Resting — map land" },
+        "border":         { "value": "#1e3a6a", "type": "color", "description": "Resting — map border" },
+        "shadow":         { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow" },
+        "bg-hover":       { "value": "#1a2d4a", "type": "color" },
+        "border-hover":   { "value": "#4A6FEF", "type": "color" },
+        "shadow-hover":   { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
+        "active": {
+          "bg":      { "value": "#FAFBFC", "type": "color", "description": "Active card — always inverts to white" },
+          "border":  { "value": "#FAFBFC", "type": "color" },
+          "shadow":  { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)", "type": "boxShadow" },
+          "heading": { "value": "#2529D8", "type": "color", "description": "Brand blue on white active card" },
+          "body":    { "value": "#8A96A3", "type": "color" }
+        },
+        "heading":    { "value": "#FAFBFC", "type": "color" },
+        "body":       { "value": "rgba(176,186,196,0.65)", "type": "color" },
+        "num":        { "value": "#4a6fa5", "type": "color", "description": "map arc" },
+        "num-active": { "value": "#4A6FEF", "type": "color" }
+      },
+      "nav": {
+        "bg":          { "value": "#020c1b", "type": "color" },
+        "border":      { "value": "#233554", "type": "color" },
+        "link":        { "value": "rgba(176,186,196,0.65)", "type": "color" },
+        "link-hover":  { "value": "#7FA8FF", "type": "color" },
+        "link-active": { "value": "#FAFBFC", "type": "color" }
+      },
+      "tab": {
+        "rest":        { "value": "rgba(176,186,196,0.55)", "type": "color" },
+        "hover":       { "value": "#7FA8FF", "type": "color" },
+        "active-text": { "value": "#FAFBFC", "type": "color" },
+        "active-line": { "value": "#2529D8", "type": "color" },
+        "disabled":    { "value": "rgba(176,186,196,0.22)", "type": "color" },
+        "bar-border":  { "value": "#1e3a6a", "type": "color" }
+      },
+      "map": {
+        "arc":      { "value": "#4a6fa5", "type": "color" },
+        "dot":      { "value": "#ff4d4d", "type": "color", "description": "HQ pulse dot" },
+        "particle": { "value": "#4A6FEF", "type": "color", "description": "Route traveling particle" }
+      },
+      "status": {
+        "success": {
+          "bg":   { "value": "#0D4F2C", "type": "color" },
+          "text": { "value": "#8DD4AD", "type": "color" }
+        },
+        "error": {
+          "bg":   { "value": "#841714", "type": "color" },
+          "text": { "value": "#FBA8A3", "type": "color" }
+        },
+        "warning": {
+          "bg":   { "value": "#724500", "type": "color" },
+          "text": { "value": "#FFCF75", "type": "color" }
+        }
+      }
+    },
 
-    "light/border/default":           { "value": "#E5E9ED", "type": "color" },
-    "light/border/strong":            { "value": "#B0BAC4", "type": "color" },
-    "light/border/hover":             { "value": "#7FA8FF", "type": "color" },
-    "light/border/focus":             { "value": "#2529D8", "type": "color" },
-    "light/border/brand":             { "value": "#2529D8", "type": "color" },
-    "light/border/disabled":          { "value": "#E5E9ED", "type": "color" },
-    "light/border/success":           { "value": "#28A462", "type": "color" },
-    "light/border/error":             { "value": "#F44F45", "type": "color" },
-    "light/border/warning":           { "value": "#FF9F00", "type": "color" },
+    "brand-surface": {
+      "background": {
+        "page":           { "value": "#2529D8", "type": "color" },
+        "surface":        { "value": "rgba(255,255,255,0.05)", "type": "color", "description": "Card resting — ghost" },
+        "surface-hover":  { "value": "rgba(255,255,255,0.10)", "type": "color" },
+        "surface-active": { "value": "#FAFBFC", "type": "color", "description": "Active card — white inversion" }
+      },
+      "text": {
+        "heading":        { "value": "#FAFBFC", "type": "color" },
+        "body":           { "value": "rgba(255,255,255,0.75)", "type": "color" },
+        "overline":       { "value": "rgba(255,255,255,0.65)", "type": "color" },
+        "num":            { "value": "rgba(255,255,255,0.50)", "type": "color", "description": "Step number resting" },
+        "num-active":     { "value": "#4A6FEF", "type": "color", "description": "Step num on white active card" },
+        "heading-active": { "value": "#2529D8", "type": "color", "description": "Heading on white active card" },
+        "body-active":    { "value": "#8A96A3", "type": "color" }
+      },
+      "border": {
+        "default": { "value": "rgba(255,255,255,0.18)", "type": "color" },
+        "hover":   { "value": "rgba(255,255,255,0.35)", "type": "color" },
+        "active":  { "value": "#FAFBFC", "type": "color" }
+      },
+      "button": {
+        "primary": {
+          "bg":       { "value": "#FAFBFC", "type": "color", "description": "White CTA on brand section" },
+          "bg-hover": { "value": "#E6EEFF", "type": "color" },
+          "text":     { "value": "#2529D8", "type": "color" }
+        },
+        "outline": {
+          "border":   { "value": "rgba(255,255,255,0.60)", "type": "color" },
+          "text":     { "value": "#FAFBFC", "type": "color" },
+          "bg-hover": { "value": "rgba(255,255,255,0.10)", "type": "color" }
+        }
+      },
+      "card": {
+        "shadow-hover":  { "value": "0 4px 24px rgba(0,0,0,0.15)", "type": "boxShadow" },
+        "shadow-active": { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)", "type": "boxShadow" }
+      }
+    },
 
-    "light/icon/default":             { "value": "#3D4752", "type": "color" },
-    "light/icon/secondary":           { "value": "#606D7A", "type": "color" },
-    "light/icon/brand":               { "value": "#2529D8", "type": "color" },
-    "light/icon/disabled":            { "value": "#D3D9E0", "type": "color" },
-    "light/icon/on-brand":            { "value": "#FAFBFC", "type": "color" },
-
-    "light/button/primary-bg":        { "value": "#2529D8", "type": "color" },
-    "light/button/primary-bg-hover":  { "value": "#1C1FB8", "type": "color" },
-    "light/button/primary-bg-active": { "value": "#131591", "type": "color" },
-    "light/button/primary-text":      { "value": "#FAFBFC", "type": "color" },
-    "light/button/primary-shadow":    { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow" },
-    "light/button/secondary-bg":      { "value": "#FFFFFF", "type": "color" },
-    "light/button/secondary-bg-hover":{ "value": "#E6EEFF", "type": "color" },
-    "light/button/secondary-text":    { "value": "#2529D8", "type": "color" },
-    "light/button/secondary-border":  { "value": "#2529D8", "type": "color" },
-    "light/button/disabled-bg":       { "value": "#F2F4F6", "type": "color" },
-    "light/button/disabled-text":     { "value": "#D3D9E0", "type": "color" },
-
-    "light/card/bg":                  { "value": "#FFFFFF", "type": "color" },
-    "light/card/border":              { "value": "#E5E9ED", "type": "color" },
-    "light/card/shadow":              { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow" },
-    "light/card/bg-hover":            { "value": "#FFFFFF", "type": "color", "description": "Stays white — lift via shadow" },
-    "light/card/border-hover":        { "value": "#7FA8FF", "type": "color" },
-    "light/card/shadow-hover":        { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow" },
-    "light/card/transform-hover":     { "value": "translateY(-4px)", "type": "other" },
-    "light/card/heading":             { "value": "#020c1b", "type": "color" },
-    "light/card/body":                { "value": "#606D7A", "type": "color" },
-    "light/card/num":                 { "value": "#8A96A3", "type": "color" },
-
-    "light/nav/bg":                   { "value": "#FAFBFC", "type": "color" },
-    "light/nav/border":               { "value": "#E5E9ED", "type": "color" },
-    "light/nav/link":                 { "value": "#606D7A", "type": "color" },
-    "light/nav/link-hover":           { "value": "#2529D8", "type": "color" },
-    "light/nav/link-active":          { "value": "#2529D8", "type": "color" },
-
-    "light/tab/rest":                 { "value": "#606D7A", "type": "color" },
-    "light/tab/hover":                { "value": "#2529D8", "type": "color" },
-    "light/tab/active-text":          { "value": "#2529D8", "type": "color" },
-    "light/tab/active-line":          { "value": "#2529D8", "type": "color" },
-    "light/tab/disabled":             { "value": "#D3D9E0", "type": "color" },
-    "light/tab/bar-border":           { "value": "#E5E9ED", "type": "color" },
-
-    "light/status/success-bg":        { "value": "#E8F7EE", "type": "color" },
-    "light/status/success-text":      { "value": "#156B3E", "type": "color" },
-    "light/status/error-bg":          { "value": "#FEF0EF", "type": "color" },
-    "light/status/error-text":        { "value": "#B02420", "type": "color" },
-    "light/status/warning-bg":        { "value": "#FFF6E6", "type": "color" },
-    "light/status/warning-text":      { "value": "#9E6100", "type": "color" },
-
-    "dark/background/page":           { "value": "#020c1b", "type": "color", "description": "Deep navy — same as map canvas" },
-    "dark/background/surface":        { "value": "#112240", "type": "color", "description": "Card resting — map land colour" },
-    "dark/background/surface-hover":  { "value": "#1a2d4a", "type": "color", "description": "Card hover — never brand blue" },
-    "dark/background/panel":          { "value": "rgba(10,25,47,0.75)", "type": "color", "description": "Glass-morphism panel" },
-    "dark/background/brand":          { "value": "#2529D8", "type": "color", "description": "Brand fill — same across themes" },
-    "dark/background/brand-subtle":   { "value": "rgba(37,41,216,0.20)", "type": "color", "description": "Icon container bg on dark" },
-    "dark/background/brand-subtle-hover": { "value": "rgba(37,41,216,0.35)", "type": "color" },
-
-    "dark/text/heading":              { "value": "#FAFBFC", "type": "color" },
-    "dark/text/body":                 { "value": "rgba(176,186,196,0.80)", "type": "color" },
-    "dark/text/secondary":            { "value": "rgba(176,186,196,0.55)", "type": "color" },
-    "dark/text/disabled":             { "value": "rgba(176,186,196,0.25)", "type": "color" },
-    "dark/text/brand":                { "value": "#7FA8FF", "type": "color", "description": "blue-300 — readable on dark" },
-    "dark/text/overline":             { "value": "#7FA8FF", "type": "color" },
-    "dark/text/on-brand":             { "value": "#FAFBFC", "type": "color" },
-
-    "dark/border/default":            { "value": "#1e3a6a", "type": "color", "description": "map-border" },
-    "dark/border/panel":              { "value": "#233554", "type": "color", "description": "map-panel-border" },
-    "dark/border/hover":              { "value": "#4A6FEF", "type": "color" },
-    "dark/border/focus":              { "value": "#4A6FEF", "type": "color" },
-    "dark/border/brand":              { "value": "#2529D8", "type": "color" },
-    "dark/border/disabled":           { "value": "#1e3a6a", "type": "color" },
-
-    "dark/icon/default":              { "value": "#7FA8FF", "type": "color" },
-    "dark/icon/secondary":            { "value": "#4a6fa5", "type": "color", "description": "map-arc" },
-    "dark/icon/brand":                { "value": "#4A6FEF", "type": "color" },
-    "dark/icon/disabled":             { "value": "rgba(176,186,196,0.25)", "type": "color" },
-    "dark/icon/on-brand":             { "value": "#FAFBFC", "type": "color" },
-
-    "dark/button/primary-bg":         { "value": "#2529D8", "type": "color" },
-    "dark/button/primary-bg-hover":   { "value": "#1C1FB8", "type": "color" },
-    "dark/button/primary-bg-active":  { "value": "#131591", "type": "color" },
-    "dark/button/primary-text":       { "value": "#FAFBFC", "type": "color" },
-    "dark/button/primary-shadow":     { "value": "0 8px 32px rgba(37,41,216,0.50)", "type": "boxShadow" },
-    "dark/button/ghost-text":         { "value": "#7FA8FF", "type": "color" },
-    "dark/button/ghost-border":       { "value": "#1e3a6a", "type": "color" },
-    "dark/button/ghost-border-hover": { "value": "#4A6FEF", "type": "color" },
-    "dark/button/disabled-bg":        { "value": "#112240", "type": "color" },
-    "dark/button/disabled-text":      { "value": "rgba(176,186,196,0.25)", "type": "color" },
-
-    "dark/card/bg":                   { "value": "#112240", "type": "color", "description": "Resting — map land" },
-    "dark/card/border":               { "value": "#1e3a6a", "type": "color", "description": "Resting — map border" },
-    "dark/card/shadow":               { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow" },
-    "dark/card/bg-hover":             { "value": "#1a2d4a", "type": "color" },
-    "dark/card/border-hover":         { "value": "#4A6FEF", "type": "color" },
-    "dark/card/shadow-hover":         { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
-    "dark/card/active-bg":            { "value": "#FAFBFC", "type": "color", "description": "Active card — always inverts to white" },
-    "dark/card/active-border":        { "value": "#FAFBFC", "type": "color" },
-    "dark/card/active-shadow":        { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)", "type": "boxShadow" },
-    "dark/card/active-heading":       { "value": "#2529D8", "type": "color", "description": "Brand blue on white active card" },
-    "dark/card/active-body":          { "value": "#8A96A3", "type": "color" },
-    "dark/card/heading":              { "value": "#FAFBFC", "type": "color" },
-    "dark/card/body":                 { "value": "rgba(176,186,196,0.65)", "type": "color" },
-    "dark/card/num":                  { "value": "#4a6fa5", "type": "color", "description": "map-arc" },
-    "dark/card/num-active":           { "value": "#4A6FEF", "type": "color" },
-
-    "dark/nav/bg":                    { "value": "#020c1b", "type": "color" },
-    "dark/nav/border":                { "value": "#233554", "type": "color" },
-    "dark/nav/link":                  { "value": "rgba(176,186,196,0.65)", "type": "color" },
-    "dark/nav/link-hover":            { "value": "#7FA8FF", "type": "color" },
-    "dark/nav/link-active":           { "value": "#FAFBFC", "type": "color" },
-
-    "dark/tab/rest":                  { "value": "rgba(176,186,196,0.55)", "type": "color" },
-    "dark/tab/hover":                 { "value": "#7FA8FF", "type": "color" },
-    "dark/tab/active-text":           { "value": "#FAFBFC", "type": "color" },
-    "dark/tab/active-line":           { "value": "#2529D8", "type": "color" },
-    "dark/tab/disabled":              { "value": "rgba(176,186,196,0.22)", "type": "color" },
-    "dark/tab/bar-border":            { "value": "#1e3a6a", "type": "color" },
-
-    "dark/map/arc":                   { "value": "#4a6fa5", "type": "color" },
-    "dark/map/dot":                   { "value": "#ff4d4d", "type": "color", "description": "HQ pulse dot" },
-    "dark/map/particle":              { "value": "#4A6FEF", "type": "color", "description": "Route traveling particle" },
-
-    "dark/status/success-bg":         { "value": "#0D4F2C", "type": "color" },
-    "dark/status/success-text":       { "value": "#8DD4AD", "type": "color" },
-    "dark/status/error-bg":           { "value": "#841714", "type": "color" },
-    "dark/status/error-text":         { "value": "#FBA8A3", "type": "color" },
-    "dark/status/warning-bg":         { "value": "#724500", "type": "color" },
-    "dark/status/warning-text":       { "value": "#FFCF75", "type": "color" },
-
-    "brand-surface/background/page":           { "value": "#2529D8", "type": "color" },
-    "brand-surface/background/surface":        { "value": "rgba(255,255,255,0.05)", "type": "color", "description": "Card resting — ghost" },
-    "brand-surface/background/surface-hover":  { "value": "rgba(255,255,255,0.10)", "type": "color" },
-    "brand-surface/background/surface-active": { "value": "#FAFBFC", "type": "color", "description": "Active card — white inversion" },
-
-    "brand-surface/text/heading":              { "value": "#FAFBFC", "type": "color" },
-    "brand-surface/text/body":                 { "value": "rgba(255,255,255,0.75)", "type": "color" },
-    "brand-surface/text/overline":             { "value": "rgba(255,255,255,0.65)", "type": "color" },
-    "brand-surface/text/num":                  { "value": "rgba(255,255,255,0.50)", "type": "color", "description": "Step number resting" },
-    "brand-surface/text/num-active":           { "value": "#4A6FEF", "type": "color", "description": "Step number on white active card" },
-    "brand-surface/text/heading-active":       { "value": "#2529D8", "type": "color", "description": "Heading on white active card" },
-    "brand-surface/text/body-active":          { "value": "#8A96A3", "type": "color" },
-
-    "brand-surface/border/default":            { "value": "rgba(255,255,255,0.18)", "type": "color" },
-    "brand-surface/border/hover":              { "value": "rgba(255,255,255,0.35)", "type": "color" },
-    "brand-surface/border/active":             { "value": "#FAFBFC", "type": "color" },
-
-    "brand-surface/button/primary-bg":         { "value": "#FAFBFC", "type": "color", "description": "White CTA on brand section" },
-    "brand-surface/button/primary-bg-hover":   { "value": "#E6EEFF", "type": "color" },
-    "brand-surface/button/primary-text":       { "value": "#2529D8", "type": "color" },
-    "brand-surface/button/outline-border":     { "value": "rgba(255,255,255,0.60)", "type": "color" },
-    "brand-surface/button/outline-text":       { "value": "#FAFBFC", "type": "color" },
-    "brand-surface/button/outline-bg-hover":   { "value": "rgba(255,255,255,0.10)", "type": "color" },
-
-    "brand-surface/card/shadow-hover":         { "value": "0 4px 24px rgba(0,0,0,0.15)", "type": "boxShadow" },
-    "brand-surface/card/shadow-active":        { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)", "type": "boxShadow" },
-
-    "shared/radius/card":             { "value": "12px", "type": "borderRadius" },
-    "shared/radius/button":           { "value": "8px",  "type": "borderRadius" },
-    "shared/radius/button-pill":      { "value": "9999px", "type": "borderRadius" },
-    "shared/radius/input":            { "value": "8px",  "type": "borderRadius" },
-    "shared/radius/badge":            { "value": "4px",  "type": "borderRadius" },
-
-    "shared/spacing/section-y":       { "value": "96px", "type": "spacing", "description": "Vertical padding all sections" },
-    "shared/spacing/section-x":       { "value": "40px", "type": "spacing", "description": "40 desktop / 32 tablet / 20 mobile" },
-    "shared/spacing/card-inner":      { "value": "24px", "type": "spacing" },
-    "shared/spacing/grid-gap":        { "value": "24px", "type": "spacing" },
-    "shared/spacing/nav-height":      { "value": "64px", "type": "spacing" },
-    "shared/spacing/nav-height-mob":  { "value": "56px", "type": "spacing" },
-
-    "shared/grid/cols":               { "value": "12",     "type": "other" },
-    "shared/grid/max-width":          { "value": "1280px", "type": "other" },
-
-    "shared/typography/display":      { "value": "72px / bold / 1.2", "type": "other", "description": "Hero headline" },
-    "shared/typography/h1":           { "value": "56px / bold / 1.2", "type": "other" },
-    "shared/typography/h2":           { "value": "40px / semibold / 1.2", "type": "other" },
-    "shared/typography/h3":           { "value": "32px / semibold / 1.4", "type": "other" },
-    "shared/typography/h4":           { "value": "24px / semibold / 1.4", "type": "other" },
-    "shared/typography/body-lg":      { "value": "18px / regular / 1.6", "type": "other" },
-    "shared/typography/body":         { "value": "16px / regular / 1.6", "type": "other" },
-    "shared/typography/body-sm":      { "value": "14px / regular / 1.6", "type": "other" },
-    "shared/typography/label":        { "value": "14px / semibold / 1.4", "type": "other" },
-    "shared/typography/overline":     { "value": "12px / semibold / uppercase / ls:0.1em", "type": "other" },
-    "shared/typography/caption":      { "value": "12px / regular / 1.6", "type": "other" },
-
-    "shared/transition/button":       { "value": "background 150ms ease, box-shadow 150ms ease", "type": "other" },
-    "shared/transition/card":         { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other" },
-    "shared/transition/tab":          { "value": "color 200ms ease", "type": "other" }
+    "shared": {
+      "radius": {
+        "card":    { "value": "12px",   "type": "borderRadius" },
+        "button":  { "value": "8px",    "type": "borderRadius" },
+        "pill":    { "value": "9999px", "type": "borderRadius" },
+        "input":   { "value": "8px",    "type": "borderRadius" },
+        "badge":   { "value": "4px",    "type": "borderRadius" }
+      },
+      "spacing": {
+        "section-y":    { "value": "96px", "type": "spacing", "description": "Vertical padding all sections" },
+        "section-x":    { "value": "40px", "type": "spacing", "description": "40 desktop / 32 tablet / 20 mobile" },
+        "card-inner":   { "value": "24px", "type": "spacing" },
+        "grid-gap":     { "value": "24px", "type": "spacing" },
+        "nav-height":   { "value": "64px", "type": "spacing" },
+        "nav-height-mob": { "value": "56px", "type": "spacing" }
+      },
+      "grid": {
+        "cols":      { "value": "12",     "type": "other" },
+        "max-width": { "value": "1280px", "type": "other" }
+      },
+      "typography": {
+        "display":  { "value": "72px / bold / 1.2",           "type": "other", "description": "Hero headline" },
+        "h1":       { "value": "56px / bold / 1.2",           "type": "other" },
+        "h2":       { "value": "40px / semibold / 1.2",       "type": "other" },
+        "h3":       { "value": "32px / semibold / 1.4",       "type": "other" },
+        "h4":       { "value": "24px / semibold / 1.4",       "type": "other" },
+        "body-lg":  { "value": "18px / regular / 1.6",        "type": "other" },
+        "body":     { "value": "16px / regular / 1.6",        "type": "other" },
+        "body-sm":  { "value": "14px / regular / 1.6",        "type": "other" },
+        "label":    { "value": "14px / semibold / 1.4",       "type": "other" },
+        "overline": { "value": "12px / semibold / uppercase / ls:0.1em", "type": "other" },
+        "caption":  { "value": "12px / regular / 1.6",        "type": "other" }
+      },
+      "transition": {
+        "button": { "value": "background 150ms ease, box-shadow 150ms ease", "type": "other" },
+        "card":   { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other" },
+        "tab":    { "value": "color 200ms ease", "type": "other" }
+      }
+    }
   }
 }
