@@ -1,424 +1,340 @@
 {
+  "_readme": "MultiSped Design System — Landing page token set. Two collections: primitive (raw values) and semantic (named roles). Semantic tokens are the ONLY ones Figma components and Cursor should reference. Naming convention: color-[category]-[role]-[modifier?]-[surface?]. Two complete theme sets: light and dark.",
+
   "primitive": {
-    "color": {
-      "neutral": {
-        "100": { "value": "#FAFBFC", "type": "color", "description": "Lightest neutral — near white" },
-        "200": { "value": "#F2F4F6", "type": "color" },
-        "300": { "value": "#E5E9ED", "type": "color" },
-        "400": { "value": "#D3D9E0", "type": "color" },
-        "500": { "value": "#B0BAC4", "type": "color" },
-        "600": { "value": "#8A96A3", "type": "color" },
-        "700": { "value": "#606D7A", "type": "color" },
-        "800": { "value": "#3D4752", "type": "color" },
-        "900": { "value": "#242C35", "type": "color" },
-        "1000": { "value": "#111518", "type": "color", "description": "Darkest neutral — near black" }
-      },
-      "blue": {
-        "100": { "value": "#E6EEFF", "type": "color", "description": "Lightest brand blue — hue ~222deg, true royal blue, no purple drift" },
-        "200": { "value": "#B8CBFF", "type": "color" },
-        "300": { "value": "#7FA8FF", "type": "color" },
-        "400": { "value": "#4A6FEF", "type": "color" },
-        "500": { "value": "#2529D8", "type": "color", "description": "MultiSped primary brand blue" },
-        "600": { "value": "#1C1FB8", "type": "color" },
-        "700": { "value": "#131591", "type": "color" },
-        "800": { "value": "#0C0E6B", "type": "color" },
-        "900": { "value": "#070847", "type": "color" },
-        "1000": { "value": "#020c1b", "type": "color", "description": "Map background — deepest navy, base dark surface" }
-      },
-      "navy": {
-        "100": { "value": "#1a2d4a", "type": "color", "description": "Card hover fill on dark surfaces" },
-        "200": { "value": "#152238", "type": "color" },
-        "300": { "value": "#112240", "type": "color", "description": "Map land — dark card resting surface" },
-        "400": { "value": "#0e1c34", "type": "color" },
-        "500": { "value": "#0a1628", "type": "color" },
-        "600": { "value": "#071220", "type": "color" },
-        "700": { "value": "#050e18", "type": "color" },
-        "800": { "value": "#030a12", "type": "color" }
-      },
-      "amber": {
-        "100": { "value": "#FFF8EC", "type": "color" },
-        "200": { "value": "#FFEDC4", "type": "color" },
-        "300": { "value": "#FFD980", "type": "color" },
-        "400": { "value": "#FFC23D", "type": "color" },
-        "500": { "value": "#FFAB00", "type": "color" },
-        "600": { "value": "#E09600", "type": "color" },
-        "700": { "value": "#B87A00", "type": "color" },
-        "800": { "value": "#8A5C00", "type": "color" }
-      },
-      "success": {
-        "100": { "value": "#E8F7EE", "type": "color" },
-        "200": { "value": "#C2E9D0", "type": "color" },
-        "300": { "value": "#8DD4AD", "type": "color" },
-        "400": { "value": "#55BC87", "type": "color" },
-        "500": { "value": "#28A462", "type": "color" },
-        "600": { "value": "#1E8750", "type": "color" },
-        "700": { "value": "#156B3E", "type": "color" },
-        "800": { "value": "#0D4F2C", "type": "color" }
-      },
-      "error": {
-        "100": { "value": "#FEF0EF", "type": "color" },
-        "200": { "value": "#FDD4D1", "type": "color" },
-        "300": { "value": "#FBA8A3", "type": "color" },
-        "400": { "value": "#F87B73", "type": "color" },
-        "500": { "value": "#F44F45", "type": "color" },
-        "600": { "value": "#D93530", "type": "color" },
-        "700": { "value": "#B02420", "type": "color" },
-        "800": { "value": "#841714", "type": "color" }
-      },
-      "warning": {
-        "100": { "value": "#FFF6E6", "type": "color" },
-        "200": { "value": "#FFE4B0", "type": "color" },
-        "300": { "value": "#FFCF75", "type": "color" },
-        "400": { "value": "#FFB83A", "type": "color" },
-        "500": { "value": "#FF9F00", "type": "color" },
-        "600": { "value": "#CC7E00", "type": "color" },
-        "700": { "value": "#9E6100", "type": "color" },
-        "800": { "value": "#724500", "type": "color" }
-      }
-    },
-    "space": {
-      "100": { "value": "4px",   "type": "spacing" },
-      "200": { "value": "8px",   "type": "spacing" },
-      "300": { "value": "12px",  "type": "spacing" },
-      "400": { "value": "16px",  "type": "spacing" },
-      "500": { "value": "24px",  "type": "spacing" },
-      "600": { "value": "32px",  "type": "spacing" },
-      "700": { "value": "48px",  "type": "spacing" },
-      "800": { "value": "64px",  "type": "spacing" },
-      "900": { "value": "96px",  "type": "spacing" },
-      "1000": { "value": "128px", "type": "spacing" }
-    },
-    "border-radius": {
-      "0":    { "value": "0px",    "type": "borderRadius" },
-      "100":  { "value": "2px",    "type": "borderRadius" },
-      "200":  { "value": "4px",    "type": "borderRadius" },
-      "300":  { "value": "8px",    "type": "borderRadius" },
-      "400":  { "value": "12px",   "type": "borderRadius" },
-      "500":  { "value": "16px",   "type": "borderRadius" },
-      "600":  { "value": "24px",   "type": "borderRadius" },
-      "full": { "value": "9999px", "type": "borderRadius" }
-    },
-    "size": {
-      "50":  { "value": "4px",  "type": "sizing" },
-      "100": { "value": "8px",  "type": "sizing" },
-      "200": { "value": "16px", "type": "sizing" },
-      "300": { "value": "20px", "type": "sizing" },
-      "400": { "value": "24px", "type": "sizing" },
-      "500": { "value": "32px", "type": "sizing" },
-      "600": { "value": "40px", "type": "sizing" },
-      "700": { "value": "48px", "type": "sizing" },
-      "800": { "value": "56px", "type": "sizing" }
-    },
-    "font-size": {
-      "50":   { "value": "10px", "type": "fontSizes" },
-      "100":  { "value": "12px", "type": "fontSizes" },
-      "200":  { "value": "14px", "type": "fontSizes" },
-      "300":  { "value": "16px", "type": "fontSizes" },
-      "400":  { "value": "18px", "type": "fontSizes" },
-      "500":  { "value": "20px", "type": "fontSizes" },
-      "600":  { "value": "24px", "type": "fontSizes" },
-      "700":  { "value": "32px", "type": "fontSizes" },
-      "800":  { "value": "40px", "type": "fontSizes" },
-      "900":  { "value": "56px", "type": "fontSizes" },
-      "1000": { "value": "72px", "type": "fontSizes" }
-    },
-    "font-weight": {
-      "thin":     { "value": "100", "type": "fontWeights" },
-      "light":    { "value": "300", "type": "fontWeights" },
-      "regular":  { "value": "400", "type": "fontWeights" },
-      "medium":   { "value": "500", "type": "fontWeights" },
-      "semibold": { "value": "600", "type": "fontWeights" },
-      "bold":     { "value": "700", "type": "fontWeights" },
-      "extrabold":{ "value": "800", "type": "fontWeights" }
-    },
-    "line-height": {
-      "100": { "value": "1.0", "type": "lineHeights" },
-      "200": { "value": "1.2", "type": "lineHeights" },
-      "300": { "value": "1.4", "type": "lineHeights" },
-      "400": { "value": "1.6", "type": "lineHeights" },
-      "500": { "value": "1.8", "type": "lineHeights" }
-    },
-    "font-style": {
-      "normal": { "value": "normal", "type": "other" },
-      "italic": { "value": "italic", "type": "other" }
-    },
-    "border-width": {
-      "none":   { "value": "0px", "type": "borderWidth" },
-      "thin":   { "value": "1px", "type": "borderWidth" },
-      "medium": { "value": "2px", "type": "borderWidth" },
-      "thick":  { "value": "4px", "type": "borderWidth" }
-    },
-    "z-index": {
-      "0":   { "value": "-1",  "type": "other" },
-      "100": { "value": "100", "type": "other" },
-      "200": { "value": "200", "type": "other" },
-      "300": { "value": "300", "type": "other" },
-      "400": { "value": "400", "type": "other" },
-      "500": { "value": "500", "type": "other" }
-    },
-    "gradient": {
-      "primary":      { "value": "linear-gradient(135deg, #2529D8 0%, #0C0E6B 100%)", "type": "other", "description": "Brand gradient — electric blue to deep navy" },
-      "primary-glow": { "value": "linear-gradient(135deg, #4A6FEF 0%, #2529D8 100%)", "type": "other", "description": "Lighter brand gradient for hover/highlight states" },
-      "surface-dark": { "value": "linear-gradient(180deg, #070847 0%, #020c1b 100%)", "type": "other", "description": "Dark surface gradient" },
-      "subtle-dark":  { "value": "linear-gradient(180deg, #112240 0%, #020c1b 100%)", "type": "other", "description": "Map land to deepest bg — section divider gradient" },
-      "success":      { "value": "linear-gradient(135deg, #28A462 0%, #0D4F2C 100%)", "type": "other" }
-    },
-    "shadow": {
-      "none":       { "value": "none", "type": "boxShadow" },
-      "sm":         { "value": "0 1px 3px rgba(2,12,27,0.08), 0 1px 2px rgba(2,12,27,0.04)", "type": "boxShadow", "description": "Subtle lift — inputs, small badges" },
-      "md":         { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow", "description": "Card resting on white surface" },
-      "lg":         { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow", "description": "Card hover on white surface — blue-tinted lift" },
-      "xl":         { "value": "0 16px 48px rgba(37,41,216,0.18), 0 8px 20px rgba(2,12,27,0.10)", "type": "boxShadow", "description": "Modals, floating panels" },
-      "brand":      { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow", "description": "Glow for primary CTA buttons" },
-      "brand-sm":   { "value": "0 4px 16px rgba(37,41,216,0.25)", "type": "boxShadow", "description": "Subtle brand glow — active inputs, focused states" },
-      "inset-dark": { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow", "description": "Top-edge highlight on dark cards" }
-    },
-    "transition": {
-      "fast":     { "value": "150ms ease", "type": "other", "description": "Micro-interactions" },
-      "base":     { "value": "250ms ease", "type": "other", "description": "Default component transitions" },
-      "moderate": { "value": "350ms cubic-bezier(0.4,0,0.2,1)", "type": "other", "description": "Card hover lift, drawer" },
-      "slow":     { "value": "500ms cubic-bezier(0.4,0,0.2,1)", "type": "other", "description": "Page-level, scroll-driven reveals" },
-      "card":     { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other", "description": "Unified card transition — all interactive properties" }
-    }
+    "blue-100":  { "value": "#E6EEFF", "type": "color" },
+    "blue-200":  { "value": "#B8CBFF", "type": "color" },
+    "blue-300":  { "value": "#7FA8FF", "type": "color" },
+    "blue-400":  { "value": "#4A6FEF", "type": "color" },
+    "blue-500":  { "value": "#2529D8", "type": "color", "description": "Brand primary" },
+    "blue-600":  { "value": "#1C1FB8", "type": "color" },
+    "blue-700":  { "value": "#131591", "type": "color" },
+    "blue-800":  { "value": "#0C0E6B", "type": "color" },
+    "blue-900":  { "value": "#070847", "type": "color" },
+    "blue-1000": { "value": "#020c1b", "type": "color", "description": "Map canvas bg / deepest navy" },
+
+    "navy-100":  { "value": "#1a2d4a", "type": "color", "description": "Card hover on dark" },
+    "navy-200":  { "value": "#152238", "type": "color" },
+    "navy-300":  { "value": "#112240", "type": "color", "description": "Map land / dark card rest" },
+    "navy-400":  { "value": "#0e1c34", "type": "color" },
+    "navy-500":  { "value": "#0a1628", "type": "color" },
+
+    "neutral-100":  { "value": "#FAFBFC", "type": "color", "description": "Near white" },
+    "neutral-200":  { "value": "#F2F4F6", "type": "color" },
+    "neutral-300":  { "value": "#E5E9ED", "type": "color" },
+    "neutral-400":  { "value": "#D3D9E0", "type": "color" },
+    "neutral-500":  { "value": "#B0BAC4", "type": "color" },
+    "neutral-600":  { "value": "#8A96A3", "type": "color" },
+    "neutral-700":  { "value": "#606D7A", "type": "color" },
+    "neutral-800":  { "value": "#3D4752", "type": "color" },
+    "neutral-900":  { "value": "#242C35", "type": "color" },
+    "neutral-1000": { "value": "#111518", "type": "color" },
+
+    "success-100": { "value": "#E8F7EE", "type": "color" },
+    "success-500": { "value": "#28A462", "type": "color" },
+    "success-700": { "value": "#156B3E", "type": "color" },
+
+    "error-100":   { "value": "#FEF0EF", "type": "color" },
+    "error-500":   { "value": "#F44F45", "type": "color" },
+    "error-700":   { "value": "#B02420", "type": "color" },
+
+    "warning-100": { "value": "#FFF6E6", "type": "color" },
+    "warning-500": { "value": "#FF9F00", "type": "color" },
+    "warning-700": { "value": "#9E6100", "type": "color" },
+
+    "map-bg":           { "value": "#020c1b", "type": "color" },
+    "map-land":         { "value": "#112240", "type": "color" },
+    "map-border":       { "value": "#1e3a6a", "type": "color" },
+    "map-arc":          { "value": "#4a6fa5", "type": "color" },
+    "map-panel":        { "value": "rgba(10,25,47,0.75)", "type": "color" },
+    "map-panel-border": { "value": "#233554", "type": "color" },
+
+    "space-100":  { "value": "4px",   "type": "spacing" },
+    "space-200":  { "value": "8px",   "type": "spacing" },
+    "space-300":  { "value": "12px",  "type": "spacing" },
+    "space-400":  { "value": "16px",  "type": "spacing" },
+    "space-500":  { "value": "24px",  "type": "spacing" },
+    "space-600":  { "value": "32px",  "type": "spacing" },
+    "space-700":  { "value": "48px",  "type": "spacing" },
+    "space-800":  { "value": "64px",  "type": "spacing" },
+    "space-900":  { "value": "96px",  "type": "spacing" },
+    "space-1000": { "value": "128px", "type": "spacing" },
+
+    "radius-0":    { "value": "0px",    "type": "borderRadius" },
+    "radius-100":  { "value": "2px",    "type": "borderRadius" },
+    "radius-200":  { "value": "4px",    "type": "borderRadius" },
+    "radius-300":  { "value": "8px",    "type": "borderRadius" },
+    "radius-400":  { "value": "12px",   "type": "borderRadius" },
+    "radius-500":  { "value": "16px",   "type": "borderRadius" },
+    "radius-600":  { "value": "24px",   "type": "borderRadius" },
+    "radius-full": { "value": "9999px", "type": "borderRadius" },
+
+    "font-size-xs":  { "value": "12px", "type": "fontSizes" },
+    "font-size-sm":  { "value": "14px", "type": "fontSizes" },
+    "font-size-md":  { "value": "16px", "type": "fontSizes" },
+    "font-size-lg":  { "value": "18px", "type": "fontSizes" },
+    "font-size-xl":  { "value": "20px", "type": "fontSizes" },
+    "font-size-2xl": { "value": "24px", "type": "fontSizes" },
+    "font-size-3xl": { "value": "32px", "type": "fontSizes" },
+    "font-size-4xl": { "value": "40px", "type": "fontSizes" },
+    "font-size-5xl": { "value": "56px", "type": "fontSizes" },
+    "font-size-6xl": { "value": "72px", "type": "fontSizes" },
+
+    "font-weight-regular":  { "value": "400", "type": "fontWeights" },
+    "font-weight-medium":   { "value": "500", "type": "fontWeights" },
+    "font-weight-semibold": { "value": "600", "type": "fontWeights" },
+    "font-weight-bold":     { "value": "700", "type": "fontWeights" },
+
+    "line-height-tight":  { "value": "1.2", "type": "lineHeights" },
+    "line-height-snug":   { "value": "1.4", "type": "lineHeights" },
+    "line-height-normal": { "value": "1.6", "type": "lineHeights" },
+    "line-height-loose":  { "value": "1.8", "type": "lineHeights" },
+
+    "shadow-sm":    { "value": "0 1px 3px rgba(2,12,27,0.08)",                                              "type": "boxShadow" },
+    "shadow-md":    { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)",              "type": "boxShadow" },
+    "shadow-lg":    { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)",           "type": "boxShadow" },
+    "shadow-brand": { "value": "0 8px 32px rgba(37,41,216,0.35)",                                           "type": "boxShadow" },
+    "shadow-dark":  { "value": "inset 0 1px 0 rgba(255,255,255,0.04)",                                      "type": "boxShadow" },
+    "shadow-dark-hover": { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
+    "shadow-active-light": { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)",     "type": "boxShadow" },
+    "shadow-active-brand": { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)",           "type": "boxShadow" },
+
+    "transition-fast":     { "value": "150ms ease",                          "type": "other" },
+    "transition-base":     { "value": "250ms ease",                          "type": "other" },
+    "transition-moderate": { "value": "350ms cubic-bezier(0.4,0,0.2,1)",    "type": "other" },
+    "transition-card":     { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other" }
   },
 
   "semantic": {
-    "color": {
+    "_surfaces": "Three named surfaces define every section. LIGHT = white page sections (Services, About). DARK = deep navy sections (Hero, Map, Stats). BRAND = brand-blue sections (Pricing, Process, CTA). Each token name encodes its surface: -onlight, -ondark, -onbrand.",
 
-      "theme": {
-        "_description": "The three named surfaces that define the Cargon-style palette. Every section of the page lives on one of these three. Cursor should key all component variants off these surface names.",
-        "white-surface": {
-          "value": "{color.neutral.100}",
-          "type": "color",
-          "description": "SURFACE 1 — White. Services, About, Blog sections. Light theme base. Text is dark navy. CTAs are brand blue."
-        },
-        "navy-surface": {
-          "value": "{color.blue.1000}",
-          "type": "color",
-          "description": "SURFACE 2 — Deep navy (#020c1b). Hero, Map, Stats sections. Same colour as InteractiveMap --bg. Text is white/muted. CTAs are brand blue."
-        },
-        "brand-surface": {
-          "value": "{color.blue.500}",
-          "type": "color",
-          "description": "SURFACE 3 — Brand blue (#2529D8). Pricing, How We Work, CTA strip sections. Text is white. Active cards invert to white. CTAs are white-filled."
-        }
-      },
+    "light": {
+      "_description": "LIGHT THEME — white surface sections. Cargon-palette inspired.",
 
-      "surface": {
-        "white": {
-          "value": "{color.neutral.100}",
-          "type": "color",
-          "description": "Page background for light sections — white"
-        },
-        "white-secondary": {
-          "value": "{color.neutral.200}",
-          "type": "color",
-          "description": "Slightly off-white — alternating rows, sidebar backgrounds on white sections"
-        },
-        "navy": {
-          "value": "{color.blue.1000}",
-          "type": "color",
-          "description": "Deep navy section background — hero, map, stats"
-        },
-        "navy-raised": {
-          "value": "{color.navy.300}",
-          "type": "color",
-          "description": "Raised surface on navy — card resting fill, panel backgrounds"
-        },
-        "brand": {
-          "value": "{color.blue.500}",
-          "type": "color",
-          "description": "Brand blue section background — pricing, process, CTA strip"
-        },
-        "brand-raised": {
-          "value": "{color.blue.600}",
-          "type": "color",
-          "description": "Slightly darker blue — subtle depth within brand sections"
-        }
-      },
+      "color-bg-page":                { "value": "#FAFBFC",  "type": "color", "description": "Page background. neutral-100." },
+      "color-bg-surface":             { "value": "#FFFFFF",  "type": "color", "description": "Card / panel surface on light page." },
+      "color-bg-surface-hover":       { "value": "#FAFBFC",  "type": "color", "description": "Card surface on hover — stays white, lift via shadow." },
+      "color-bg-subtle":              { "value": "#F2F4F6",  "type": "color", "description": "Alternate row / sidebar tint. neutral-200." },
+      "color-bg-brand":               { "value": "#2529D8",  "type": "color", "description": "Brand-blue fill — CTA buttons, active pills, highlights." },
+      "color-bg-brand-subtle":        { "value": "#E6EEFF",  "type": "color", "description": "Tinted brand fill — icon containers, tag bg. blue-100." },
 
-      "text": {
-        "primary":           { "value": "{color.blue.1000}",   "type": "color", "description": "Main body text on white surface — deepest navy, not pure black" },
-        "secondary":         { "value": "{color.neutral.700}", "type": "color", "description": "Supporting text on white surface" },
-        "tertiary":          { "value": "{color.neutral.600}", "type": "color", "description": "Captions, placeholders on white surface" },
-        "disabled":          { "value": "{color.neutral.400}", "type": "color" },
-        "heading-white":     { "value": "{color.blue.1000}",   "type": "color", "description": "Section headings on white surface — map.background colour for strong contrast" },
-        "heading-navy":      { "value": "{color.neutral.100}", "type": "color", "description": "Headings on navy surface — full white" },
-        "heading-brand":     { "value": "{color.neutral.100}", "type": "color", "description": "Headings on brand-blue surface — full white" },
-        "body-navy":         { "value": "rgba(176,186,196,0.80)", "type": "color", "description": "Body text on navy surface — muted neutral" },
-        "body-brand":        { "value": "rgba(255,255,255,0.75)", "type": "color", "description": "Body text on brand-blue surface — 75% white" },
-        "overline-white":    { "value": "{color.blue.500}",   "type": "color", "description": "Section overline/label on white surface — brand blue" },
-        "overline-navy":     { "value": "{color.blue.300}",   "type": "color", "description": "Section overline/label on navy surface — lighter blue" },
-        "overline-brand":    { "value": "rgba(255,255,255,0.65)", "type": "color", "description": "Section overline/label on brand surface — 65% white" },
-        "brand":             { "value": "{color.blue.500}",   "type": "color", "description": "Brand-coloured inline text — links, emphasis on white" },
-        "on-brand":          { "value": "{color.neutral.100}", "type": "color", "description": "Text on any brand-blue filled element" },
-        "inverse":           { "value": "{color.neutral.100}", "type": "color" }
-      },
+      "color-text-heading":           { "value": "#020c1b",  "type": "color", "description": "Section headings on light. Uses map-bg (blue-1000) for max contrast — feels deep navy not black." },
+      "color-text-body":              { "value": "#3D4752",  "type": "color", "description": "Body copy on light. neutral-800." },
+      "color-text-secondary":         { "value": "#606D7A",  "type": "color", "description": "Supporting / caption text. neutral-700." },
+      "color-text-placeholder":       { "value": "#B0BAC4",  "type": "color", "description": "Input placeholders. neutral-500." },
+      "color-text-disabled":          { "value": "#D3D9E0",  "type": "color", "description": "Disabled text. neutral-400." },
+      "color-text-brand":             { "value": "#2529D8",  "type": "color", "description": "Brand-coloured inline text — links, emphasis. blue-500." },
+      "color-text-overline":          { "value": "#2529D8",  "type": "color", "description": "Section overline / label text. blue-500." },
+      "color-text-on-brand":          { "value": "#FAFBFC",  "type": "color", "description": "Text on any brand-blue filled element." },
 
-      "border": {
-        "white-surface":       { "value": "{color.neutral.300}",  "type": "color", "description": "Default border on white surface" },
-        "white-surface-hover": { "value": "{color.blue.300}",     "type": "color", "description": "Border tint on hover — white surface" },
-        "navy-surface":        { "value": "#1e3a6a",              "type": "color", "description": "Default border on navy surface — map.border" },
-        "navy-surface-hover":  { "value": "{color.blue.400}",     "type": "color", "description": "Border on hover — navy surface" },
-        "brand-surface":       { "value": "rgba(255,255,255,0.18)", "type": "color", "description": "Default border on brand surface — white alpha" },
-        "brand-surface-hover": { "value": "rgba(255,255,255,0.35)", "type": "color", "description": "Border on hover — brand surface" },
-        "focus":               { "value": "{color.blue.500}",     "type": "color", "description": "Focus ring — all surfaces" },
-        "brand":               { "value": "{color.blue.500}",     "type": "color" },
-        "disabled":            { "value": "{color.neutral.300}",  "type": "color" },
-        "success":             { "value": "{color.success.500}",  "type": "color" },
-        "error":               { "value": "{color.error.500}",    "type": "color" },
-        "warning":             { "value": "{color.warning.500}",  "type": "color" },
-        "map-panel":           { "value": "#233554",              "type": "color", "description": "Panel/card border on navy — InteractiveMap panel-border value" }
-      },
+      "color-border-default":         { "value": "#E5E9ED",  "type": "color", "description": "Default border. neutral-300." },
+      "color-border-strong":          { "value": "#B0BAC4",  "type": "color", "description": "Stronger border for emphasis. neutral-500." },
+      "color-border-hover":           { "value": "#7FA8FF",  "type": "color", "description": "Border tint on hover. blue-300." },
+      "color-border-focus":           { "value": "#2529D8",  "type": "color", "description": "Focus ring. blue-500." },
+      "color-border-brand":           { "value": "#2529D8",  "type": "color", "description": "Brand-coloured border. blue-500." },
+      "color-border-disabled":        { "value": "#E5E9ED",  "type": "color", "description": "Disabled border. neutral-300." },
+      "color-border-success":         { "value": "#28A462",  "type": "color" },
+      "color-border-error":           { "value": "#F44F45",  "type": "color" },
+      "color-border-warning":         { "value": "#FF9F00",  "type": "color" },
 
-      "card": {
-        "_description": "CORE RULE: active/selected card always inverts to WHITE on any surface. Brand blue lives in the text of the white active card, never as a card fill. Three surface variants — white, navy, brand.",
+      "color-icon-default":           { "value": "#3D4752",  "type": "color", "description": "Default icon. neutral-800." },
+      "color-icon-secondary":         { "value": "#606D7A",  "type": "color", "description": "Secondary icon. neutral-700." },
+      "color-icon-brand":             { "value": "#2529D8",  "type": "color", "description": "Brand icon. blue-500." },
+      "color-icon-disabled":          { "value": "#D3D9E0",  "type": "color", "description": "Disabled icon. neutral-400." },
+      "color-icon-on-brand":          { "value": "#FAFBFC",  "type": "color", "description": "Icon on brand-blue fill." },
 
-        "active-background":  { "value": "{color.neutral.100}", "type": "color", "description": "Active card fill — ALL surfaces. White pops off navy or brand blue." },
-        "active-border":      { "value": "{color.neutral.100}", "type": "color", "description": "Active card border — flush with white fill." },
-        "active-num":         { "value": "{color.blue.400}",    "type": "color", "description": "Step number on active white card — blue.400" },
-        "active-title":       { "value": "{color.blue.500}",    "type": "color", "description": "Heading on active white card — brand blue" },
-        "active-body":        { "value": "{color.neutral.600}", "type": "color", "description": "Body text on active white card — neutral.600" },
-        "active-shadow-on-navy":  { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)", "type": "boxShadow", "description": "Shadow for white active card on navy surface" },
-        "active-shadow-on-brand": { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)", "type": "boxShadow", "description": "Shadow for white active card on brand-blue surface" },
+      "color-btn-primary-bg":         { "value": "#2529D8",  "type": "color", "description": "Primary button fill." },
+      "color-btn-primary-bg-hover":   { "value": "#1C1FB8",  "type": "color" },
+      "color-btn-primary-bg-active":  { "value": "#131591",  "type": "color" },
+      "color-btn-primary-text":       { "value": "#FAFBFC",  "type": "color" },
+      "color-btn-primary-shadow":     { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow" },
 
-        "white-surface-background":       { "value": "{color.neutral.100}", "type": "color", "description": "WHITE SURFACE resting — white card on white page. Border + shadow define it." },
-        "white-surface-border":           { "value": "{color.neutral.300}", "type": "color", "description": "WHITE SURFACE resting border" },
-        "white-surface-shadow":           { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow" },
-        "white-surface-background-hover": { "value": "{color.neutral.100}", "type": "color", "description": "WHITE SURFACE hover — fill stays white, lift via shadow" },
-        "white-surface-border-hover":     { "value": "{color.blue.300}",    "type": "color", "description": "WHITE SURFACE hover border — tints brand blue" },
-        "white-surface-shadow-hover":     { "value": "0 8px 32px rgba(37,41,216,0.14), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow", "description": "WHITE SURFACE hover shadow — blue-tinted lift" },
-        "white-surface-transform-hover":  { "value": "translateY(-4px)", "type": "other" },
-        "white-surface-title":            { "value": "{color.blue.1000}",  "type": "color", "description": "WHITE SURFACE card heading — deep navy for contrast" },
-        "white-surface-num":              { "value": "{color.neutral.600}", "type": "color", "description": "WHITE SURFACE step number — neutral muted" },
-        "white-surface-body":             { "value": "{color.neutral.700}", "type": "color" },
+      "color-btn-secondary-bg":       { "value": "#FFFFFF",  "type": "color", "description": "Secondary button fill." },
+      "color-btn-secondary-bg-hover": { "value": "#E6EEFF",  "type": "color" },
+      "color-btn-secondary-text":     { "value": "#2529D8",  "type": "color" },
+      "color-btn-secondary-border":   { "value": "#2529D8",  "type": "color" },
 
-        "navy-surface-background":        { "value": "{color.navy.300}",    "type": "color", "description": "NAVY SURFACE resting — navy.300 (#112240) = map.land, card blends with section" },
-        "navy-surface-border":            { "value": "#1e3a6a",             "type": "color", "description": "NAVY SURFACE resting border — map.border" },
-        "navy-surface-shadow":            { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow", "description": "Subtle top-edge depth" },
-        "navy-surface-background-hover":  { "value": "{color.navy.100}",    "type": "color", "description": "NAVY SURFACE hover — lightens to #1a2d4a, never brand blue" },
-        "navy-surface-border-hover":      { "value": "{color.blue.400}",    "type": "color", "description": "NAVY SURFACE hover border — blue.400 accent" },
-        "navy-surface-shadow-hover":      { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
-        "navy-surface-title":             { "value": "{color.neutral.100}", "type": "color", "description": "NAVY SURFACE resting heading — white" },
-        "navy-surface-num":               { "value": "#4a6fa5",             "type": "color", "description": "NAVY SURFACE step number — map.arc" },
-        "navy-surface-body":              { "value": "rgba(176,186,196,0.65)", "type": "color" },
+      "color-btn-disabled-bg":        { "value": "#F2F4F6",  "type": "color" },
+      "color-btn-disabled-text":      { "value": "#D3D9E0",  "type": "color" },
 
-        "brand-surface-background":       { "value": "rgba(255,255,255,0.05)", "type": "color", "description": "BRAND SURFACE resting — near-invisible ghost over blue section" },
-        "brand-surface-border":           { "value": "rgba(255,255,255,0.18)", "type": "color", "description": "BRAND SURFACE resting border — white alpha" },
-        "brand-surface-background-hover": { "value": "rgba(255,255,255,0.10)", "type": "color", "description": "BRAND SURFACE hover — slightly more visible" },
-        "brand-surface-border-hover":     { "value": "rgba(255,255,255,0.35)", "type": "color", "description": "BRAND SURFACE hover border — brighter white alpha" },
-        "brand-surface-shadow-hover":     { "value": "0 4px 24px rgba(0,0,0,0.15)", "type": "boxShadow" },
-        "brand-surface-title":            { "value": "rgba(255,255,255,0.90)", "type": "color", "description": "BRAND SURFACE resting heading — near-white" },
-        "brand-surface-num":              { "value": "rgba(255,255,255,0.50)", "type": "color", "description": "BRAND SURFACE step number — 50% white" },
-        "brand-surface-body":             { "value": "rgba(255,255,255,0.55)", "type": "color" },
+      "color-card-bg":                { "value": "#FFFFFF",  "type": "color", "description": "Card resting background on light surface." },
+      "color-card-border":            { "value": "#E5E9ED",  "type": "color", "description": "Card resting border. neutral-300." },
+      "color-card-shadow":            { "value": "0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04)", "type": "boxShadow" },
+      "color-card-border-hover":      { "value": "#7FA8FF",  "type": "color", "description": "Card border on hover — tints blue-300." },
+      "color-card-shadow-hover":      { "value": "0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06)", "type": "boxShadow" },
+      "color-card-transform-hover":   { "value": "translateY(-4px)", "type": "other" },
 
-        "art-on-navy":  { "value": "rgba(74,111,165,0.60)",  "type": "color", "description": "Decorative SVG art in navy-surface resting card — map.arc at 60%" },
-        "art-on-brand": { "value": "rgba(255,255,255,0.12)", "type": "color", "description": "Decorative SVG art in brand-surface resting card — white at 12%" },
-        "art-active":   { "value": "{color.blue.300}",       "type": "color", "description": "Decorative SVG art in active white card — blue.300 at low opacity" }
-      },
+      "color-tab-rest":               { "value": "#606D7A",  "type": "color", "description": "Tab label resting. neutral-700." },
+      "color-tab-hover":              { "value": "#2529D8",  "type": "color", "description": "Tab label hover. blue-500." },
+      "color-tab-active-text":        { "value": "#2529D8",  "type": "color", "description": "Active tab text. blue-500." },
+      "color-tab-active-line":        { "value": "#2529D8",  "type": "color", "description": "Active tab underline. blue-500." },
+      "color-tab-disabled":           { "value": "#D3D9E0",  "type": "color", "description": "Disabled tab. neutral-400." },
+      "color-tab-bar-border":         { "value": "#E5E9ED",  "type": "color", "description": "Tab bar bottom border. neutral-300." },
 
-      "action": {
-        "primary-background":        { "value": "{color.blue.500}",    "type": "color", "description": "Primary CTA — brand blue. Used on white and navy surfaces." },
-        "primary-background-hover":  { "value": "{color.blue.600}",    "type": "color" },
-        "primary-background-active": { "value": "{color.blue.700}",    "type": "color" },
-        "primary-text":              { "value": "{color.neutral.100}", "type": "color" },
-        "primary-shadow":            { "value": "0 8px 32px rgba(37,41,216,0.35)", "type": "boxShadow", "description": "Brand glow on CTA button" },
+      "color-nav-bg":                 { "value": "#FAFBFC",  "type": "color", "description": "Navbar bg on light pages — transparent initially, fills on scroll." },
+      "color-nav-border":             { "value": "#E5E9ED",  "type": "color" },
+      "color-nav-link":               { "value": "#606D7A",  "type": "color" },
+      "color-nav-link-hover":         { "value": "#2529D8",  "type": "color" },
+      "color-nav-link-active":        { "value": "#2529D8",  "type": "color" },
 
-        "primary-on-brand-background":       { "value": "{color.neutral.100}", "type": "color", "description": "Primary CTA on brand-blue surface — white filled button" },
-        "primary-on-brand-background-hover": { "value": "{color.blue.100}",    "type": "color", "description": "Hover tints slightly blue" },
-        "primary-on-brand-text":             { "value": "{color.blue.500}",    "type": "color", "description": "Text on white CTA button — brand blue" },
-
-        "secondary-background":       { "value": "{color.neutral.100}", "type": "color" },
-        "secondary-background-hover": { "value": "{color.blue.100}",    "type": "color" },
-        "secondary-text":             { "value": "{color.blue.500}",    "type": "color" },
-        "secondary-border":           { "value": "{color.blue.500}",    "type": "color" },
-
-        "outline-on-brand-border":    { "value": "rgba(255,255,255,0.60)", "type": "color", "description": "Outline button border on brand surface" },
-        "outline-on-brand-text":      { "value": "{color.neutral.100}",   "type": "color" },
-        "outline-on-brand-hover":     { "value": "rgba(255,255,255,0.10)", "type": "color" },
-
-        "ghost-text":       { "value": "{color.neutral.700}", "type": "color" },
-        "ghost-text-hover": { "value": "{color.blue.500}",    "type": "color" },
-
-        "disabled-background": { "value": "{color.neutral.200}", "type": "color" },
-        "disabled-text":       { "value": "{color.neutral.400}", "type": "color" },
-
-        "destructive-background": { "value": "{color.error.500}",    "type": "color" },
-        "destructive-text":       { "value": "{color.neutral.100}", "type": "color" }
-      },
-
-      "icon": {
-        "default":          { "value": "{color.neutral.800}", "type": "color" },
-        "secondary":        { "value": "{color.neutral.600}", "type": "color" },
-        "brand":            { "value": "{color.blue.500}",    "type": "color" },
-        "on-brand":         { "value": "{color.neutral.100}", "type": "color" },
-        "on-navy":          { "value": "{color.blue.300}",    "type": "color", "description": "Icon on navy surface" },
-        "disabled":         { "value": "{color.neutral.400}", "type": "color" },
-        "success":          { "value": "{color.success.600}", "type": "color" },
-        "error":            { "value": "{color.error.600}",   "type": "color" },
-        "warning":          { "value": "{color.warning.600}", "type": "color" },
-        "button-primary":   { "value": "{color.neutral.100}", "type": "color" },
-        "button-secondary": { "value": "{color.blue.500}",    "type": "color" },
-        "container-white":  { "value": "{color.blue.100}",    "type": "color", "description": "Icon container bg on white surface — blue.100 tint" },
-        "container-navy":   { "value": "rgba(37,41,216,0.20)", "type": "color", "description": "Icon container bg on navy surface — brand at 20% opacity" }
-      },
-
-      "map": {
-        "background":   { "value": "#020c1b", "type": "color", "description": "InteractiveMap --bg. Also theme.navy-surface." },
-        "land":         { "value": "#112240", "type": "color", "description": "InteractiveMap country fill. Also card.navy-surface-background." },
-        "border":       { "value": "#1e3a6a", "type": "color", "description": "InteractiveMap country stroke. Also card.navy-surface-border." },
-        "arc":          { "value": "#4a6fa5", "type": "color", "description": "Route arc colour. Use for decorative lines on dark surfaces." },
-        "panel":        { "value": "rgba(10,25,47,0.75)", "type": "color", "description": "Glass-morphism card backdrop on navy surface." },
-        "panel-border": { "value": "#233554", "type": "color", "description": "Panel border on navy surface." }
-      },
-
-      "status": {
-        "success":    { "value": "{color.success.500}", "type": "color" },
-        "error":      { "value": "{color.error.500}",   "type": "color" },
-        "warning":    { "value": "{color.warning.500}", "type": "color" },
-        "info":       { "value": "{color.blue.500}",    "type": "color" },
-        "decorative": { "value": "{color.amber.500}",   "type": "color" },
-        "progress":   { "value": "{color.blue.500}",    "type": "color" }
-      }
+      "color-status-success-bg":      { "value": "#E8F7EE",  "type": "color" },
+      "color-status-success-text":    { "value": "#156B3E",  "type": "color" },
+      "color-status-error-bg":        { "value": "#FEF0EF",  "type": "color" },
+      "color-status-error-text":      { "value": "#B02420",  "type": "color" },
+      "color-status-warning-bg":      { "value": "#FFF6E6",  "type": "color" },
+      "color-status-warning-text":    { "value": "#9E6100",  "type": "color" }
     },
 
-    "typography": {
-      "display":     { "size": { "value": "{font-size.1000}", "type": "fontSizes", "description": "Hero — 72px" },      "weight": { "value": "{font-weight.bold}",     "type": "fontWeights" }, "line-height": { "value": "{line-height.200}", "type": "lineHeights" } },
-      "h1":          { "size": { "value": "{font-size.900}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.bold}",     "type": "fontWeights" }, "line-height": { "value": "{line-height.200}", "type": "lineHeights" } },
-      "h2":          { "size": { "value": "{font-size.800}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" }, "line-height": { "value": "{line-height.200}", "type": "lineHeights" } },
-      "h3":          { "size": { "value": "{font-size.700}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" }, "line-height": { "value": "{line-height.300}", "type": "lineHeights" } },
-      "h4":          { "size": { "value": "{font-size.600}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" }, "line-height": { "value": "{line-height.300}", "type": "lineHeights" } },
-      "body-large":  { "size": { "value": "{font-size.400}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.regular}",  "type": "fontWeights" }, "line-height": { "value": "{line-height.400}", "type": "lineHeights" } },
-      "body":        { "size": { "value": "{font-size.300}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.regular}",  "type": "fontWeights" }, "line-height": { "value": "{line-height.400}", "type": "lineHeights" } },
-      "body-small":  { "size": { "value": "{font-size.200}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.regular}",  "type": "fontWeights" }, "line-height": { "value": "{line-height.400}", "type": "lineHeights" } },
-      "label":       { "size": { "value": "{font-size.200}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" }, "line-height": { "value": "{line-height.300}", "type": "lineHeights" } },
-      "caption":     { "size": { "value": "{font-size.100}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.regular}",  "type": "fontWeights" }, "line-height": { "value": "{line-height.400}", "type": "lineHeights" } },
-      "overline":    { "size": { "value": "{font-size.100}",  "type": "fontSizes" }, "weight": { "value": "{font-weight.semibold}", "type": "fontWeights" }, "line-height": { "value": "{line-height.300}", "type": "lineHeights" }, "description": "All-caps label — letter-spacing 0.1em" }
+    "dark": {
+      "_description": "DARK THEME — deep navy surface sections (Hero, Map, Stats, Network). Same brand blue CTAs. Active cards invert to white.",
+
+      "color-bg-page":                { "value": "#020c1b",  "type": "color", "description": "Deep navy page/section bg. blue-1000 = map-bg. Exact same as InteractiveMap --bg." },
+      "color-bg-surface":             { "value": "#112240",  "type": "color", "description": "Card / panel resting fill. navy-300 = map-land. Card blends into section." },
+      "color-bg-surface-hover":       { "value": "#1a2d4a",  "type": "color", "description": "Card hover fill. navy-100. Lightens — never uses brand blue." },
+      "color-bg-panel":               { "value": "rgba(10,25,47,0.75)", "type": "color", "description": "Glass-morphism panel backdrop. map-panel." },
+      "color-bg-brand":               { "value": "#2529D8",  "type": "color", "description": "Brand-blue fill — CTAs, active pills. Same as light theme." },
+      "color-bg-brand-subtle":        { "value": "rgba(37,41,216,0.20)", "type": "color", "description": "Tinted brand fill for icon containers on dark. 20% opacity." },
+      "color-bg-brand-subtle-hover":  { "value": "rgba(37,41,216,0.35)", "type": "color", "description": "Icon container hover on dark. 35% opacity." },
+
+      "color-text-heading":           { "value": "#FAFBFC",  "type": "color", "description": "Headings on dark. neutral-100." },
+      "color-text-body":              { "value": "rgba(176,186,196,0.80)", "type": "color", "description": "Body copy on dark — muted neutral." },
+      "color-text-secondary":         { "value": "rgba(176,186,196,0.55)", "type": "color", "description": "Supporting text on dark — 55% neutral." },
+      "color-text-disabled":          { "value": "rgba(176,186,196,0.25)", "type": "color", "description": "Disabled text on dark. Very faint." },
+      "color-text-brand":             { "value": "#7FA8FF",  "type": "color", "description": "Brand-coloured inline text on dark. blue-300 (lighter for readability)." },
+      "color-text-overline":          { "value": "#7FA8FF",  "type": "color", "description": "Section overline on dark. blue-300." },
+      "color-text-on-brand":          { "value": "#FAFBFC",  "type": "color", "description": "Text on brand-blue fill. Same as light." },
+
+      "color-border-default":         { "value": "#1e3a6a",  "type": "color", "description": "Default border on dark. map-border." },
+      "color-border-panel":           { "value": "#233554",  "type": "color", "description": "Panel/card border on dark. map-panel-border." },
+      "color-border-hover":           { "value": "#4A6FEF",  "type": "color", "description": "Border on card hover. blue-400." },
+      "color-border-focus":           { "value": "#4A6FEF",  "type": "color", "description": "Focus ring on dark. blue-400." },
+      "color-border-brand":           { "value": "#2529D8",  "type": "color" },
+      "color-border-disabled":        { "value": "#1e3a6a",  "type": "color" },
+
+      "color-icon-default":           { "value": "#7FA8FF",  "type": "color", "description": "Default icon on dark. blue-300." },
+      "color-icon-secondary":         { "value": "#4a6fa5",  "type": "color", "description": "Secondary icon on dark. map-arc." },
+      "color-icon-brand":             { "value": "#4A6FEF",  "type": "color", "description": "Brand icon on dark. blue-400." },
+      "color-icon-disabled":          { "value": "rgba(176,186,196,0.25)", "type": "color" },
+      "color-icon-on-brand":          { "value": "#FAFBFC",  "type": "color" },
+
+      "color-btn-primary-bg":         { "value": "#2529D8",  "type": "color", "description": "Primary CTA on dark — same brand blue." },
+      "color-btn-primary-bg-hover":   { "value": "#1C1FB8",  "type": "color" },
+      "color-btn-primary-bg-active":  { "value": "#131591",  "type": "color" },
+      "color-btn-primary-text":       { "value": "#FAFBFC",  "type": "color" },
+      "color-btn-primary-shadow":     { "value": "0 8px 32px rgba(37,41,216,0.50)", "type": "boxShadow", "description": "Higher opacity glow on dark bg." },
+
+      "color-btn-ghost-text":         { "value": "#7FA8FF",  "type": "color", "description": "Ghost/outline button text on dark. blue-300." },
+      "color-btn-ghost-border":       { "value": "#1e3a6a",  "type": "color" },
+      "color-btn-ghost-border-hover": { "value": "#4A6FEF",  "type": "color" },
+
+      "color-btn-disabled-bg":        { "value": "#112240",  "type": "color" },
+      "color-btn-disabled-text":      { "value": "rgba(176,186,196,0.25)", "type": "color" },
+
+      "color-card-bg":                { "value": "#112240",  "type": "color", "description": "Resting card bg. navy-300 = map-land." },
+      "color-card-border":            { "value": "#1e3a6a",  "type": "color", "description": "Resting card border. map-border." },
+      "color-card-shadow":            { "value": "inset 0 1px 0 rgba(255,255,255,0.04)", "type": "boxShadow" },
+      "color-card-bg-hover":          { "value": "#1a2d4a",  "type": "color", "description": "Card hover bg. navy-100." },
+      "color-card-border-hover":      { "value": "#4A6FEF",  "type": "color", "description": "Card hover border. blue-400." },
+      "color-card-shadow-hover":      { "value": "0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06)", "type": "boxShadow" },
+      "color-card-active-bg":         { "value": "#FAFBFC",  "type": "color", "description": "ACTIVE/SELECTED card — always inverts to white on any surface." },
+      "color-card-active-border":     { "value": "#FAFBFC",  "type": "color" },
+      "color-card-active-shadow":     { "value": "0 8px 40px rgba(37,41,216,0.22), 0 2px 8px rgba(2,12,27,0.15)", "type": "boxShadow" },
+      "color-card-active-heading":    { "value": "#2529D8",  "type": "color", "description": "Heading on white active card — brand blue." },
+      "color-card-active-body":       { "value": "#8A96A3",  "type": "color", "description": "Body text on white active card. neutral-600." },
+      "color-card-num":               { "value": "#4a6fa5",  "type": "color", "description": "Step number resting on dark card. map-arc." },
+      "color-card-num-active":        { "value": "#4A6FEF",  "type": "color", "description": "Step number on white active card. blue-400." },
+
+      "color-tab-rest":               { "value": "rgba(176,186,196,0.55)", "type": "color", "description": "Tab resting on dark. muted neutral." },
+      "color-tab-hover":              { "value": "#7FA8FF",  "type": "color", "description": "Tab hover on dark. blue-300." },
+      "color-tab-active-text":        { "value": "#FAFBFC",  "type": "color", "description": "Active tab text on dark. full white." },
+      "color-tab-active-line":        { "value": "#2529D8",  "type": "color", "description": "Active tab underline on dark. blue-500." },
+      "color-tab-disabled":           { "value": "rgba(176,186,196,0.22)", "type": "color" },
+      "color-tab-bar-border":         { "value": "#1e3a6a",  "type": "color", "description": "Tab bar border on dark. map-border." },
+
+      "color-nav-bg":                 { "value": "#020c1b",  "type": "color", "description": "Navbar bg on dark — deep navy." },
+      "color-nav-border":             { "value": "#233554",  "type": "color", "description": "Navbar bottom border. map-panel-border." },
+      "color-nav-link":               { "value": "rgba(176,186,196,0.65)", "type": "color" },
+      "color-nav-link-hover":         { "value": "#7FA8FF",  "type": "color" },
+      "color-nav-link-active":        { "value": "#FAFBFC",  "type": "color" },
+
+      "color-map-arc":                { "value": "#4a6fa5",  "type": "color", "description": "Route arc lines on map." },
+      "color-map-dot":                { "value": "#ff4d4d",  "type": "color", "description": "HQ pulsing dot on map." },
+      "color-map-particle":           { "value": "#4A6FEF",  "type": "color", "description": "Traveling particle on route arcs." },
+
+      "color-status-success-bg":      { "value": "#0D4F2C",  "type": "color" },
+      "color-status-success-text":    { "value": "#8DD4AD",  "type": "color" },
+      "color-status-error-bg":        { "value": "#841714",  "type": "color" },
+      "color-status-error-text":      { "value": "#FBA8A3",  "type": "color" },
+      "color-status-warning-bg":      { "value": "#724500",  "type": "color" },
+      "color-status-warning-text":    { "value": "#FFCF75",  "type": "color" }
     },
 
-    "border-radius": {
-      "default": { "value": "{border-radius.300}", "type": "borderRadius" },
-      "small":   { "value": "{border-radius.200}", "type": "borderRadius" },
-      "large":   { "value": "{border-radius.400}", "type": "borderRadius" },
-      "pill":    { "value": "{border-radius.full}", "type": "borderRadius" },
-      "none":    { "value": "{border-radius.0}",   "type": "borderRadius" },
-      "sharp":   { "value": "{border-radius.100}", "type": "borderRadius" }
+    "brand-surface": {
+      "_description": "BRAND SURFACE — sections with blue.500 (#2529D8) as background (Pricing, Process steps, CTA strip). Cards ghost/invert. CTAs go white.",
+
+      "color-bg-page":                { "value": "#2529D8",  "type": "color" },
+      "color-bg-surface":             { "value": "rgba(255,255,255,0.05)", "type": "color", "description": "Card resting on brand. Near-invisible ghost." },
+      "color-bg-surface-hover":       { "value": "rgba(255,255,255,0.10)", "type": "color", "description": "Card hover on brand. Slightly visible." },
+      "color-bg-surface-active":      { "value": "#FAFBFC",  "type": "color", "description": "Active/selected card on brand — inverts to white." },
+
+      "color-text-heading":           { "value": "#FAFBFC",  "type": "color" },
+      "color-text-body":              { "value": "rgba(255,255,255,0.75)", "type": "color" },
+      "color-text-overline":          { "value": "rgba(255,255,255,0.65)", "type": "color" },
+      "color-text-num":               { "value": "rgba(255,255,255,0.50)", "type": "color", "description": "Step number resting on brand card." },
+      "color-text-num-active":        { "value": "#4A6FEF",  "type": "color", "description": "Step number on white active card. blue-400." },
+      "color-text-heading-active":    { "value": "#2529D8",  "type": "color", "description": "Heading on white active card. brand blue." },
+      "color-text-body-active":       { "value": "#8A96A3",  "type": "color", "description": "Body on white active card. neutral-600." },
+
+      "color-border-default":         { "value": "rgba(255,255,255,0.18)", "type": "color", "description": "Card resting border on brand." },
+      "color-border-hover":           { "value": "rgba(255,255,255,0.35)", "type": "color" },
+      "color-border-active":          { "value": "#FAFBFC",  "type": "color", "description": "Active card border — flush with white fill." },
+
+      "color-btn-primary-bg":         { "value": "#FAFBFC",  "type": "color", "description": "CTA on brand surface — white filled." },
+      "color-btn-primary-bg-hover":   { "value": "#E6EEFF",  "type": "color", "description": "White CTA hover — tints blue-100." },
+      "color-btn-primary-text":       { "value": "#2529D8",  "type": "color", "description": "White CTA text — brand blue." },
+      "color-btn-outline-border":     { "value": "rgba(255,255,255,0.60)", "type": "color", "description": "Outline button on brand." },
+      "color-btn-outline-text":       { "value": "#FAFBFC",  "type": "color" },
+      "color-btn-outline-hover":      { "value": "rgba(255,255,255,0.10)", "type": "color" },
+
+      "color-shadow-card-active":     { "value": "0 8px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12)", "type": "boxShadow" },
+      "color-shadow-card-hover":      { "value": "0 4px 24px rgba(0,0,0,0.15)", "type": "boxShadow" }
     },
 
-    "size": {
-      "icon-small":          { "value": "{size.100}", "type": "sizing" },
-      "icon-medium":         { "value": "{size.200}", "type": "sizing" },
-      "icon-large":          { "value": "{size.300}", "type": "sizing" },
-      "icon-button-primary": { "value": "{size.200}", "type": "sizing" },
-      "icon-badge":          { "value": "{size.300}", "type": "sizing" }
-    },
+    "shared": {
+      "_description": "Values identical across all themes.",
 
-    "z-index": {
-      "default":    { "value": "{z-index.0}",   "type": "other" },
-      "sticky":     { "value": "{z-index.200}", "type": "other" },
-      "navigation": { "value": "{z-index.300}", "type": "other" },
-      "dropdown":   { "value": "{z-index.400}", "type": "other" },
-      "modal":      { "value": "{z-index.500}", "type": "other" }
+      "radius-card":      { "value": "12px",  "type": "borderRadius" },
+      "radius-btn":       { "value": "8px",   "type": "borderRadius" },
+      "radius-btn-pill":  { "value": "9999px","type": "borderRadius" },
+      "radius-input":     { "value": "8px",   "type": "borderRadius" },
+      "radius-badge":     { "value": "4px",   "type": "borderRadius" },
+      "radius-panel":     { "value": "12px",  "type": "borderRadius" },
+
+      "space-section-y":  { "value": "96px",  "type": "spacing", "description": "Vertical padding for all page sections." },
+      "space-section-x":  { "value": "40px",  "type": "spacing", "description": "Horizontal margin. 40px desktop, 32px tablet, 20px mobile." },
+      "space-card-inner": { "value": "24px",  "type": "spacing", "description": "Card internal padding." },
+      "space-grid-gap":   { "value": "24px",  "type": "spacing", "description": "Grid gutter." },
+      "space-nav-h":      { "value": "64px",  "type": "spacing", "description": "Navbar height desktop." },
+      "space-nav-h-mob":  { "value": "56px",  "type": "spacing", "description": "Navbar height mobile." },
+
+      "grid-cols":        { "value": "12",    "type": "other", "description": "12-column grid." },
+      "grid-max-width":   { "value": "1280px","type": "other" },
+
+      "type-display":     { "value": "72px / bold / 1.2",  "type": "other", "description": "Hero headline." },
+      "type-h1":          { "value": "56px / bold / 1.2",  "type": "other" },
+      "type-h2":          { "value": "40px / semibold / 1.2", "type": "other" },
+      "type-h3":          { "value": "32px / semibold / 1.4", "type": "other" },
+      "type-h4":          { "value": "24px / semibold / 1.4", "type": "other" },
+      "type-body-lg":     { "value": "18px / regular / 1.6",  "type": "other" },
+      "type-body":        { "value": "16px / regular / 1.6",  "type": "other" },
+      "type-body-sm":     { "value": "14px / regular / 1.6",  "type": "other" },
+      "type-label":       { "value": "14px / semibold / 1.4", "type": "other" },
+      "type-overline":    { "value": "12px / semibold / 1.4 / ls:0.1em / uppercase", "type": "other" },
+      "type-caption":     { "value": "12px / regular / 1.6",  "type": "other" },
+
+      "transition-card":  { "value": "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)", "type": "other" },
+      "transition-btn":   { "value": "background 150ms ease, box-shadow 150ms ease", "type": "other" },
+      "transition-tab":   { "value": "color 200ms ease", "type": "other" }
     }
   }
 }
