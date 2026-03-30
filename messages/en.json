@@ -18,19 +18,13 @@
   },
   "about": {
     "overline": "ABOUT US",
-    "heading": "A Trusted Logistics Partner Since 2005",
-    "description": "MultiSped is a freight forwarding company based in North Macedonia, specializing in international transport and customs brokerage. Since our founding in 2005, we have built a strong network of partners across Europe and provide complete logistics solutions for businesses of all sizes.",
-    "stat1": {
-      "value": "18+",
-      "label": "Years of Experience"
-    },
-    "stat2": {
-      "value": "25+",
-      "label": "European Countries"
-    },
-    "stat3": {
-      "value": "5000+",
-      "label": "Deliveries per Year"
+    "heading": "About Us",
+    "body": "MultiSped as a company is dedicated to delivering secure transport in the safest and fastest possible way. Our warehouses and developed network of road, maritime, rail, and container transport operates in dynamic cohesion so your shipments arrive at the desired destination without any issues. We carry out international goods transport at competitive prices based on current market conditions. The quality of our services is always at the highest level.",
+    "director": "Director: Serafimovski Vlatko",
+    "stats": {
+      "tonsLabel": "Tons annually",
+      "surveillanceLabel": "Video surveillance of entire facility",
+      "licensesLabel": "Customs licenses"
     }
   },
   "services": {
