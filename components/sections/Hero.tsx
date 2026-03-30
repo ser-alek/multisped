@@ -150,7 +150,7 @@ export function Hero() {
         />
 
         {/* Text layer — z-2 */}
-        <div className="relative z-[2] flex h-full flex-col items-center justify-center px-[var(--section-x)] text-center">
+        <div className="relative z-[2] flex h-full flex-col items-start justify-center px-[var(--section-x)] text-left max-w-[1280px] mx-auto w-full">
           <motion.p
             style={{ opacity: headingOpacity }}
             className="mb-4 text-xs font-semibold uppercase tracking-[0.1em]"
