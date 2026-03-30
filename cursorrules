@@ -1,0 +1,326 @@
+You are building a logistics company landing page for MultiSped, a Macedonian freight forwarding company. The project is a Next.js 14 App Router application, written in TypeScript, styled with Tailwind CSS and shadcn/ui components, with Macedonian and English translations via next-intl.
+
+The repo starts completely empty. When the user asks you to initialise the project, run these commands in order:
+npx create-next-app@latest . --typescript --tailwind --app --src-dir=false --import-alias="@/*"
+npx shadcn-ui@latest init
+npm install next-intl framer-motion lucide-react react-hook-form zod @hookform/resolvers d3 topojson-client
+npm install -D @types/d3 @types/topojson-client
+
+---
+
+## Project structure
+
+Always follow this folder structure exactly. Never deviate from it without asking:
+
+app/
+  [locale]/
+    layout.tsx
+    page.tsx
+  globals.css
+components/
+  ui/                      ← shadcn/ui only, never edit manually
+  layout/
+    Navbar.tsx
+    Footer.tsx
+  sections/
+    Hero.tsx
+    About.tsx
+    Services.tsx
+    ServiceItems.tsx
+    Sectors.tsx
+    Map.tsx
+    Contact.tsx
+lib/
+  utils.ts
+messages/
+  mk.json
+  en.json
+public/
+  hero-frames/             ← JPEG sequence, frame-0001.jpg to frame-XXXX.jpg
+tokens-ms.json
+tailwind.config.ts
+middleware.ts
+
+---
+
+## Components
+
+Always use shadcn/ui for every component. Never build a button, input, form, card, badge, or any UI primitive from scratch. If a shadcn component exists for the job, use it. Add components via the CLI: npx shadcn-ui@latest add [component].
+
+The only things you build custom are the section-level layout components (Hero, About, Services, etc.) which compose shadcn primitives inside them.
+
+Never modify files inside components/ui/ by hand. Style overrides go in the consuming component using Tailwind classes.
+
+---
+
+## Design tokens and CSS variables
+
+The file tokens-ms.json is the single source of truth for all design decisions. Never hardcode a color, spacing value, border radius, or shadow anywhere in the codebase. Always use CSS variables.
+
+Declare all CSS variables in app/globals.css like this:
+
+:root {
+  --bg-page: #FAFBFC;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F2F4F6;
+  --bg-brand: #2529D8;
+  --bg-brand-subtle: #E6EEFF;
+  --text-heading: #020c1b;
+  --text-body: #3D4752;
+  --text-secondary: #606D7A;
+  --text-placeholder: #B0BAC4;
+  --text-disabled: #D3D9E0;
+  --text-brand: #2529D8;
+  --text-overline: #2529D8;
+  --text-on-brand: #FAFBFC;
+  --border-default: #E5E9ED;
+  --border-hover: #7FA8FF;
+  --border-focus: #2529D8;
+  --border-brand: #2529D8;
+  --icon-default: #3D4752;
+  --icon-brand: #2529D8;
+  --btn-primary-bg: #2529D8;
+  --btn-primary-bg-hover: #1C1FB8;
+  --btn-primary-bg-active: #131591;
+  --btn-primary-text: #FAFBFC;
+  --btn-primary-shadow: 0 8px 32px rgba(37,41,216,0.35);
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-bg-hover: #E6EEFF;
+  --btn-secondary-text: #2529D8;
+  --btn-secondary-border: #2529D8;
+  --card-bg: #FFFFFF;
+  --card-border: #E5E9ED;
+  --card-shadow: 0 4px 16px rgba(2,12,27,0.08), 0 1px 4px rgba(2,12,27,0.04);
+  --card-bg-hover: #FFFFFF;
+  --card-border-hover: #7FA8FF;
+  --card-shadow-hover: 0 8px 32px rgba(37,41,216,0.12), 0 4px 12px rgba(2,12,27,0.06);
+  --card-heading: #020c1b;
+  --card-body: #606D7A;
+  --nav-bg: #FAFBFC;
+  --nav-border: #E5E9ED;
+  --nav-link: #606D7A;
+  --nav-link-hover: #2529D8;
+  --nav-link-active: #2529D8;
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-input: 8px;
+  --radius-badge: 4px;
+  --radius-pill: 9999px;
+  --section-y: 96px;
+  --section-x: 40px;
+  --card-inner: 24px;
+  --grid-gap: 24px;
+  --nav-height: 64px;
+  --nav-height-mob: 56px;
+}
+
+[data-theme="dark"] {
+  --bg-page: #020c1b;
+  --bg-surface: #112240;
+  --bg-surface-hover: #1a2d4a;
+  --bg-panel: rgba(10,25,47,0.75);
+  --bg-brand: #2529D8;
+  --bg-brand-subtle: rgba(37,41,216,0.20);
+  --text-heading: #FAFBFC;
+  --text-body: rgba(176,186,196,0.80);
+  --text-secondary: rgba(176,186,196,0.55);
+  --text-disabled: rgba(176,186,196,0.25);
+  --text-brand: #7FA8FF;
+  --text-overline: #7FA8FF;
+  --text-on-brand: #FAFBFC;
+  --border-default: #1e3a6a;
+  --border-panel: #233554;
+  --border-hover: #4A6FEF;
+  --border-focus: #4A6FEF;
+  --border-brand: #2529D8;
+  --icon-default: #7FA8FF;
+  --icon-brand: #4A6FEF;
+  --btn-primary-bg: #2529D8;
+  --btn-primary-bg-hover: #1C1FB8;
+  --btn-primary-bg-active: #131591;
+  --btn-primary-text: #FAFBFC;
+  --btn-primary-shadow: 0 8px 32px rgba(37,41,216,0.50);
+  --btn-ghost-text: #7FA8FF;
+  --btn-ghost-border: #1e3a6a;
+  --btn-ghost-border-hover: #4A6FEF;
+  --card-bg: #112240;
+  --card-border: #1e3a6a;
+  --card-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  --card-bg-hover: #1a2d4a;
+  --card-border-hover: #4A6FEF;
+  --card-shadow-hover: 0 4px 20px rgba(37,41,216,0.18), inset 0 1px 0 rgba(255,255,255,0.06);
+  --card-heading: #FAFBFC;
+  --card-body: rgba(176,186,196,0.65);
+  --nav-bg: #020c1b;
+  --nav-border: #233554;
+  --nav-link: rgba(176,186,196,0.65);
+  --nav-link-hover: #7FA8FF;
+  --nav-link-active: #FAFBFC;
+  --map-bg: #020c1b;
+  --map-land: #112240;
+  --map-border: #1e3a6a;
+  --map-arc: #4a6fa5;
+  --map-dot: #ff4d4d;
+  --map-particle: #4A6FEF;
+  --map-panel: rgba(10,25,47,0.75);
+  --map-panel-border: #233554;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-y: 64px;
+    --section-x: 20px;
+    --nav-height: 56px;
+  }
+}
+
+In tailwind.config.ts, extend the theme to reference these variables so you can write bg-[var(--bg-page)] as Tailwind classes.
+
+---
+
+## Typography
+
+Use Inter for everything — both headings and body text. Load it via next/font/google in app/[locale]/layout.tsx.
+
+Type scale:
+- Display (hero heading): clamp(2.25rem, 6vw, 4.5rem), weight 700, line-height 1.2
+- H2 (section headings): 2.5rem desktop / 2rem mobile, weight 600, line-height 1.2
+- H3 (card headings): 1.5rem, weight 600, line-height 1.4
+- Body large: 1.125rem, weight 400, line-height 1.6
+- Body: 1rem, weight 400, line-height 1.6
+- Overline: 0.75rem, weight 600, uppercase, letter-spacing 0.1em
+- Label: 0.875rem, weight 600, line-height 1.4
+
+---
+
+## Translations
+
+Use next-intl. The default locale is mk (Macedonian). English (en) is the second locale.
+
+Set up middleware.ts to detect locale from the URL path. The app folder structure is app/[locale]/.
+
+All user-facing text must come from useTranslations(). Never hardcode Macedonian or English strings in JSX.
+
+Message files live in messages/mk.json and messages/en.json. Structure keys as section.element — for example hero.heading, services.truck.title, contact.submit.
+
+The language toggle lives in the Navbar. It switches between /mk/... and /en/... using next-intl's router. Display it as a simple pill with the two locale codes: MK | EN.
+
+---
+
+## Theme toggle (dark/light mode)
+
+Theme is controlled by a data-theme attribute on the <html> element. Never use prefers-color-scheme media queries to drive the theme — it must always be an explicit user toggle.
+
+Store the user's preference in localStorage under the key "ms-theme". On initial load, read localStorage and apply the attribute before first paint to avoid a flash of the wrong theme.
+
+The toggle button lives in the Navbar next to the language switcher.
+
+---
+
+## Navbar
+
+Fixed at the top. Height is var(--nav-height). Background is var(--nav-bg) with backdrop-filter: blur(12px).
+
+Add a bottom border (1px solid var(--nav-border)) only when the user has scrolled more than 20px — use a scroll event listener with useEffect for this.
+
+Layout: logo on the left, nav links in the center, language toggle + theme toggle + primary CTA button on the right.
+
+On mobile, hide the nav links and show a hamburger icon that opens a full-screen overlay menu.
+
+---
+
+## Buttons
+
+Always use the shadcn Button component. Override its default variant styles in components/ui/button.tsx to use the CSS variables defined above.
+
+Primary: background var(--btn-primary-bg), hover var(--btn-primary-bg-hover), text var(--btn-primary-text), box-shadow var(--btn-primary-shadow), border-radius var(--radius-button).
+
+Secondary: background var(--btn-secondary-bg), hover var(--btn-secondary-bg-hover), text var(--btn-secondary-text), border 1px solid var(--btn-secondary-border), border-radius var(--radius-button).
+
+---
+
+## Cards
+
+Use the shadcn Card component as the base. Apply these styles:
+- Background: var(--card-bg)
+- Border: 1px solid var(--card-border)
+- Box-shadow: var(--card-shadow)
+- Border-radius: var(--radius-card)
+- On hover: background var(--card-bg-hover), border-color var(--card-border-hover), box-shadow var(--card-shadow-hover), transform translateY(-4px)
+- Transition: background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms, box-shadow 280ms, transform 280ms
+
+---
+
+## Section layout
+
+Every section uses a consistent content wrapper: max-w-[1280px] mx-auto px-[var(--section-x)] py-[var(--section-y)].
+
+Section backgrounds alternate. Light sections use var(--bg-page). The ServiceItems section and the Map section use a dark background that is always #020c1b regardless of the current theme — these two sections never change their background colour.
+
+Page section order:
+1. Navbar (fixed)
+2. Hero — full viewport, scroll-driven canvas animation
+3. About — light bg, company description, 3 stat blocks
+4. Services — light bg, 3 transport cards (Truck, Maritime, Rail) with expand/collapse
+5. ServiceItems — always dark (#020c1b), 2×3 grid of service icon cards
+6. Sectors — light bg, alternating image + text layout (Logistics, Commercial, Finance)
+7. Map — always dark (#020c1b), full-width D3 interactive map
+8. Contact — light bg, 2-column (form left, contact info right)
+9. Footer — dark bg
+
+---
+
+## Hero section (scroll-driven canvas animation)
+
+The hero shows a video exported as a JPEG sequence, played frame-by-frame as the user scrolls. Frames are in public/hero-frames/ named frame-0001.jpg through frame-XXXX.jpg.
+
+Implementation rules:
+- A canvas element is position absolute, fills the full viewport, z-index 0
+- An outer div is position relative with height 250vh — this is the scroll distance
+- A sticky inner div (top 0, height 100vh) holds the canvas and all text content
+- TOTAL_FRAMES constant must match the actual frame count — leave it as a clearly named constant so it is easy to update
+- On scroll: progress = scrollY / (containerHeight - viewportHeight), frameIndex = Math.floor(progress * (TOTAL_FRAMES - 1))
+- Use requestAnimationFrame to draw frames — only redraw when frameIndex changes
+- Preload frame 1 immediately on mount, load the rest in the background
+- Use useRef for the canvas element, frames array, and current frame index — never put these in React state
+- A gradient overlay sits above the canvas for text legibility: linear-gradient(to bottom, rgba(2,12,27,0.50) 0%, rgba(2,12,27,0.10) 40%, rgba(2,12,27,0.75) 100%)
+- The heading, subheading, and CTA use Framer Motion useScroll + useTransform to fade and translate in as the user starts scrolling
+- A bouncing ChevronDown icon at the bottom fades out once scrolling begins
+
+---
+
+## Map section
+
+The map is a D3 + TopoJSON visualization. Integrate it as a client component in components/sections/Map.tsx using useEffect and useRef to mount D3 against a div ref.
+
+Load world topology from: https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json
+
+The map draws animated arc routes from North Macedonia (lon 21.745, lat 41.608) to partner countries across Europe, with traveling particle dots along each route.
+
+Replace any hardcoded colour values in the D3 code with CSS variable references using getComputedStyle to read them at runtime.
+
+Guard the useEffect: if the svg ref already has children, return early to prevent re-initialisation on re-renders.
+
+Section background is always #020c1b. Map container minimum height: 600px desktop, 400px mobile.
+
+---
+
+## Contact form
+
+Use shadcn Form + react-hook-form + zod. Fields: Name, Title, Company Name, Email, Message. All required. Email must pass format validation. Put the zod schema in lib/validations/contact.ts. Handle submission with a Next.js server action. Show inline success/error feedback without page reload.
+
+---
+
+## General rules
+
+Never hardcode colours, spacing, radii, or shadows — always CSS variables.
+Never hardcode text strings in JSX — always useTranslations().
+Never use !important anywhere.
+Never use inline styles except when dynamically assigning a CSS variable value in JS.
+Never animate width or height — always animate transform and opacity for performance.
+Never initialise D3 more than once per component mount.
+Never modify files in components/ui/ manually.
+All images use next/image with explicit width, height, and alt attributes. The hero canvas is exempt.
+Use named exports for all section components.
+Only add 'use client' when the component genuinely needs browser APIs, event listeners, or hooks.
+When in doubt about any design decision, refer back to tokens-ms.json before making assumptions.
