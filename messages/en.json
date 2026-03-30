@@ -49,31 +49,31 @@
     "collapse": "Close"
   },
   "serviceItems": {
-    "overline": "WHAT WE OFFER",
-    "heading": "Complete Logistics Services",
+    "heading": "Service Items",
+    "subheading": "Our mission is to turn logistics challenges into your competitive advantage through expert representation, safe storage, and efficient distribution of your products.",
     "item1": {
-      "title": "Customs Brokerage",
-      "description": "Professional representation before customs authorities, documentation preparation, and ensuring fast and efficient customs clearance."
+      "title": "Customs Formalities",
+      "description": "Full mediation in all import and export customs procedures for uninterrupted flow of your goods."
     },
     "item2": {
-      "title": "Warehousing",
-      "description": "Modern storage facilities with controlled conditions for short-term and long-term goods storage."
+      "title": "Special Transport & Permits",
+      "description": "Complete organization of oversized transport with appropriate technical equipment and logistics support."
     },
     "item3": {
-      "title": "Cargo Insurance",
-      "description": "Full shipment insurance for maximum protection of your goods during transport."
+      "title": "Simplified Customs Procedures",
+      "description": "Application of simplified procedures for significantly speeding up the customs clearance process."
     },
     "item4": {
-      "title": "Distribution",
-      "description": "Last-mile logistics and distribution to the final destination with precise planning and timely delivery."
+      "title": "Goods Origin Department",
+      "description": "Expert assistance in defining the preferential and non-preferential origin of your products."
     },
     "item5": {
-      "title": "Consulting",
-      "description": "Expert advice on optimizing logistics processes, choosing transport modes, and reducing costs."
+      "title": "Warehousing Services",
+      "description": "Complete inventory management, labeling, and preparation of shipments for further distribution."
     },
     "item6": {
-      "title": "Shipment Tracking",
-      "description": "Real-time tracking of your shipments with detailed reports on cargo status and location."
+      "title": "Own Customs Warehouse",
+      "description": "Safe and efficient storage of your goods in modernly equipped facilities with 24/7 video surveillance."
     }
   },
   "sectors": {

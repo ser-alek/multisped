@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
@@ -14,16 +14,20 @@ const NAV_LINKS = [
   { key: "contact", href: "#contact" },
 ] as const;
 
+const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
+
 export function Navbar() {
   const t = useTranslations("nav");
   const tTheme = useTranslations("theme");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const pathname = usePathname();
   const router = useRouter();
   const params = useParams();
   const locale = params.locale as string;
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     const saved = localStorage.getItem("ms-theme");
@@ -35,6 +39,41 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    observerRef.current?.disconnect();
+
+    const visibleRatios = new Map<string, number>();
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibleRatios.set(entry.target.id, entry.intersectionRatio);
+        });
+
+        let best: string | null = null;
+        let bestRatio = 0;
+        visibleRatios.forEach((ratio, id) => {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            best = id;
+          }
+        });
+
+        if (bestRatio > 0) {
+          setActiveSection(best);
+        }
+      },
+      { threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1] },
+    );
+
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observerRef.current!.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
   }, []);
 
   useEffect(() => {
@@ -111,16 +150,33 @@ export function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.key}
-                onClick={() => scrollToSection(link.href)}
-                className="text-base font-medium transition-colors duration-200 hover:text-[var(--nav-link-hover)]"
-                style={{ color: "var(--nav-link)" }}
-              >
-                {t(link.key)}
-              </button>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const sectionId = link.href.slice(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <button
+                  key={link.key}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-base font-medium"
+                  style={{
+                    color: isActive
+                      ? "var(--nav-link-active)"
+                      : "var(--nav-link)",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive)
+                      e.currentTarget.style.color = "var(--nav-link-hover)";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive)
+                      e.currentTarget.style.color = "var(--nav-link)";
+                  }}
+                >
+                  {t(link.key)}
+                </button>
+              );
+            })}
           </div>
 
           {/* Desktop right group */}
@@ -214,16 +270,25 @@ export function Navbar() {
           <div
             className="pt-28 px-[var(--section-x)] flex flex-1 flex-col gap-2"
           >
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.key}
-                onClick={() => scrollToSection(link.href)}
-                className="w-full rounded-[var(--radius-card)] px-4 py-4 text-left text-lg font-semibold transition-colors duration-200"
-                style={{ color: "var(--text-heading)" }}
-              >
-                {t(link.key)}
-              </button>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const sectionId = link.href.slice(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <button
+                  key={link.key}
+                  onClick={() => scrollToSection(link.href)}
+                  className="w-full rounded-[var(--radius-card)] px-4 py-4 text-left text-lg font-semibold"
+                  style={{
+                    color: isActive
+                      ? "var(--nav-link-active)"
+                      : "var(--text-heading)",
+                    transition: "color 150ms ease",
+                  }}
+                >
+                  {t(link.key)}
+                </button>
+              );
+            })}
 
             <div className="mt-6 flex items-center gap-3">
               {/* Language toggle mobile */}
