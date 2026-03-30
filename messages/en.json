@@ -29,25 +29,24 @@
   },
   "services": {
     "overline": "SERVICES",
-    "heading": "Transport Solutions for Every Need",
-    "description": "We offer complete logistics solutions tailored to your specific needs — from road and maritime to rail freight.",
+    "heading": "Transport Services",
     "truck": {
       "title": "Road Freight",
-      "description": "Full and partial loads (FTL/LTL) across Europe with on-time delivery and real-time tracking.",
-      "details": "Our fleet covers over 25 European countries with direct routes and consolidated shipments. We provide temperature-controlled transport, ADR hazardous materials transport, and express deliveries with guaranteed deadlines."
+      "body": "We organize and carry out mass transport with all types of trucks.",
+      "detail": "We transport goods in bulk using tipper trucks according to daily needs or a pre-announced delivery schedule with maximum quantities of up to 3,000 tons per day. The most commonly transported goods are coal, ores, FeSi, salt, grain, and other commodities."
     },
     "maritime": {
-      "title": "Maritime Freight",
-      "description": "Container shipping for overseas shipments with competitive rates and global coverage.",
-      "details": "We organize FCL and LCL maritime transport to and from all major world ports. Our services include container booking, documentation preparation, customs clearance, and door-to-door delivery."
+      "title": "Maritime-Container Transport",
+      "body": "Ship equipment, storage, and safekeeping of goods are handled through our partners at major European ports.",
+      "detail": "We organize FCL and LCL container transport, container booking, preparation of all documentation for maritime transport, and customs clearance of goods for import and export."
     },
     "rail": {
       "title": "Rail Freight",
-      "description": "Efficient and eco-friendly rail transport for large cargo on long-distance routes.",
-      "details": "Rail transport is ideal for large volumes on long-distance destinations. We offer intermodal solutions combining rail and road for optimal efficiency and reduced carbon footprint."
+      "body": "We transport scheduled trains and individual shipments daily to and from all railway stations.",
+      "detail": "Rail transport is ideal for large volumes on long-distance destinations. We offer intermodal solutions combining rail and road for optimal efficiency and reduced carbon footprint."
     },
-    "expand": "More details",
-    "collapse": "Less"
+    "expand": "More",
+    "collapse": "Close"
   },
   "serviceItems": {
     "overline": "WHAT WE OFFER",
