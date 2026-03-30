@@ -1,0 +1,175 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "sectors": "Sectors",
+    "map": "Network",
+    "contact": "Contact",
+    "cta": "Get a Quote",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "overline": "MULTISPED",
+    "heading": "Your Partner in International Transport",
+    "subheading": "We provide safe and efficient transport of goods across Europe and beyond. With over 18 years of experience, we are your trusted logistics partner.",
+    "cta": "Get a Quote",
+    "scroll": "Scroll down"
+  },
+  "about": {
+    "overline": "ABOUT US",
+    "heading": "A Trusted Logistics Partner Since 2005",
+    "description": "MultiSped is a freight forwarding company based in North Macedonia, specializing in international transport and customs brokerage. Since our founding in 2005, we have built a strong network of partners across Europe and provide complete logistics solutions for businesses of all sizes.",
+    "stat1": {
+      "value": "18+",
+      "label": "Years of Experience"
+    },
+    "stat2": {
+      "value": "25+",
+      "label": "European Countries"
+    },
+    "stat3": {
+      "value": "5000+",
+      "label": "Deliveries per Year"
+    }
+  },
+  "services": {
+    "overline": "SERVICES",
+    "heading": "Transport Solutions for Every Need",
+    "description": "We offer complete logistics solutions tailored to your specific needs — from road and maritime to rail freight.",
+    "truck": {
+      "title": "Road Freight",
+      "description": "Full and partial loads (FTL/LTL) across Europe with on-time delivery and real-time tracking.",
+      "details": "Our fleet covers over 25 European countries with direct routes and consolidated shipments. We provide temperature-controlled transport, ADR hazardous materials transport, and express deliveries with guaranteed deadlines."
+    },
+    "maritime": {
+      "title": "Maritime Freight",
+      "description": "Container shipping for overseas shipments with competitive rates and global coverage.",
+      "details": "We organize FCL and LCL maritime transport to and from all major world ports. Our services include container booking, documentation preparation, customs clearance, and door-to-door delivery."
+    },
+    "rail": {
+      "title": "Rail Freight",
+      "description": "Efficient and eco-friendly rail transport for large cargo on long-distance routes.",
+      "details": "Rail transport is ideal for large volumes on long-distance destinations. We offer intermodal solutions combining rail and road for optimal efficiency and reduced carbon footprint."
+    },
+    "expand": "More details",
+    "collapse": "Less"
+  },
+  "serviceItems": {
+    "overline": "WHAT WE OFFER",
+    "heading": "Complete Logistics Services",
+    "item1": {
+      "title": "Customs Brokerage",
+      "description": "Professional representation before customs authorities, documentation preparation, and ensuring fast and efficient customs clearance."
+    },
+    "item2": {
+      "title": "Warehousing",
+      "description": "Modern storage facilities with controlled conditions for short-term and long-term goods storage."
+    },
+    "item3": {
+      "title": "Cargo Insurance",
+      "description": "Full shipment insurance for maximum protection of your goods during transport."
+    },
+    "item4": {
+      "title": "Distribution",
+      "description": "Last-mile logistics and distribution to the final destination with precise planning and timely delivery."
+    },
+    "item5": {
+      "title": "Consulting",
+      "description": "Expert advice on optimizing logistics processes, choosing transport modes, and reducing costs."
+    },
+    "item6": {
+      "title": "Shipment Tracking",
+      "description": "Real-time tracking of your shipments with detailed reports on cargo status and location."
+    }
+  },
+  "sectors": {
+    "overline": "SECTORS",
+    "heading": "Industries We Serve",
+    "logistics": {
+      "title": "Logistics & Distribution",
+      "description": "Complete logistics solutions for companies seeking reliable and efficient goods transport. From supply chain management to last-mile delivery."
+    },
+    "commercial": {
+      "title": "Commercial Sector",
+      "description": "Specialized transport services for retail and wholesale, including consumer goods distribution and inventory management."
+    },
+    "finance": {
+      "title": "Finance & Trade",
+      "description": "Support for international trade with comprehensive customs brokerage, import/export documentation, and regulatory compliance."
+    }
+  },
+  "map": {
+    "overline": "NETWORK",
+    "heading": "Connected Across Europe",
+    "description": "Our network of partners and transport routes covers over 25 European countries, ensuring fast and reliable delivery to every destination.",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "reset": "Reset view"
+  },
+  "contact": {
+    "overline": "CONTACT",
+    "heading": "Get in Touch",
+    "description": "Write to us for a quote, question, or partnership. Our team will respond as soon as possible.",
+    "name": "Full Name",
+    "namePlaceholder": "Your full name",
+    "title": "Title",
+    "titlePlaceholder": "Your title",
+    "company": "Company Name",
+    "companyPlaceholder": "Your company name",
+    "email": "Email",
+    "emailPlaceholder": "name@company.com",
+    "message": "Message",
+    "messagePlaceholder": "Describe your needs...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Message sent successfully! We will get back to you shortly.",
+    "error": "An error occurred while sending. Please try again.",
+    "validation": {
+      "required": "This field is required",
+      "email": "Enter a valid email address"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Boris Trajkovski St. 62, 1000 Skopje, North Macedonia",
+      "phone": "+389 2 3100 200",
+      "email": "info@multisped.mk",
+      "hours": "Mon - Fri: 08:00 - 17:00"
+    }
+  },
+  "footer": {
+    "description": "MultiSped is a leading freight forwarding company in North Macedonia, specializing in international transport, customs brokerage, and complete logistics solutions.",
+    "links": {
+      "title": "Navigation",
+      "about": "About",
+      "services": "Services",
+      "sectors": "Sectors",
+      "contact": "Contact"
+    },
+    "servicesLinks": {
+      "title": "Services",
+      "truck": "Road Freight",
+      "maritime": "Maritime Freight",
+      "rail": "Rail Freight",
+      "customs": "Customs Brokerage",
+      "warehousing": "Warehousing"
+    },
+    "contactInfo": {
+      "title": "Contact",
+      "address": "Boris Trajkovski St. 62, 1000 Skopje",
+      "phone": "+389 2 3100 200",
+      "email": "info@multisped.mk"
+    },
+    "copyright": "© 2025 MultiSped. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "toggle": "Toggle theme"
+  },
+  "locale": {
+    "switch": "Switch language"
+  }
+}
