@@ -257,6 +257,32 @@
 }
 
 /* ========================================================================
+   PRIMARY BUTTON INTERACTIVE STATES
+   ======================================================================== */
+.ms-btn-primary {
+  background-color: var(--btn-primary-bg);
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+.ms-btn-primary:hover {
+  background-color: #4A6FEF;
+}
+.ms-btn-primary:active {
+  background-color: #1C1FB8;
+}
+
+/* ========================================================================
+   SOCIAL BUTTON INTERACTIVE STATES
+   ======================================================================== */
+.ms-social-btn {
+  background-color: #202E43;
+  border: none;
+  color: #fff;
+  transition: background-color 150ms ease;
+}
+.ms-social-fb:hover, .ms-social-fb:active { background-color: #1877F2; }
+.ms-social-li:hover, .ms-social-li:active { background-color: #0077B5; }
+
+/* ========================================================================
    BASE STYLES
    ======================================================================== */
 @layer base {

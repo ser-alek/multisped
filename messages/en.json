@@ -105,61 +105,40 @@
     "reset": "Reset view"
   },
   "contact": {
-    "overline": "CONTACT",
-    "heading": "Get in Touch",
-    "description": "Write to us for a quote, question, or partnership. Our team will respond as soon as possible.",
-    "name": "Full Name",
-    "namePlaceholder": "Your full name",
-    "title": "Title",
-    "titlePlaceholder": "Your title",
-    "company": "Company Name",
-    "companyPlaceholder": "Your company name",
-    "email": "Email",
-    "emailPlaceholder": "name@company.com",
+    "heading": "Let's build a successful partnership together.",
+    "subheading": "We are here to help with all your requests related to transport, customs, and warehousing. Share your needs and we will offer an efficient solution tailored to your business.",
+    "cardTitle": "Get in Touch",
+    "emailLabel": "EMAIL",
+    "phoneLabel": "PHONE NUMBER",
+    "addressLabel": "ADDRESS",
+    "followUs": "Follow us on:",
+    "name": "Name",
+    "namePlaceholder": "Full name",
+    "email": "Email address",
+    "emailPlaceholder": "Address",
+    "title": "Subject",
+    "titlePlaceholder": "Subject",
+    "company": "Company name",
+    "companyPlaceholder": "Company/Product name",
     "message": "Message",
-    "messagePlaceholder": "Describe your needs...",
-    "submit": "Send Message",
-    "submitting": "Sending...",
-    "success": "Message sent successfully! We will get back to you shortly.",
-    "error": "An error occurred while sending. Please try again.",
+    "messagePlaceholder": "Share more...",
+    "submit": "Send",
+    "successMsg": "Message sent successfully!",
     "validation": {
       "required": "This field is required",
       "email": "Enter a valid email address"
-    },
-    "info": {
-      "title": "Contact Information",
-      "address": "Boris Trajkovski St. 62, 1000 Skopje, North Macedonia",
-      "phone": "+389 2 3100 200",
-      "email": "info@multisped.mk",
-      "hours": "Mon - Fri: 08:00 - 17:00"
     }
   },
   "footer": {
-    "description": "MultiSped is a leading freight forwarding company in North Macedonia, specializing in international transport, customs brokerage, and complete logistics solutions.",
-    "links": {
-      "title": "Navigation",
-      "about": "About",
-      "services": "Services",
-      "sectors": "Sectors",
+    "tagline": "Logistics that drives your business forward.",
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Transport Services",
+      "serviceItems": "Service Items",
       "contact": "Contact"
     },
-    "servicesLinks": {
-      "title": "Services",
-      "truck": "Road Freight",
-      "maritime": "Maritime Freight",
-      "rail": "Rail Freight",
-      "customs": "Customs Brokerage",
-      "warehousing": "Warehousing"
-    },
-    "contactInfo": {
-      "title": "Contact",
-      "address": "Boris Trajkovski St. 62, 1000 Skopje",
-      "phone": "+389 2 3100 200",
-      "email": "info@multisped.mk"
-    },
-    "copyright": "© 2025 MultiSped. All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "copyright": "© 2026 - MultiSped International Forwarder"
   },
   "theme": {
     "light": "Light mode",

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
@@ -131,21 +132,16 @@ export function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-1 shrink-0"
+            className="shrink-0"
             aria-label="MultiSped"
           >
-            <span
-              className="text-xl font-bold tracking-tight"
-              style={{ color: "var(--btn-primary-bg)" }}
-            >
-              Multi
-            </span>
-            <span
-              className="text-xl font-bold tracking-tight"
-              style={{ color: "var(--text-heading)" }}
-            >
-              Sped
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="MultiSped"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+            />
           </button>
 
           {/* Desktop nav links */}
@@ -157,10 +153,10 @@ export function Navbar() {
                 <button
                   key={link.key}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-base font-medium"
+                  className="relative pb-1 text-base font-medium"
                   style={{
                     color: isActive
-                      ? "var(--nav-link-active)"
+                      ? "var(--nav-link-hover)"
                       : "var(--nav-link)",
                     transition: "color 150ms ease",
                   }}
@@ -174,6 +170,14 @@ export function Navbar() {
                   }}
                 >
                   {t(link.key)}
+                  <span
+                    className="absolute bottom-0 left-0 h-0.5 w-full"
+                    style={{
+                      backgroundColor: "var(--nav-link-hover)",
+                      opacity: isActive ? 1 : 0,
+                      transition: "opacity 150ms ease",
+                    }}
+                  />
                 </button>
               );
             })}
@@ -234,15 +238,14 @@ export function Navbar() {
             {/* CTA */}
             <Button
               onClick={() => scrollToSection("#contact")}
-              className="font-bold"
+              className="ms-btn-primary font-bold"
               style={{
-                backgroundColor: "var(--btn-primary-bg)",
                 color: "var(--btn-primary-text)",
                 borderRadius: "var(--radius-button)",
                 boxShadow: "var(--btn-primary-shadow)",
               }}
             >
-              {t("cta")}
+              {t("contact")}
             </Button>
           </div>
 
@@ -346,15 +349,14 @@ export function Navbar() {
             <div className="mt-4">
               <Button
                 onClick={() => scrollToSection("#contact")}
-                className="w-full font-bold"
+                className="ms-btn-primary w-full font-bold"
                 style={{
-                  backgroundColor: "var(--btn-primary-bg)",
                   color: "var(--btn-primary-text)",
                   borderRadius: "var(--radius-button)",
                   boxShadow: "var(--btn-primary-shadow)",
                 }}
               >
-                {t("cta")}
+                {t("contact")}
               </Button>
             </div>
           </div>
