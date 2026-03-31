@@ -78,18 +78,22 @@
   },
   "sectors": {
     "overline": "SECTORS",
-    "heading": "Industries We Serve",
+    "heading": "Our Key Sectors",
+    "subheading": "An overview of the organizational units that drive our services. With dedication to precision and reliability, we offer complete solutions tailored to your specific business needs.",
     "logistics": {
-      "title": "Logistics & Distribution",
-      "description": "Complete logistics solutions for companies seeking reliable and efficient goods transport. From supply chain management to last-mile delivery."
+      "label": "Transport Network / Global Distribution",
+      "heading": "Logistics",
+      "body": "Years of experience and a specialized team of employees offer a high level of logistics services. Logistics solutions based on experience, trust, and cost-effectiveness provide a tremendous advantage in meeting client needs. We perform all types of transport, from bulk shipments to consolidated loads, and offer 24-hour vehicle tracking, ensuring our clients are satisfied with our accuracy, responsibility, and efficiency."
     },
     "commercial": {
-      "title": "Commercial Sector",
-      "description": "Specialized transport services for retail and wholesale, including consumer goods distribution and inventory management."
+      "label": "Commercial Operations / Client Support",
+      "heading": "Commercial",
+      "body": "This department is responsible for providing cost-effective and reliable solutions to its clients in meeting their needs and requirements. It tracks client shipments, ensuring their timely and safe arrival to any destination, regardless of the type of transport."
     },
     "finance": {
-      "title": "Finance & Trade",
-      "description": "Support for international trade with comprehensive customs brokerage, import/export documentation, and regulatory compliance."
+      "label": "Financial Management / Foreign Exchange",
+      "heading": "Finance",
+      "body": "Monitoring obligations and receivables with partner companies and complete foreign exchange operations in international trade. Strategic principles include quality service execution, continuous investment, and nurturing good relations with companies with whom we have long-term agreements. Every employee is obligated to perform their duties with quality, thoroughness, timeliness, efficiency, and at the lowest possible cost."
     }
   },
   "map": {
