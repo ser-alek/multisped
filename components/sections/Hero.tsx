@@ -7,12 +7,14 @@ import { ChevronDown } from "lucide-react";
 
 const TOTAL_FRAMES = 211;
 const FRAME_EXT = "jpg";
+const BATCH_SIZE = 20;
 
 export function Hero() {
   const t = useTranslations("hero");
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const framesRef = useRef<HTMLImageElement[]>([]);
+  const loadedRef = useRef<Set<number>>(new Set());
   const currentFrameRef = useRef(-1);
   const rafRef = useRef(0);
 
@@ -32,22 +34,32 @@ export function Hero() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    if (
-      !framesRef.current[frameIndex] ||
-      !framesRef.current[frameIndex].complete
-    ) {
+    let idx = frameIndex;
+    let frame = framesRef.current[idx];
+
+    if (!frame || !frame.complete || !frame.naturalWidth) {
+      for (let i = idx - 1; i >= 0; i--) {
+        if (loadedRef.current.has(i)) {
+          frame = framesRef.current[i];
+          idx = i;
+          break;
+        }
+      }
+    }
+
+    if (!frame || !frame.complete || !frame.naturalWidth) {
       ctx.fillStyle = "#020c1b";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       return;
     }
 
-    ctx.drawImage(
-      framesRef.current[frameIndex],
-      0,
-      0,
-      canvas.width,
-      canvas.height,
+    const scale = Math.max(
+      canvas.width / frame.naturalWidth,
+      canvas.height / frame.naturalHeight,
     );
+    const x = (canvas.width - frame.naturalWidth * scale) / 2;
+    const y = (canvas.height - frame.naturalHeight * scale) / 2;
+    ctx.drawImage(frame, x, y, frame.naturalWidth * scale, frame.naturalHeight * scale);
   }, []);
 
   const resizeCanvas = useCallback(() => {
@@ -65,15 +77,29 @@ export function Hero() {
     first.src = `/hero-frames/frame-0001.${FRAME_EXT}`;
     first.onload = () => {
       framesRef.current[0] = first;
+      loadedRef.current.add(0);
       currentFrameRef.current = 0;
       drawFrame(0);
     };
 
-    for (let i = 1; i < TOTAL_FRAMES; i++) {
-      const img = new Image();
-      img.src = `/hero-frames/frame-${String(i + 1).padStart(4, "0")}.${FRAME_EXT}`;
-      framesRef.current[i] = img;
+    let batchStart = 1;
+    function loadBatch() {
+      const end = Math.min(batchStart + BATCH_SIZE, TOTAL_FRAMES);
+      for (let i = batchStart; i < end; i++) {
+        const img = new Image();
+        const idx = i;
+        img.src = `/hero-frames/frame-${String(i + 1).padStart(4, "0")}.${FRAME_EXT}`;
+        img.onload = () => {
+          loadedRef.current.add(idx);
+        };
+        framesRef.current[i] = img;
+      }
+      batchStart = end;
+      if (batchStart < TOTAL_FRAMES) {
+        setTimeout(loadBatch, 0);
+      }
     }
+    loadBatch();
   }, [drawFrame, resizeCanvas]);
 
   useEffect(() => {
@@ -128,7 +154,7 @@ export function Hero() {
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Canvas — z-0 */}
-        <canvas ref={canvasRef} className="absolute inset-0 z-0" />
+        <canvas ref={canvasRef} className="absolute inset-0 z-0" style={{ willChange: "transform" }} />
 
         {/* Bottom gradient overlay — z-1 */}
         <div
@@ -149,12 +175,13 @@ export function Hero() {
         />
 
         {/* Text layer — z-2 */}
-        <div className="relative z-[2] flex h-full flex-col items-start justify-center px-[var(--section-x)] text-left max-w-[1280px] mx-auto w-full">
+        <div className="relative z-[2] flex h-full flex-col items-start justify-start pt-[25vh] md:pt-[35vh] px-[var(--section-x)] text-left max-w-[1280px] mx-auto w-full">
           <motion.h1
             style={{
               opacity: headingOpacity,
               y: headingY,
-              fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)",
+              willChange: "transform, opacity",
+              fontSize: "clamp(2.1rem, 5.5vw, 3.9rem)",
               color: "var(--text-on-brand)",
               textShadow:
                 "0 2px 20px rgba(2,12,27,0.8), 0 1px 4px rgba(2,12,27,0.6)",

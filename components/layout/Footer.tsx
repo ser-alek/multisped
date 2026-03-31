@@ -57,6 +57,7 @@ export function Footer() {
                 src="/images/logo.png"
                 alt="MultiSped"
                 fill
+                sizes="120px"
                 className="object-contain object-left"
               />
             </div>

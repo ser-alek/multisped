@@ -29,6 +29,8 @@ function SectorImage({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         fill
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
         onError={() => setError(true)}
       />

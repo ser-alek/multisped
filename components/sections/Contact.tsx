@@ -135,13 +135,13 @@ export function Contact() {
                   </span>
                   <div className="flex flex-col gap-1">
                     <span
-                      className="text-xs font-medium uppercase tracking-[0.01em] opacity-50"
-                      style={{ color: "#B0BAC4" }}
+                      className="text-xs font-semibold uppercase tracking-widest"
+                      style={{ color: "rgba(176,186,196,0.55)" }}
                     >
                       {t("emailLabel")}
                     </span>
                     <span
-                      className="text-lg leading-[1.4]"
+                      className="break-all text-sm leading-[1.4] md:text-base"
                       style={{ color: "#FAFBFC" }}
                     >
                       {CONTACT_EMAIL}
@@ -163,13 +163,13 @@ export function Contact() {
                   </span>
                   <div className="flex flex-col gap-1">
                     <span
-                      className="text-xs font-medium uppercase tracking-[0.01em] opacity-50"
-                      style={{ color: "#B0BAC4" }}
+                      className="text-xs font-semibold uppercase tracking-widest"
+                      style={{ color: "rgba(176,186,196,0.55)" }}
                     >
                       {t("phoneLabel")}
                     </span>
                     <span
-                      className="text-lg leading-[1.4]"
+                      className="text-sm leading-[1.4] md:text-base"
                       style={{ color: "#FAFBFC" }}
                     >
                       {CONTACT_PHONE}
@@ -190,7 +190,7 @@ export function Contact() {
                     <MapPin size={22} color="#fff" />
                   </span>
                   <span
-                    className="text-base leading-[1.5]"
+                    className="text-sm leading-[1.4] md:text-base"
                     style={{ color: "#FAFBFC" }}
                   >
                     {CONTACT_ADDRESS}

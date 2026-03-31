@@ -5,6 +5,9 @@ import { useTranslations } from "next-intl";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let topologyCache: any = null;
+
 /* ─── constants ─── */
 
 const MACEDONIA: [number, number] = [21.745, 41.608];
@@ -130,8 +133,14 @@ export function Map() {
     }
     window.addEventListener("resize", onResize);
 
+    const topoPromise = topologyCache
+      ? Promise.resolve(topologyCache)
+      : d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then((data) => {
+          topologyCache = data;
+          return data;
+        });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then((topology: any) => {
+    topoPromise.then((topology: any) => {
       if (!mounted) return;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const countries = topojson.feature(topology, topology.objects.countries) as any;

@@ -89,9 +89,9 @@ export function About() {
           src="/images/about-team.jpg"
           alt=""
           fill
+          loading="lazy"
           className="object-cover"
           sizes="100vw"
-          priority={false}
         />
         <div
           className="absolute inset-0"

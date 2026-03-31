@@ -1,20 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 import "../globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   title: "MultiSped — Freight Forwarding & Logistics",
   description:
     "MultiSped is a North Macedonian logistics company providing international freight forwarding, customs brokerage, and supply chain solutions across Europe.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#020c1b",
 };
 
 export function generateStaticParams() {
@@ -52,7 +61,9 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <MotionProvider>
+            {children}
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>
