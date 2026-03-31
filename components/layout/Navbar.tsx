@@ -15,7 +15,25 @@ const NAV_LINKS = [
   { key: "contact", href: "#contact" },
 ] as const;
 
-const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
+const ALL_SECTION_IDS = [
+  "hero",
+  "about",
+  "services",
+  "service-items",
+  "sectors",
+  "map",
+  "contact",
+];
+
+const SECTION_TO_NAV: Record<string, string> = {
+  hero: "",
+  about: "about",
+  services: "services",
+  "service-items": "services",
+  sectors: "sectors",
+  map: "sectors",
+  contact: "contact",
+};
 
 export function Navbar() {
   const t = useTranslations("nav");
@@ -62,14 +80,15 @@ export function Navbar() {
           }
         });
 
-        if (bestRatio > 0) {
-          setActiveSection(best);
+        if (bestRatio > 0 && best) {
+          const navKey = SECTION_TO_NAV[best];
+          setActiveSection(navKey || null);
         }
       },
       { threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1] },
     );
 
-    SECTION_IDS.forEach((id) => {
+    ALL_SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observerRef.current!.observe(el);
     });
@@ -147,8 +166,7 @@ export function Navbar() {
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-8">
             {NAV_LINKS.map((link) => {
-              const sectionId = link.href.slice(1);
-              const isActive = activeSection === sectionId;
+              const isActive = activeSection === link.key;
               return (
                 <button
                   key={link.key}
@@ -274,8 +292,7 @@ export function Navbar() {
             className="pt-28 px-[var(--section-x)] flex flex-1 flex-col gap-2"
           >
             {NAV_LINKS.map((link) => {
-              const sectionId = link.href.slice(1);
-              const isActive = activeSection === sectionId;
+              const isActive = activeSection === link.key;
               return (
                 <button
                   key={link.key}

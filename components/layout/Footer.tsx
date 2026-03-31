@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 
 const CONTACT_EMAIL = "multisped2001@multisped.com.mk";
@@ -45,8 +44,6 @@ function scrollTo(href: string) {
 
 export function Footer() {
   const t = useTranslations("footer");
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
 
   return (
     <footer id="footer" style={{ backgroundColor: "#0a1628" }}>
@@ -55,14 +52,14 @@ export function Footer() {
         <div className="flex flex-col gap-12 md:flex-row">
           {/* Left — logo + tagline (30%) */}
           <div className="flex shrink-0 flex-col gap-8 md:w-[30%]">
-            <Image
-              src="/images/logo.png"
-              alt="MultiSped"
-              width={191}
-              height={28}
-              style={{ width: "auto" }}
-              className="h-7"
-            />
+            <div className="relative" style={{ width: 120, height: 28 }}>
+              <Image
+                src="/images/logo.png"
+                alt="MultiSped"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
             <p
               className="text-base leading-[1.5]"
               style={{ color: "rgba(176,186,196,0.65)" }}
@@ -73,33 +70,25 @@ export function Footer() {
 
           {/* Middle — nav links (35%) */}
           <div className="grid grid-cols-2 gap-x-6 gap-y-2 md:w-[35%]">
-            {NAV_LINKS.map((link) => {
-              const isActive = link.key === "home" && isHomePage;
-              return (
-                <button
-                  key={link.key}
-                  onClick={() => scrollTo(link.href)}
-                  className="flex items-center gap-2 text-left text-base font-medium leading-[36px]"
-                  style={{
-                    color: isActive ? "#FAFBFC" : "rgba(176,186,196,0.65)",
-                    transition: "color 150ms ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isActive)
-                      e.currentTarget.style.color = "#7FA8FF";
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isActive)
-                      e.currentTarget.style.color = "rgba(176,186,196,0.65)";
-                  }}
-                >
-                  {isActive && (
-                    <span style={{ color: "#FAFBFC" }}>—</span>
-                  )}
-                  {t(`nav.${link.key}`)}
-                </button>
-              );
-            })}
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.key}
+                onClick={() => scrollTo(link.href)}
+                className="text-left text-base font-medium leading-[36px]"
+                style={{
+                  color: "rgba(176,186,196,0.65)",
+                  transition: "color 150ms ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "#7FA8FF";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "rgba(176,186,196,0.65)";
+                }}
+              >
+                {t(`nav.${link.key}`)}
+              </button>
+            ))}
           </div>
 
           {/* Right — contact info (35%) */}

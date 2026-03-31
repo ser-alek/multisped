@@ -11,14 +11,15 @@
   },
   "hero": {
     "overline": "MultiSped International Forwarder",
-    "heading": "Logistics that drives your business forward",
+    "headingLine1": "Logistics that drives",
+    "headingLine2": "your business forward.",
     "subheading": "We provide safe and efficient transport of goods across Europe and beyond. With over 18 years of experience, we are your trusted logistics partner.",
     "cta": "Get a Quote",
     "scroll": "Scroll down"
   },
   "about": {
-    "overline": "ABOUT US",
-    "heading": "About Us",
+    "overline": "About the Company",
+    "heading": "About MultiSped",
     "body": "MultiSped as a company is dedicated to delivering secure transport in the safest and fastest possible way. Our warehouses and developed network of road, maritime, rail, and container transport operates in dynamic cohesion so your shipments arrive at the desired destination without any issues. We carry out international goods transport at competitive prices based on current market conditions. The quality of our services is always at the highest level.",
     "director": "Director: Serafimovski Vlatko",
     "stats": {
@@ -28,8 +29,8 @@
     }
   },
   "services": {
-    "overline": "SERVICES",
-    "heading": "Transport Services",
+    "overline": "What We Offer",
+    "heading": "Transportation Services",
     "truck": {
       "title": "Road Freight",
       "body": "We organize and carry out mass transport with all types of trucks.",

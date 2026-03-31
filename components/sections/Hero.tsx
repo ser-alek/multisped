@@ -4,9 +4,9 @@ import { useRef, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-const TOTAL_FRAMES = 0;
+const TOTAL_FRAMES = 211;
+const FRAME_EXT = "jpg";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -21,10 +21,9 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const headingOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
-  const headingY = useTransform(scrollYProgress, [0, 0.15], [40, 0]);
-  const subOpacity = useTransform(scrollYProgress, [0.08, 0.25], [0, 1]);
-  const ctaOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
+  const headingY = useTransform(scrollYProgress, [0, 0.08], [40, 0]);
+  const subOpacity = useTransform(scrollYProgress, [0, 0.08], [0, 1]);
   const chevronOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   const drawFrame = useCallback((frameIndex: number) => {
@@ -34,7 +33,6 @@ export function Hero() {
     if (!ctx) return;
 
     if (
-      TOTAL_FRAMES === 0 ||
       !framesRef.current[frameIndex] ||
       !framesRef.current[frameIndex].complete
     ) {
@@ -63,10 +61,8 @@ export function Hero() {
   useEffect(() => {
     resizeCanvas();
 
-    if (TOTAL_FRAMES === 0) return;
-
     const first = new Image();
-    first.src = "/hero-frames/frame-0001.jpg";
+    first.src = `/hero-frames/frame-0001.${FRAME_EXT}`;
     first.onload = () => {
       framesRef.current[0] = first;
       currentFrameRef.current = 0;
@@ -75,7 +71,7 @@ export function Hero() {
 
     for (let i = 1; i < TOTAL_FRAMES; i++) {
       const img = new Image();
-      img.src = `/hero-frames/frame-${String(i + 1).padStart(4, "0")}.jpg`;
+      img.src = `/hero-frames/frame-${String(i + 1).padStart(4, "0")}.${FRAME_EXT}`;
       framesRef.current[i] = img;
     }
   }, [drawFrame, resizeCanvas]);
@@ -95,8 +91,6 @@ export function Hero() {
   }, [resizeCanvas]);
 
   useEffect(() => {
-    if (TOTAL_FRAMES === 0) return;
-
     const onScroll = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -125,22 +119,18 @@ export function Hero() {
     };
   }, [drawFrame]);
 
-  const scrollToContact = useCallback(() => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
   return (
     <section
       id="hero"
       ref={containerRef}
       className="relative"
-      style={{ height: "250vh" }}
+      style={{ height: "180vh" }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Canvas — z-0 */}
         <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
-        {/* Gradient overlay — z-1 */}
+        {/* Bottom gradient overlay — z-1 */}
         <div
           className="absolute inset-0 z-[1] pointer-events-none"
           style={{
@@ -149,51 +139,44 @@ export function Hero() {
           }}
         />
 
+        {/* Left-side gradient overlay for text legibility — z-1 */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(2,12,27,0.65) 0%, rgba(2,12,27,0.35) 50%, rgba(2,12,27,0.0) 100%)",
+          }}
+        />
+
         {/* Text layer — z-2 */}
         <div className="relative z-[2] flex h-full flex-col items-start justify-center px-[var(--section-x)] text-left max-w-[1280px] mx-auto w-full">
-          <motion.p
-            style={{ opacity: headingOpacity }}
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.1em]"
-          >
-            <span style={{ color: "var(--text-on-brand)" }}>
-              {t("overline")}
-            </span>
-          </motion.p>
-
           <motion.h1
             style={{
               opacity: headingOpacity,
               y: headingY,
-              fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
+              fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)",
               color: "var(--text-on-brand)",
-              textShadow: "4px 4px 10px rgba(0,0,0,0.5)",
+              textShadow:
+                "0 2px 20px rgba(2,12,27,0.8), 0 1px 4px rgba(2,12,27,0.6)",
             }}
             className="max-w-4xl font-bold leading-[1.2] tracking-tight"
           >
-            {t("heading")}
+            {t("headingLine1")}
+            <br />
+            {t("headingLine2")}
           </motion.h1>
 
           <motion.p
-            style={{ opacity: subOpacity, color: "var(--text-on-brand)" }}
+            style={{
+              opacity: subOpacity,
+              color: "var(--text-on-brand)",
+              textShadow:
+                "0 2px 20px rgba(2,12,27,0.8), 0 1px 4px rgba(2,12,27,0.6)",
+            }}
             className="mt-6 max-w-2xl text-lg leading-relaxed opacity-80"
           >
             {t("subheading")}
           </motion.p>
-
-          <motion.div style={{ opacity: ctaOpacity }} className="mt-8">
-            <Button
-              onClick={scrollToContact}
-              className="h-auto px-8 py-3 text-base font-bold"
-              style={{
-                backgroundColor: "var(--btn-primary-bg)",
-                color: "var(--btn-primary-text)",
-                borderRadius: "var(--radius-button)",
-                boxShadow: "var(--btn-primary-shadow)",
-              }}
-            >
-              {t("cta")}
-            </Button>
-          </motion.div>
         </div>
 
         {/* Scroll indicator — z-2 */}
