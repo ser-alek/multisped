@@ -36,7 +36,7 @@ export function Services() {
             {t("overline")}
           </p>
           <h2
-            className="text-[2rem] font-semibold leading-[1.2] tracking-tight md:text-[2.5rem]"
+            className="text-[2.5rem] font-bold leading-[1.07] tracking-[-0.02em] md:text-[3.5rem]"
             style={{ color: "#FAFBFC" }}
           >
             {t("heading")}

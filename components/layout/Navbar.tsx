@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { key: "about", href: "#about" },
   { key: "services", href: "#services" },
   { key: "sectors", href: "#sectors" },
+  { key: "partners", href: "#partners" },
   { key: "contact", href: "#contact" },
 ] as const;
 
@@ -21,6 +22,7 @@ const ALL_SECTION_IDS = [
   "services",
   "service-items",
   "sectors",
+  "partners",
   "map",
   "contact",
 ];
@@ -31,7 +33,8 @@ const SECTION_TO_NAV: Record<string, string> = {
   services: "services",
   "service-items": "services",
   sectors: "sectors",
-  map: "sectors",
+  partners: "partners",
+  map: "partners",
   contact: "contact",
 };
 

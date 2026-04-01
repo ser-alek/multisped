@@ -3,6 +3,7 @@
     "about": "About",
     "services": "Services",
     "sectors": "Sectors",
+    "partners": "Partners",
     "map": "Network",
     "contact": "Contact",
     "cta": "Get a Quote",
@@ -13,7 +14,7 @@
     "overline": "MultiSped International Forwarder",
     "headingLine1": "Logistics that drives",
     "headingLine2": "your business forward.",
-    "subheading": "We provide safe and efficient transport of goods across Europe and beyond. With over 18 years of experience, we are your trusted logistics partner.",
+    "subheading": "We provide safe and efficient transport of goods across Europe and beyond. With over 25 years of experience, we are your trusted logistics partner.",
     "cta": "Get a Quote",
     "scroll": "Scroll down"
   },
@@ -96,6 +97,10 @@
       "heading": "Finance",
       "body": "Monitoring obligations and receivables with partner companies and complete foreign exchange operations in international trade. Strategic principles include quality service execution, continuous investment, and nurturing good relations with companies with whom we have long-term agreements. Every employee is obligated to perform their duties with quality, thoroughness, timeliness, efficiency, and at the lowest possible cost."
     }
+  },
+  "partners": {
+    "heading": "Companies That Trust Us",
+    "subheading": "Long-term partnerships built on trust and quality"
   },
   "map": {
     "overline": "NETWORK",
