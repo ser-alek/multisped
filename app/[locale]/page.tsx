@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { MissionVision } from "@/components/sections/MissionVision";
 import { Services } from "@/components/sections/Services";
 import { ServiceItems } from "@/components/sections/ServiceItems";
 import { Sectors } from "@/components/sections/Sectors";
@@ -24,6 +25,7 @@ export default async function HomePage({
       <main>
         <Hero />
         <About />
+        <MissionVision />
         <Services />
         <ServiceItems />
         <Sectors />

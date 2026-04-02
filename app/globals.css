@@ -74,6 +74,11 @@
   --icon-disabled: #D3D9E0;
   --icon-on-brand: #FAFBFC;
 
+  /* Mission-Vision canvas */
+  --mv-line: rgba(176,186,196,0.35);
+  --mv-brand: #2529D8;
+  --mv-glow: rgba(37,41,216,0.45);
+
   /* Button — Primary */
   --btn-primary-bg: #2529D8;
   --btn-primary-bg-hover: #1C1FB8;
@@ -189,6 +194,11 @@
   --icon-brand: #4A6FEF;
   --icon-disabled: rgba(176,186,196,0.25);
   --icon-on-brand: #FAFBFC;
+
+  /* Mission-Vision canvas */
+  --mv-line: rgba(74,111,239,0.15);
+  --mv-brand: #4A6FEF;
+  --mv-glow: rgba(74,111,239,0.55);
 
   /* Button — Primary */
   --btn-primary-bg: #2529D8;

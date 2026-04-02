@@ -10,6 +10,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 
 const NAV_LINKS = [
   { key: "about", href: "#about" },
+  { key: "missionVision", href: "#mission-vision" },
   { key: "services", href: "#services" },
   { key: "sectors", href: "#sectors" },
   { key: "partners", href: "#partners" },
@@ -19,6 +20,7 @@ const NAV_LINKS = [
 const ALL_SECTION_IDS = [
   "hero",
   "about",
+  "mission-vision",
   "services",
   "service-items",
   "sectors",
@@ -30,6 +32,7 @@ const ALL_SECTION_IDS = [
 const SECTION_TO_NAV: Record<string, string> = {
   hero: "",
   about: "about",
+  "mission-vision": "missionVision",
   services: "services",
   "service-items": "services",
   sectors: "sectors",

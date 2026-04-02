@@ -1,6 +1,7 @@
 {
   "nav": {
     "about": "About",
+    "missionVision": "Mission & Vision",
     "services": "Services",
     "sectors": "Sectors",
     "partners": "Partners",
@@ -145,6 +146,14 @@
       "contact": "Contact"
     },
     "copyright": "© 2026 - MultiSped International Forwarder"
+  },
+  "missionVision": {
+    "missionLabel": "Mission",
+    "missionHeading": "A new standard of quality",
+    "missionBody": "MultiSped strives to set a new standard of quality in courier services on the Macedonian market. With a young and motivated team, we aim to build lasting value through continuous improvement of our services, expanding our network, and maintaining strong partnerships with our clients. The values we nurture are, above all, professionalism, adherence to high ethical standards, and mutual trust with our clients.",
+    "visionLabel": "Vision",
+    "visionHeading": "Synonymous with quality service",
+    "visionBody": "Our vision is to become synonymous with quality service, creating new trends and standards in both the business and everyday life."
   },
   "theme": {
     "light": "Light mode",

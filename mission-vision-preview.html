@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Vision Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FAFBFC;
+    --text-heading: #020c1b;
+    --text-body: #3D4752;
+    --border: #E5E9ED;
+    --brand: #2529D8;
+    --line: rgba(37,41,216,0.10);
+    --glow: rgba(37,41,216,0.45);
+  }
+
+  [data-theme="dark"] {
+    --bg: #020c1b;
+    --text-heading: #FAFBFC;
+    --text-body: rgba(176,186,196,0.80);
+    --border: #1e3a6a;
+    --brand: #4A6FEF;
+    --line: rgba(74,111,239,0.14);
+    --glow: rgba(74,111,239,0.55);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    transition: background 0.35s;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .toggle {
+    position: fixed; top: 16px; right: 16px;
+    background: var(--bg); border: 1px solid var(--border);
+    color: var(--text-heading); padding: 7px 16px;
+    border-radius: 999px; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    z-index: 100;
+  }
+
+  .phone-toggle {
+    position: fixed; top: 16px; left: 16px;
+    background: var(--bg); border: 1px solid var(--border);
+    color: var(--text-heading); padding: 7px 16px;
+    border-radius: 999px; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    z-index: 100;
+  }
+
+  .section {
+    position: relative;
+    width: 100%; max-width: 1200px;
+    padding: 96px 60px;
+    overflow: hidden;
+  }
+
+  .section.mobile {
+    max-width: 390px;
+    padding: 64px 24px;
+  }
+
+  canvas {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+
+  .content {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .section.mobile .content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .sep {
+    position: absolute; z-index: 1;
+    left: 50%; top: 96px; bottom: 96px;
+    width: 1px; background: var(--border);
+    transform: translateX(-50%);
+  }
+
+  .section.mobile .sep { display: none; }
+
+  .label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--brand); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .label::before {
+    content:''; display:block; width:18px; height:2px;
+    background:currentColor; border-radius:2px;
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    font-weight: 700; line-height: 1.25;
+    color: var(--text-heading); margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1rem; line-height: 1.8;
+    color: var(--text-body);
+  }
+</style>
+</head>
+<body>
+
+<button class="toggle" onclick="toggleTheme()">🌙 Dark</button>
+<button class="phone-toggle" onclick="toggleMobile()">📱 Mobile</button>
+
+<div class="section" id="section">
+  <canvas id="cvs"></canvas>
+  <div class="sep"></div>
+  <div class="content">
+    <div>
+      <div class="label">Мисија</div>
+      <h2>Нов стандард за квалитет</h2>
+      <p>Компанијата MultiSped се стреми да постави нов стандард за квалитет во курирските услуги на Македонскиот пазар. Со млад и мотивиран тим, сакаме да градиме трајни вредности преку постојано подобрување на услугите што ги нудиме, развивање на нашата мрежа и одржување партнерски односи со нашите клиенти. Вредностите што ги негуваме се, пред сè, професионализам, почитување на високите етички стандарди и меѓусебна доверба со нашите клиенти.</p>
+    </div>
+    <div>
+      <div class="label">Визија</div>
+      <h2>Синоним за квалитетна услуга</h2>
+      <p>Нашата визија е да станеме синоним за квалитетна услуга, создавајќи нови трендови и стандарди, како во областа на бизнисот, така и во областа на животот.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement, b=document.querySelector('.toggle');
+  if(h.getAttribute('data-theme')==='dark'){
+    h.removeAttribute('data-theme'); b.textContent='🌙 Dark';
+  } else {
+    h.setAttribute('data-theme','dark'); b.textContent='☀️ Light';
+  }
+}
+
+function toggleMobile(){
+  const s=document.getElementById('section');
+  const b=document.querySelector('.phone-toggle');
+  if(s.classList.contains('mobile')){
+    s.classList.remove('mobile'); b.textContent='📱 Mobile';
+  } else {
+    s.classList.add('mobile'); b.textContent='🖥 Desktop';
+  }
+  resize(); initAnimRoutes();
+}
+
+const section = document.getElementById('section');
+const cvs     = document.getElementById('cvs');
+const ctx     = cvs.getContext('2d');
+let W, H;
+
+function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+
+function resize(){
+  W = section.offsetWidth;
+  H = section.offsetHeight;
+  cvs.width  = W * devicePixelRatio;
+  cvs.height = H * devicePixelRatio;
+  cvs.style.width  = W+'px';
+  cvs.style.height = H+'px';
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+
+function buildRoutes(){
+  const isMobile = W < 600;
+  const pad = 16; // distance from edge
+
+  // KEY CONSTRAINT:
+  // Routes must ONLY live within the top or bottom "safe strip"
+  // Safe strip = top 15% of H OR bottom 15% of H (desktop)
+  //              top 12% or bottom 12% (mobile, since content is taller relative)
+  // And horizontally within outer 18% of W (desktop) or outer 25% (mobile)
+
+  const safeH = isMobile ? H * 0.13 : H * 0.16; // max Y from top/bottom edge
+  const safeX = isMobile ? W * 0.28 : W * 0.18; // max X from left/right edge
+  const R = 28;
+
+  // TOP-LEFT: descends from top edge, turns right, ends going down — all within safeH from top
+  const TL = {
+    pts: [
+      [pad + safeX * 0.55, 0],
+      [pad + safeX * 0.55, safeH * 0.55],
+      [pad, safeH * 0.55],
+      [pad, safeH * 0.95],
+    ],
+    r: R, dur: 3600, delay: 0
+  };
+
+  // TOP-RIGHT: same but mirrored
+  const TR = {
+    pts: [
+      [W - pad - safeX * 0.55, 0],
+      [W - pad - safeX * 0.55, safeH * 0.6],
+      [W - pad, safeH * 0.6],
+      [W - pad, safeH * 0.95],
+    ],
+    r: R, dur: 4000, delay: 500
+  };
+
+  // BOTTOM-LEFT: rises from bottom edge, turns right — all within safeH from bottom
+  const BL = {
+    pts: [
+      [pad, H],
+      [pad, H - safeH * 0.95],
+      [pad + safeX * 0.6, H - safeH * 0.95],
+      [pad + safeX * 0.6, H - safeH * 0.5],
+    ],
+    r: R, dur: 3800, delay: 250
+  };
+
+  // BOTTOM-RIGHT: mirrored
+  const BR = {
+    pts: [
+      [W - pad - safeX * 0.45, H],
+      [W - pad - safeX * 0.45, H - safeH * 0.85],
+      [W - pad, H - safeH * 0.85],
+      [W - pad, H - safeH * 0.4],
+    ],
+    r: R, dur: 4400, delay: 900
+  };
+
+  if(isMobile) return [TL, TR, BL];
+  return [TL, TR, BL, BR];
+}
+
+function samplePath(pts, r, n=300){
+  const res=[];
+  if(pts.length<2) return res;
+  const segs=[];
+  let cur=[pts[0][0],pts[0][1]];
+  for(let i=1;i<pts.length-1;i++){
+    const a=pts[i-1],b=pts[i],c=pts[i+1];
+    const dx1=b[0]-a[0],dy1=b[1]-a[1];
+    const dx2=c[0]-b[0],dy2=c[1]-b[1];
+    const l1=Math.hypot(dx1,dy1)||1e-9,l2=Math.hypot(dx2,dy2)||1e-9;
+    const rad=Math.min(r,l1/2,l2/2);
+    const t1x=b[0]-(dx1/l1)*rad,t1y=b[1]-(dy1/l1)*rad;
+    const t2x=b[0]+(dx2/l2)*rad,t2y=b[1]+(dy2/l2)*rad;
+    segs.push({type:'L',x0:cur[0],y0:cur[1],x1:t1x,y1:t1y});
+    segs.push({type:'Q',x0:t1x,y0:t1y,cx:b[0],cy:b[1],x1:t2x,y1:t2y});
+    cur=[t2x,t2y];
+  }
+  segs.push({type:'L',x0:cur[0],y0:cur[1],x1:pts[pts.length-1][0],y1:pts[pts.length-1][1]});
+
+  let total=0;
+  segs.forEach(s=>{ total+=s.type==='L'?Math.hypot(s.x1-s.x0,s.y1-s.y0):Math.hypot(s.cx-s.x0,s.cy-s.y0)+Math.hypot(s.x1-s.cx,s.y1-s.cy); });
+  if(!total) return res;
+
+  segs.forEach(s=>{
+    const sl=s.type==='L'?Math.hypot(s.x1-s.x0,s.y1-s.y0):Math.hypot(s.cx-s.x0,s.cy-s.y0)+Math.hypot(s.x1-s.cx,s.y1-s.cy);
+    const steps=Math.max(2,Math.round((sl/total)*n));
+    for(let j=0;j<=steps;j++){
+      const t=j/steps;
+      res.push(s.type==='L'
+        ?[s.x0+(s.x1-s.x0)*t, s.y0+(s.y1-s.y0)*t]
+        :[(1-t)**2*s.x0+2*(1-t)*t*s.cx+t**2*s.x1, (1-t)**2*s.y0+2*(1-t)*t*s.cy+t**2*s.y1]);
+    }
+  });
+  return res;
+}
+
+function drawRP(c, pts, r){
+  if(pts.length<2) return;
+  c.moveTo(pts[0][0],pts[0][1]);
+  for(let i=1;i<pts.length-1;i++){
+    const a=pts[i-1],b=pts[i],cc=pts[i+1];
+    const dx1=b[0]-a[0],dy1=b[1]-a[1];
+    const dx2=cc[0]-b[0],dy2=cc[1]-b[1];
+    const l1=Math.hypot(dx1,dy1)||1e-9,l2=Math.hypot(dx2,dy2)||1e-9;
+    const rad=Math.min(r,l1/2,l2/2);
+    c.lineTo(b[0]-(dx1/l1)*rad,b[1]-(dy1/l1)*rad);
+    c.quadraticCurveTo(b[0],b[1],b[0]+(dx2/l2)*rad,b[1]+(dy2/l2)*rad);
+  }
+  c.lineTo(pts[pts.length-1][0],pts[pts.length-1][1]);
+}
+
+let animRoutes=[];
+const PAUSE=700;
+
+function initAnimRoutes(){
+  animRoutes=buildRoutes().map(r=>({
+    ...r,
+    samples:samplePath(r.pts,r.r,350),
+    progress:0, phase:'waiting',
+    startAt:null, pauseUntil:null, first:true
+  }));
+}
+
+function ease(t){ return t<.5?2*t*t:-1+(4-2*t)*t; }
+
+function draw(ts){
+  ctx.clearRect(0,0,W,H);
+  const lc=cssVar('--line'), bc=cssVar('--brand'), gc=cssVar('--glow');
+
+  animRoutes.forEach(r=>{
+    if(r.phase==='waiting'){
+      if(r.startAt===null) r.startAt=ts+(r.first?r.delay:0);
+      if(ts>=r.startAt){r.phase='travel';r.startAt=ts;r.progress=0;}
+    }
+    if(r.phase==='travel'){
+      const raw=Math.min((ts-r.startAt)/r.dur,1);
+      r.progress=ease(raw);
+      if(raw>=1){r.phase='pause';r.pauseUntil=ts+PAUSE;}
+    }
+    if(r.phase==='pause'){
+      r.progress=1;
+      if(ts>=r.pauseUntil){r.phase='waiting';r.startAt=ts+150;r.first=false;r.progress=0;}
+    }
+
+    const prog=r.progress;
+    const sc=r.samples.length;
+    const hi=Math.min(Math.floor(prog*(sc-1)),sc-1);
+
+    // base line
+    ctx.save();
+    ctx.beginPath(); drawRP(ctx,r.pts,r.r);
+    ctx.strokeStyle=lc; ctx.lineWidth=1.2;
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.stroke(); ctx.restore();
+
+    if(prog<=0||sc<2) return;
+
+    // trail
+    const trail=r.samples.slice(0,hi+1);
+    if(trail.length>=2){
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(trail[0][0],trail[0][1]);
+      for(let i=1;i<trail.length;i++) ctx.lineTo(trail[i][0],trail[i][1]);
+      ctx.strokeStyle=bc; ctx.lineWidth=1.8;
+      ctx.lineCap='round'; ctx.lineJoin='round';
+      ctx.shadowColor=gc; ctx.shadowBlur=7;
+      ctx.globalAlpha=0.6; ctx.stroke(); ctx.restore();
+    }
+
+    // head rect
+    const h=r.samples[hi], p=r.samples[Math.max(0,hi-2)];
+    const ang=Math.atan2(h[1]-p[1],h[0]-p[0]);
+    const rw=10,rh=4,rc=2;
+    ctx.save();
+    ctx.translate(h[0],h[1]); ctx.rotate(ang);
+    const x=-rw/2,y=-rh/2;
+    ctx.beginPath();
+    ctx.moveTo(x+rc,y); ctx.lineTo(x+rw-rc,y);
+    ctx.quadraticCurveTo(x+rw,y,x+rw,y+rc);
+    ctx.lineTo(x+rw,y+rh-rc);
+    ctx.quadraticCurveTo(x+rw,y+rh,x+rw-rc,y+rh);
+    ctx.lineTo(x+rc,y+rh);
+    ctx.quadraticCurveTo(x,y+rh,x,y+rh-rc);
+    ctx.lineTo(x,y+rc);
+    ctx.quadraticCurveTo(x,y,x+rc,y);
+    ctx.closePath();
+    ctx.fillStyle=bc; ctx.shadowColor=gc; ctx.shadowBlur=12;
+    ctx.fill(); ctx.restore();
+  });
+
+  requestAnimationFrame(draw);
+}
+
+function init(){ resize(); initAnimRoutes(); requestAnimationFrame(draw); }
+window.addEventListener('resize',()=>{ resize(); initAnimRoutes(); });
+init();
+</script>
+</body>
+</html>
