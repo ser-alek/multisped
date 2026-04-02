@@ -6,9 +6,9 @@ import Image from "next/image";
 import { ChevronRight, X } from "lucide-react";
 
 const CARDS = [
-  { key: "truck", image: "/images/truck.jpg" },
-  { key: "maritime", image: "/images/maritime.jpg" },
-  { key: "rail", image: "/images/rail.jpg" },
+  { key: "truck", image: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/truck.jpg" },
+  { key: "maritime", image: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/maritime.jpg" },
+  { key: "rail", image: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/rail.jpg" },
 ] as const;
 
 const TRANSITION = "background 280ms cubic-bezier(0.4,0,0.2,1), border-color 280ms cubic-bezier(0.4,0,0.2,1), box-shadow 280ms cubic-bezier(0.4,0,0.2,1), color 280ms cubic-bezier(0.4,0,0.2,1)";

@@ -6,9 +6,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const sectors = [
-  { key: "logistics", image: "/images/logistics.jpg", imageLeft: true },
-  { key: "commercial", image: "/images/commercial.jpg", imageLeft: false },
-  { key: "finance", image: "/images/finance.jpg", imageLeft: true },
+  { key: "logistics", image: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/logistics.jpg", imageLeft: true },
+  { key: "commercial", image: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/commercial.jpg", imageLeft: false },
+  { key: "finance", image: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/finance.jpg", imageLeft: true },
 ] as const;
 
 function SectorImage({ src, alt }: { src: string; alt: string }) {

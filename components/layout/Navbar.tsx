@@ -161,7 +161,7 @@ export function Navbar() {
             aria-label="MultiSped"
           >
             <Image
-              src="/images/logo.png"
+              src="https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/logo.png"
               alt="MultiSped"
               width={120}
               height={32}

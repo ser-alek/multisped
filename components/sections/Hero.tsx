@@ -74,7 +74,7 @@ export function Hero() {
     resizeCanvas();
 
     const first = new Image();
-    first.src = `/hero-frames/frame-0001.${FRAME_EXT}`;
+    first.src = `https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/hero-frames/frame-0001.${FRAME_EXT}`;
     first.onload = () => {
       framesRef.current[0] = first;
       loadedRef.current.add(0);
@@ -88,7 +88,7 @@ export function Hero() {
       for (let i = batchStart; i < end; i++) {
         const img = new Image();
         const idx = i;
-        img.src = `/hero-frames/frame-${String(i + 1).padStart(4, "0")}.${FRAME_EXT}`;
+        img.src = `https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/hero-frames/frame-${String(i + 1).padStart(4, "0")}.${FRAME_EXT}`;
         img.onload = () => {
           loadedRef.current.add(idx);
         };

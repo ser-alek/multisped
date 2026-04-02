@@ -54,7 +54,7 @@ export function Footer() {
           <div className="flex shrink-0 flex-col gap-8 md:w-[30%]">
             <div className="relative" style={{ width: 120, height: 28 }}>
               <Image
-                src="/images/logo.png"
+                src="https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/logo.png"
                 alt="MultiSped"
                 fill
                 sizes="120px"

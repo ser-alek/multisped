@@ -86,7 +86,7 @@ export function About() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/about-team.jpg"
+          src="https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/about-team.jpg"
           alt=""
           fill
           loading="lazy"

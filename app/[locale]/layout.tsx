@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "MultiSped is a North Macedonian logistics company providing international freight forwarding, customs brokerage, and supply chain solutions across Europe.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/favicon.svg",
   },
   openGraph: {
     title: "MultiSped — Freight Forwarding & Logistics",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "MultiSped",
     images: [
       {
-        url: "https://multisped.fly.dev/og-image.jpg",
+        url: "https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "MultiSped International Forwarder",

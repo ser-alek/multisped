@@ -46,7 +46,7 @@ export function Partners() {
               className="flex items-center justify-center"
             >
               <Image
-                src={`/images/partners/${name}.png`}
+                src={`https://pub-1175e2eb3d2945a0943894b7ba322652.r2.dev/images/partners/${name}.png`}
                 alt={name}
                 width={120}
                 height={48}
