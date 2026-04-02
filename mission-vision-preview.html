@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mission Vision Preview</title>
+<title>Mission Vision Preview v3</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,8 +14,9 @@
     --text-body: #3D4752;
     --border: #E5E9ED;
     --brand: #2529D8;
-    --line: rgba(37,41,216,0.10);
-    --glow: rgba(37,41,216,0.45);
+    --mv-line: rgba(37,41,216,0.10);
+    --mv-brand: #2529D8;
+    --mv-glow: rgba(37,41,216,0.45);
   }
 
   [data-theme="dark"] {
@@ -24,8 +25,9 @@
     --text-body: rgba(176,186,196,0.80);
     --border: #1e3a6a;
     --brand: #4A6FEF;
-    --line: rgba(74,111,239,0.14);
-    --glow: rgba(74,111,239,0.55);
+    --mv-line: rgba(74,111,239,0.15);
+    --mv-brand: #4A6FEF;
+    --mv-glow: rgba(74,111,239,0.55);
   }
 
   body {
@@ -182,19 +184,11 @@ function resize(){
 
 function buildRoutes(){
   const isMobile = W < 600;
-  const pad = 16; // distance from edge
-
-  // KEY CONSTRAINT:
-  // Routes must ONLY live within the top or bottom "safe strip"
-  // Safe strip = top 15% of H OR bottom 15% of H (desktop)
-  //              top 12% or bottom 12% (mobile, since content is taller relative)
-  // And horizontally within outer 18% of W (desktop) or outer 25% (mobile)
-
-  const safeH = isMobile ? H * 0.13 : H * 0.16; // max Y from top/bottom edge
-  const safeX = isMobile ? W * 0.28 : W * 0.18; // max X from left/right edge
+  const pad = 16;
+  const safeH = isMobile ? H * 0.10 : H * 0.16; // tighter on mobile
+  const safeX = isMobile ? W * 0.28 : W * 0.18;
   const R = 28;
 
-  // TOP-LEFT: descends from top edge, turns right, ends going down — all within safeH from top
   const TL = {
     pts: [
       [pad + safeX * 0.55, 0],
@@ -205,7 +199,6 @@ function buildRoutes(){
     r: R, dur: 3600, delay: 0
   };
 
-  // TOP-RIGHT: same but mirrored
   const TR = {
     pts: [
       [W - pad - safeX * 0.55, 0],
@@ -216,8 +209,18 @@ function buildRoutes(){
     r: R, dur: 4000, delay: 500
   };
 
-  // BOTTOM-LEFT: rises from bottom edge, turns right — all within safeH from bottom
-  const BL = {
+  // Mobile BL: much tighter — only occupies bottom 10% of height
+  const BL_mobile = {
+    pts: [
+      [pad, H],
+      [pad, H - safeH * 0.85],
+      [pad + safeX * 0.5, H - safeH * 0.85],
+      [pad + safeX * 0.5, H - safeH * 0.4],
+    ],
+    r: R, dur: 3800, delay: 250
+  };
+
+  const BL_desktop = {
     pts: [
       [pad, H],
       [pad, H - safeH * 0.95],
@@ -227,7 +230,6 @@ function buildRoutes(){
     r: R, dur: 3800, delay: 250
   };
 
-  // BOTTOM-RIGHT: mirrored
   const BR = {
     pts: [
       [W - pad - safeX * 0.45, H],
@@ -238,8 +240,8 @@ function buildRoutes(){
     r: R, dur: 4400, delay: 900
   };
 
-  if(isMobile) return [TL, TR, BL];
-  return [TL, TR, BL, BR];
+  if(isMobile) return [TL, TR, BL_mobile];
+  return [TL, TR, BL_desktop, BR];
 }
 
 function samplePath(pts, r, n=300){
@@ -293,8 +295,48 @@ function drawRP(c, pts, r){
   c.lineTo(pts[pts.length-1][0],pts[pts.length-1][1]);
 }
 
+// Top-down truck silhouette
+// Facing right along x-axis. Origin at center of truck.
+// Trailer: long rectangle behind cab
+// Cab: smaller square at front
+// Mirrors: tiny nubs on sides of cab
+function drawTruck(c, color, glowColor, alpha){
+  c.save();
+  c.globalAlpha = alpha;
+  c.fillStyle = color;
+  c.shadowColor = glowColor;
+  c.shadowBlur = 10;
+
+  // Trailer — long body, slightly narrower
+  // x: -10 to 1, y: -2.8 to 2.8
+  c.beginPath();
+  c.roundRect(-10, -2.8, 11, 5.6, 1);
+  c.fill();
+
+  // Cab — squarish front section, same width or slightly wider
+  // x: 1 to 7, y: -3.2 to 3.2
+  c.beginPath();
+  c.roundRect(1, -3.2, 6, 6.4, 1.2);
+  c.fill();
+
+  // Side mirrors — tiny rectangles on sides of cab
+  c.shadowBlur = 0;
+  // Left mirror
+  c.beginPath();
+  c.roundRect(2.5, -4.5, 2.5, 1.2, 0.4);
+  c.fill();
+  // Right mirror
+  c.beginPath();
+  c.roundRect(2.5, 3.3, 2.5, 1.2, 0.4);
+  c.fill();
+
+  c.restore();
+}
+
 let animRoutes=[];
-const PAUSE=700;
+const FADE_OUT_START = 0.90;
+const FADE_IN_END = 0.05;
+const PAUSE = 500;
 
 function initAnimRoutes(){
   animRoutes=buildRoutes().map(r=>({
@@ -307,9 +349,15 @@ function initAnimRoutes(){
 
 function ease(t){ return t<.5?2*t*t:-1+(4-2*t)*t; }
 
+function truckAlpha(prog){
+  if(prog < FADE_IN_END) return prog / FADE_IN_END;
+  if(prog > FADE_OUT_START) return 1 - (prog - FADE_OUT_START) / (1 - FADE_OUT_START);
+  return 1;
+}
+
 function draw(ts){
   ctx.clearRect(0,0,W,H);
-  const lc=cssVar('--line'), bc=cssVar('--brand'), gc=cssVar('--glow');
+  const lc=cssVar('--mv-line'), bc=cssVar('--mv-brand'), gc=cssVar('--mv-glow');
 
   animRoutes.forEach(r=>{
     if(r.phase==='waiting'){
@@ -329,6 +377,7 @@ function draw(ts){
     const prog=r.progress;
     const sc=r.samples.length;
     const hi=Math.min(Math.floor(prog*(sc-1)),sc-1);
+    const alpha = truckAlpha(prog);
 
     // base line
     ctx.save();
@@ -349,28 +398,18 @@ function draw(ts){
       ctx.strokeStyle=bc; ctx.lineWidth=1.8;
       ctx.lineCap='round'; ctx.lineJoin='round';
       ctx.shadowColor=gc; ctx.shadowBlur=7;
-      ctx.globalAlpha=0.6; ctx.stroke(); ctx.restore();
+      ctx.globalAlpha=0.6 * alpha;
+      ctx.stroke(); ctx.restore();
     }
 
-    // head rect
+    // truck head — top down
     const h=r.samples[hi], p=r.samples[Math.max(0,hi-2)];
     const ang=Math.atan2(h[1]-p[1],h[0]-p[0]);
-    const rw=10,rh=4,rc=2;
     ctx.save();
-    ctx.translate(h[0],h[1]); ctx.rotate(ang);
-    const x=-rw/2,y=-rh/2;
-    ctx.beginPath();
-    ctx.moveTo(x+rc,y); ctx.lineTo(x+rw-rc,y);
-    ctx.quadraticCurveTo(x+rw,y,x+rw,y+rc);
-    ctx.lineTo(x+rw,y+rh-rc);
-    ctx.quadraticCurveTo(x+rw,y+rh,x+rw-rc,y+rh);
-    ctx.lineTo(x+rc,y+rh);
-    ctx.quadraticCurveTo(x,y+rh,x,y+rh-rc);
-    ctx.lineTo(x,y+rc);
-    ctx.quadraticCurveTo(x,y,x+rc,y);
-    ctx.closePath();
-    ctx.fillStyle=bc; ctx.shadowColor=gc; ctx.shadowBlur=12;
-    ctx.fill(); ctx.restore();
+    ctx.translate(h[0],h[1]);
+    ctx.rotate(ang);
+    drawTruck(ctx, bc, gc, alpha);
+    ctx.restore();
   });
 
   requestAnimationFrame(draw);

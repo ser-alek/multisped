@@ -41,8 +41,7 @@ export function MissionVision() {
     function buildRoutes() {
       const isMobile = W < 600;
       const pad = 16;
-
-      const safeH = isMobile ? H * 0.13 : H * 0.16;
+      const safeH = isMobile ? H * 0.10 : H * 0.16;
       const safeX = isMobile ? W * 0.28 : W * 0.18;
       const R = 28;
 
@@ -70,7 +69,19 @@ export function MissionVision() {
         delay: 500,
       };
 
-      const BL = {
+      const BL_mobile = {
+        pts: [
+          [pad, H],
+          [pad, H - safeH * 0.85],
+          [pad + safeX * 0.5, H - safeH * 0.85],
+          [pad + safeX * 0.5, H - safeH * 0.4],
+        ],
+        r: R,
+        dur: 3800,
+        delay: 250,
+      };
+
+      const BL_desktop = {
         pts: [
           [pad, H],
           [pad, H - safeH * 0.95],
@@ -94,8 +105,8 @@ export function MissionVision() {
         delay: 900,
       };
 
-      if (isMobile) return [TL, TR, BL];
-      return [TL, TR, BL, BR];
+      if (isMobile) return [TL, TR, BL_mobile];
+      return [TL, TR, BL_desktop, BR];
     }
 
     function samplePath(pts: number[][], r: number, n = 300) {
@@ -205,7 +216,40 @@ export function MissionVision() {
       c.lineTo(pts[pts.length - 1][0], pts[pts.length - 1][1]);
     }
 
-    const PAUSE = 700;
+    function drawTruck(
+      c: CanvasRenderingContext2D,
+      color: string,
+      glowColor: string,
+      alpha: number,
+    ) {
+      c.save();
+      c.globalAlpha = alpha;
+      c.fillStyle = color;
+      c.shadowColor = glowColor;
+      c.shadowBlur = 10;
+
+      c.beginPath();
+      c.roundRect(-10, -2.8, 11, 5.6, 1);
+      c.fill();
+
+      c.beginPath();
+      c.roundRect(1, -3.2, 6, 6.4, 1.2);
+      c.fill();
+
+      c.shadowBlur = 0;
+      c.beginPath();
+      c.roundRect(2.5, -4.5, 2.5, 1.2, 0.4);
+      c.fill();
+      c.beginPath();
+      c.roundRect(2.5, 3.3, 2.5, 1.2, 0.4);
+      c.fill();
+
+      c.restore();
+    }
+
+    const FADE_OUT_START = 0.90;
+    const FADE_IN_END = 0.05;
+    const PAUSE = 500;
 
     interface AnimRoute {
       pts: number[][];
@@ -236,6 +280,13 @@ export function MissionVision() {
 
     function ease(t: number) {
       return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    function truckAlpha(prog: number) {
+      if (prog < FADE_IN_END) return prog / FADE_IN_END;
+      if (prog > FADE_OUT_START)
+        return 1 - (prog - FADE_OUT_START) / (1 - FADE_OUT_START);
+      return 1;
     }
 
     function draw(ts: number) {
@@ -274,6 +325,7 @@ export function MissionVision() {
         const prog = r.progress;
         const sc = r.samples.length;
         const hi = Math.min(Math.floor(prog * (sc - 1)), sc - 1);
+        const alpha = truckAlpha(prog);
 
         ctx.save();
         ctx.beginPath();
@@ -300,7 +352,7 @@ export function MissionVision() {
           ctx.lineJoin = "round";
           ctx.shadowColor = gc;
           ctx.shadowBlur = 7;
-          ctx.globalAlpha = 0.6;
+          ctx.globalAlpha = 0.6 * alpha;
           ctx.stroke();
           ctx.restore();
         }
@@ -308,29 +360,10 @@ export function MissionVision() {
         const h = r.samples[hi],
           p = r.samples[Math.max(0, hi - 2)];
         const ang = Math.atan2(h[1] - p[1], h[0] - p[0]);
-        const rw = 10,
-          rh = 4,
-          rc = 2;
         ctx.save();
         ctx.translate(h[0], h[1]);
         ctx.rotate(ang);
-        const x = -rw / 2,
-          y = -rh / 2;
-        ctx.beginPath();
-        ctx.moveTo(x + rc, y);
-        ctx.lineTo(x + rw - rc, y);
-        ctx.quadraticCurveTo(x + rw, y, x + rw, y + rc);
-        ctx.lineTo(x + rw, y + rh - rc);
-        ctx.quadraticCurveTo(x + rw, y + rh, x + rw - rc, y + rh);
-        ctx.lineTo(x + rc, y + rh);
-        ctx.quadraticCurveTo(x, y + rh, x, y + rh - rc);
-        ctx.lineTo(x, y + rc);
-        ctx.quadraticCurveTo(x, y, x + rc, y);
-        ctx.closePath();
-        ctx.fillStyle = bc;
-        ctx.shadowColor = gc;
-        ctx.shadowBlur = 12;
-        ctx.fill();
+        drawTruck(ctx, bc, gc, alpha);
         ctx.restore();
       });
 
