@@ -10,10 +10,11 @@ const LI_URL =
   "https://www.linkedin.com/in/multi-sped-l-t-d-international-forwarder-b7845b10b/";
 
 const NAV_LINKS = [
-  { key: "home", href: "#" },
   { key: "about", href: "#about" },
+  { key: "missionVision", href: "#mission-vision" },
   { key: "services", href: "#services" },
-  { key: "serviceItems", href: "#service-items" },
+  { key: "sectors", href: "#sectors" },
+  { key: "partners", href: "#partners" },
   { key: "contact", href: "#contact" },
 ] as const;
 

@@ -27,7 +27,8 @@
     "stats": {
       "tonsLabel": "Тони годишно",
       "surveillanceLabel": "Видео надзор на целиот објект",
-      "licensesLabel": "Царински лиценци"
+      "licensesLabel": "Царински лиценци",
+      "hourSuffix": "ч"
     }
   },
   "services": {
@@ -139,10 +140,11 @@
   "footer": {
     "tagline": "Логистика кој го движи вашиот бизнис напред.",
     "nav": {
-      "home": "Дома",
       "about": "За Нас",
+      "missionVision": "Мисија и Визија",
       "services": "Транспортни Услуги",
-      "serviceItems": "Сервисни Услуги",
+      "sectors": "Сектори",
+      "partners": "Партнери",
       "contact": "Контакт"
     },
     "copyright": "© 2026 - MultiSped International Forwarder"

@@ -153,7 +153,7 @@ export function About() {
             />
             <StatBlock
               target={24}
-              suffix="ч"
+              suffix={t("stats.hourSuffix")}
               label={t("stats.surveillanceLabel")}
             />
             <StatBlock
